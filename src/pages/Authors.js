@@ -27,7 +27,7 @@ export default function Authors() {
   );
 }
 
-function Author(author) {
+export function Author(author) {
   const { id, first_name, last_name } = author;
   const [showUpdate, setShowUpdate] = useState(false);
 

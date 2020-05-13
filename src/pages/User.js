@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import {updateUser, useUser} from "../api";
-
+import {updateUser, useAuthors, useUser} from "../api";
+import{Author} from "../pages/Authors";
 import Button from "../components/Button";
 import Header from "../components/Header";
 
 export default function Users() {
-    /*const { loading, users, error } = useUser();
+    const { loading, authors, error } = useAuthors();
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -14,10 +14,12 @@ export default function Users() {
     }
 
     // use this to make sure you are getting the right data
-    console.log(users);*/
+    console.log(authors);
+    // Display a list of the authors
+
     // Display a list of the users
     let username;
-    username = window.location.pathname
+    username = window.location.pathname;
     let index;
     index = username.lastIndexOf('/');
     let name;
@@ -28,10 +30,21 @@ export default function Users() {
 
     return (
         <div>
-            <h1>Welcome</h1>
+            <Header />
+            <h1>Personal Information</h1>
+            {authors.map(author =>{
+                if(author.username===name){
+                    return <Author key={author.id} {...author} />
+                }
+                else{
+                    return
+                }
+            })}
+
         </div>
     );
 }
+
 
 function User(user) {
     const {username, password} = user;

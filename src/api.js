@@ -163,7 +163,7 @@ export function useAuthors() {
   };
 }
 export function getUser(username) {
-  const endpoint = BASE_URL + `/login/${username}`;
+  const endpoint = BASE_URL + `/findCaregiver/${username}`;
   return fetch(endpoint).then(res => {
     console.log(res);
     return res.json();
