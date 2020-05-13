@@ -5,7 +5,6 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 
 import Home from "./pages/Home";
-import Authors from "./pages/Authors";
 import Caregivers from "./pages/Caregivers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -25,9 +24,6 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/authors">
-            <Authors />
-          </Route>
           <Route path="/login">
             <Login />
           </Route>
@@ -38,7 +34,7 @@ export default function App() {
             <User />
           </Route>
           <Route path='/findCaregivers'>
-            <User />
+            <Caregivers />
           </Route>
         </Switch>
       </div>

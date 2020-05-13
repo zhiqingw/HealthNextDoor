@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import {updateUser, useAuthors, useUser} from "../api";
-import{Author} from "../pages/Authors";
+import {updateUser, useAuthors, useCaregivers, useUser} from "../api";
 import Button from "../components/Button";
 import Header from "../components/Header";
+import Caregivers from "./Caregivers";
 
 export default function Users() {
-    const { loading, authors, error } = useAuthors();
+    const { loading, caregivers, error } = useCaregivers();
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -14,7 +14,7 @@ export default function Users() {
     }
 
     // use this to make sure you are getting the right data
-    console.log(authors);
+    console.log(caregivers);
     // Display a list of the authors
 
     // Display a list of the users
@@ -32,9 +32,9 @@ export default function Users() {
         <div>
             <Header />
             <h1>Personal Information</h1>
-            {authors.map(author =>{
-                if(author.username===name){
-                    return <Author key={author.id} {...author} />
+            {caregivers.map(caregiver =>{
+                if(caregiver.username===name){
+                    return <Caregivers key={caregiver.username} {...caregiver} />
                 }
                 else{
                     return

@@ -20,19 +20,19 @@ export default function Caregivers() {
       <div>
         <h1>Caregivers List</h1>
           {caregivers.map(caregiver => (
-              <Caregiver key={caregiver.id} {...caregiver} />
+              <Caregiver key={caregiver.username} {...caregiver} />
           ))}
       </div> );
 }
 
 function Caregiver(caregiver) {
-  const { id, first_name, last_name, gender, introduction} = caregiver;
+  const { first_name, last_name, gender, introduction, username} = caregiver;
   const [showUpdate, setShowUpdate] = useState(false);
 
   return (
-    <div className={`caregiver caregiver-${id}`} key={id}>
+    <div className={`caregiver caregiver-${username}`} key={username}>
       <div className="info">
-        ({id}) {first_name} {last_name} {gender} {introduction}
+        ({username}) {first_name} {last_name} {gender} {introduction}
         <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
           {showUpdate ? "-" : "+"}
         </Button>
@@ -43,9 +43,9 @@ function Caregiver(caregiver) {
 }
 
 function CaregiverExtended(props) {
-  const { id, first_name, last_name, gender, introduction, showUpdate } = props;
+  const { first_name, last_name, gender, introduction, username, showUpdate } = props;
 
-  const [id_input, setId] = useState(id);
+  const [username_input, setUsername] = useState(username);
   const [first_input, setFirstName] = useState(first_name);
   const [last_input, setLastName] = useState(last_name);
   const [gender_input, setGender] = useState(gender);
@@ -53,11 +53,11 @@ function CaregiverExtended(props) {
   function onSubmit() {
     // call upate author function
       updateCaregiver({
-       id: id_input,
        first_name: first_input,
        last_name: last_input,
        gender: gender_input,
-       introduction: introduction_input
+       introduction: introduction_input,
+       username: username_input,
      });
   }
 
@@ -65,13 +65,6 @@ function CaregiverExtended(props) {
     <div className={`caregiver-expand ${showUpdate ? "show" : ""}`}>
       <form>
         {/* TODO - add value and onChange properties to inputs */}
-        <input type="text"
-               name="id"
-               value = {id_input}
-               onChange={event => {
-                   setId(event.target.value);
-               }}
-            />
         <input type="text"
                name="first_name"
                value = {first_input}
@@ -100,12 +93,19 @@ function CaregiverExtended(props) {
                      setIntroduction(event.target.value);
                  }}
          />
+          <input type="text"
+                 name="username"
+                 value = {username_input}
+                 onChange={event => {
+                     setUsername(event.target.value);
+                 }}
+          />
 
         <Button className={"btn-warning"} onClick={onSubmit}>
           Update
         </Button>
       </form>
-      <Button className={"btn-danger"} onClick={() => deleteCaregiver(id)}>
+      <Button className={"btn-danger"} onClick={() => deleteCaregiver(username)}>
         Delete
       </Button>
     </div>

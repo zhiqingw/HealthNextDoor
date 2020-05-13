@@ -1,50 +1,7 @@
 import { useState, useEffect } from "react";
 
 // TODO - update this to be your url
-const BASE_URL = "https://mylibraryapp956895.herokuapp.com";
-
-function getAuthors() {
-  const endpoint = BASE_URL + `/author-management`;
-// return fetch call that gets author list
-  return fetch(endpoint).then(res => {
-    console.log(res);
-    return res.json();
-  });
-}
-
-export function getAuthor(id) {
-  const endpoint = BASE_URL + `/author-management/${id}`;
-  return fetch(endpoint).then(res => {
-    console.log(res);
-    return res.json();
-  });
-  // TODO
-  // return fetch statement to get an author by the id
-}
-
-export function addAuthor(author) {
-  const { id, first_name, last_name } = author;
-  if (!id || !first_name || !last_name) {
-    alert("must include all fields");
-    return;
-  }
-
-  const endpoint = BASE_URL + `/author-management/`;
-
-  // TODO
-  // return fetch statement to add an author
-  return fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      id,
-      first_name,
-      last_name
-    })
-  });
-}
+const BASE_URL = "https://healthnextdoortest.herokuapp.com";
 
 export function loginCheck(username, password) {
 
@@ -83,32 +40,6 @@ export function loginCheck(username, password) {
 
 }
 
-export function updateAuthor(author) {
-  const { id, first_name, last_name } = author;
-  if (!id) {
-    alert("must include an id");
-    return;
-  }
-  if (!first_name || !last_name) {
-    alert("must include a first name or last name to update");
-    return;
-  }
-  const endpoint = BASE_URL + `/author-management/${id}`;
-// return fetch query
-  return fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      id,
-      first_name,
-      last_name
-    })
-  });
-  //.then(res => location.reload());
-}
-
 export function updateUser(user) {
   const { username, password} = user;
   if (!password) {
@@ -130,38 +61,7 @@ export function updateUser(user) {
   //.then(res => location.reload());
 }
 
-export function deleteAuthor(id) {
-  const endpoint = BASE_URL + `/user-management/${id}`;
-  return fetch(endpoint, {
-    method: "DELETE",
-  });
-  // return fetch query
-}
 
-export function useAuthors() {
-  const [loading, setLoading] = useState(true);
-  const [authors, setAuthors] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    getAuthors()
-        .then(authors => {
-          setAuthors(authors);
-          setLoading(false);
-        })
-        .catch(e => {
-          console.log(e);
-          setError(e);
-          setLoading(false);
-        });
-  }, []);
-
-  return {
-    loading,
-    authors,
-    error
-  };
-}
 export function getUser(username) {
   const endpoint = BASE_URL + `/findCaregiver/${username}`;
   return fetch(endpoint).then(res => {
@@ -216,22 +116,34 @@ export function getCaregiver(id) {
 }
 
 export function addCaregiver(caregiver) {
-  const { id, first_name, last_name } = caregiver;
-  if (!id || !first_name || !last_name) {
+  const { first_name, last_name, gender, introduction, username } = caregiver;
+  if ( !gender|| !first_name || !last_name || !introduction || !username) {
     alert("must include all fields");
     return;
   }
 
   const endpoint = BASE_URL + `/findCaregiver/`;
-
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      first_name,
+      last_name,
+      gender,
+      introduction,
+      username
+    })
+  });
   // TODO
   // return fetch statement to add an author
 }
 
 export function updateCaregiver(caregiver) {
-  const { id, first_name, last_name, gender, introduction } = caregiver;
-  if (!id) {
-    alert("must include an id");
+  const { first_name, last_name, gender, introduction, username } = caregiver;
+  if (!username) {
+    alert("must include a username");
     return;
   }
   if (!first_name || !last_name) {
@@ -247,7 +159,7 @@ export function updateCaregiver(caregiver) {
     return;
   }
 
-  const endpoint = BASE_URL + `/findCaregiver/${id}`;
+  const endpoint = BASE_URL + `/findCaregiver/${username}`;
 
   // return fetch query to update an author
   return fetch(endpoint, {
@@ -256,19 +168,21 @@ export function updateCaregiver(caregiver) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      id,
       first_name,
       last_name,
       gender,
-      introduction
+      introduction,
+      username
     })
   });
 
 }
 
-export function deleteCaregiver(id) {
-  const endpoint = BASE_URL + `/findCaregiver/${id}`;
-
+export function deleteCaregiver(username) {
+  const endpoint = BASE_URL + `/findCaregiver/${username}`;
+  return fetch(endpoint, {
+    method: "DELETE",
+  });
   // return fetch query
 }
 

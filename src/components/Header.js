@@ -1,34 +1,29 @@
 import React, { useState } from "react";
 
-import { addAuthor } from "../api";
+import { addCaregiver } from "../api";
 import Button from "../components/Button";
 
 export default function Header() {
-  const [id, setId] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
+  const [gender, setGender] = useState("");
+  const [introduction, setIntroduction] = useState("");
+  const [username, setUsername] = useState("");
 
   function onSubmit() {
-     addAuthor({
-       id,
+     addCaregiver({
        first_name,
-       last_name
+       last_name,
+       gender,
+       introduction,
+       username
      });
   }
 
   return (
-    <div className="addAuthor">
-      Add New Author
+    <div className="addCaregiver">
+      Add New Caregiver
       <form>
-        <input
-          type="text"
-          placeholder="Author id"
-          name="id"
-           value={id}
-           onChange={event => {
-             setId(event.target.value);
-           }}
-        />
         <input
           type="text"
           placeholder="First Name"
@@ -47,6 +42,33 @@ export default function Header() {
              setLastName(event.target.value);
            }}
         />
+          <input
+              type="text"
+              placeholder="gender"
+              name="gender"
+              value={gender}
+              onChange={event => {
+                  setGender(event.target.value);
+              }}
+          />
+          <input
+              type="text"
+              placeholder="introduction"
+              name="introduction"
+              value={introduction}
+              onChange={event => {
+                  setIntroduction(event.target.value);
+              }}
+          />
+          <input
+              type="text"
+              placeholder="username"
+              name="username"
+              value={username}
+              onChange={event => {
+                  setUsername(event.target.value);
+              }}
+          />
         <Button className={"btn-success"} onClick={onSubmit}>
           Save
         </Button>

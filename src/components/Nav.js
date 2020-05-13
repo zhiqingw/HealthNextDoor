@@ -6,7 +6,6 @@ export default function Nav() {
       <NavLink exact to="/">
         Home
       </NavLink>
-      <NavLink to="/authors">Authors</NavLink>
       <NavLink to="/login">Login</NavLink>
       <NavLink to="/findCaregivers">Caregivers</NavLink>
     </nav>
