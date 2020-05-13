@@ -8,6 +8,7 @@ export default function Nav() {
       </NavLink>
       <NavLink to="/authors">Authors</NavLink>
       <NavLink to="/login">Login</NavLink>
+      <NavLink to="/findCaregivers">Caregivers</NavLink>
     </nav>
   );
 }

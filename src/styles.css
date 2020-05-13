@@ -8,10 +8,21 @@
 }
 
 html,
+
+/*body
+{
+  padding: 0;
+  margin: 0;
+  background-image:url('./homepage.pdf');
+  background-repeat:no-repeat;
+  background-position:center;
+}*/
 body {
   padding: 0;
   margin: 0;
 }
+
+
 
 input {
   padding: 8px;
@@ -40,9 +51,15 @@ nav a.active {
   border-bottom: 2px solid #fff;
 }
 
-.addAuthor {
-  background-color: #2da2db;
-  padding: 40px;
+.homepage_frame {
+  /*background-color: #2da2db;*/
+  background-image:url('./hhome.png');
+
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: cover;
+  padding: 350px;
+  /*margin: 0px;*/
 }
 
 div.author {
@@ -65,6 +82,7 @@ div.author .info {
 .author-expand {
   display: none;
   background-color: #2da2db;
+
   padding: 10px;
 }
 
@@ -260,3 +278,4 @@ fieldset[disabled] .btn {
   background: #f4511e;
   box-shadow: none;
 }
+

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 
 import Home from "./pages/Home";
 import Authors from "./pages/Authors";
+import Caregivers from "./pages/Caregivers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 
@@ -17,7 +18,6 @@ export default function App() {
     <Router>
       <div className="App">
         <Nav />
-        <Header />
         {/* the content */}
         {/* A <Switch> looks through its children <Route>s and
    renders the first one that matches the current URL. */}
@@ -35,6 +35,9 @@ export default function App() {
             <SignUp />
           </Route>
           <Route path='/user-management'>
+            <User />
+          </Route>
+          <Route path='/findCaregivers'>
             <User />
           </Route>
         </Switch>
