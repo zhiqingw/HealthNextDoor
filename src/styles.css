@@ -22,6 +22,16 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-family: Georgia;
+  font-size: 350%;
+  color: #2784fb;
+}
+
+h3 {
+  color: #268bc6;
+}
+
 
 
 input {
@@ -53,12 +63,12 @@ nav a.active {
 
 .homepage_frame {
   /*background-color: #2da2db;*/
-  background-image:url('./hhome.png');
+  background-image:url('./family2.png');
 
   background-repeat:no-repeat;
   background-position:center;
   background-size: cover;
-  padding: 350px;
+  padding: 400px;
   /*margin: 0px;*/
 }
 
