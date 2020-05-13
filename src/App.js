@@ -5,30 +5,40 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 
 import Home from "./pages/Home";
-import Caregivers from "./pages/Caregivers";
+import Authors from "./pages/Authors";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 import "./styles.css";
+import User from "./pages/User";
 
 export default function App() {
   return (
-      <Router>
-        <div className="App">
-          <Nav />
-          <Header />
-          {/* the content */}
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
-          <Switch>
-              <Route exact path="/">
-                  <Home />
-              </Route>
-
-              <Route path="/caregivers">
-                  <Caregivers/>
-              </Route>
-          </Switch>
-        </div>
-      </Router>
-
+    <Router>
+      <div className="App">
+        <Nav />
+        <Header />
+        {/* the content */}
+        {/* A <Switch> looks through its children <Route>s and
+   renders the first one that matches the current URL. */}
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/authors">
+            <Authors />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path='/user-management'>
+            <User />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
