@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useCaregivers, updateCaregiver, deleteCaregiver } from "../api";
 
 import Button from "../components/Button";
+import Header from "../components/Header";
 
 export default function Caregivers() {
   const { loading, caregivers, error } = useCaregivers();
@@ -18,6 +19,7 @@ export default function Caregivers() {
   // Display a list of the authors
   return (
       <div>
+        <Header />
         <h1>Caregivers List</h1>
           {caregivers.map(caregiver => (
               <Caregiver key={caregiver.username} {...caregiver} />
