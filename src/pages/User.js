@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {updateUser, useAuthors, useCaregivers, useUser} from "../api";
+import {updateUser, useCaregivers, useUser} from "../api";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import Caregivers from "./Caregivers";
