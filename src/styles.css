@@ -89,14 +89,14 @@ div.author .info {
   padding: 10px;
 }
 
-.author-expand {
+.caregiver-expand {
   display: none;
   background-color: #2da2db;
 
   padding: 10px;
 }
 
-.author-expand.show {
+.caregiver-expand.show {
   display: block;
 }
 
