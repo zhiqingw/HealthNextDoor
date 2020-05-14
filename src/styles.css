@@ -79,10 +79,10 @@ div.author {
   border-bottom: 1px #f2f2f2 solid;
 }
 
-div.right {
-  width: 65%;
-  float: right;
-  text-align: left;
+.right {
+  width: 57%;
+  float: left;
+  text-align: right;
 }
 
 div.author .info {
@@ -91,12 +91,31 @@ div.author .info {
 
 .caregiver-expand {
   display: none;
+  background-color: #ffffff;
+  width: 57%;
+  float: bottom;
+  text-align: right;
+  padding: 10px;
+}
+.caregiver-expand-right {
+  display: none;
+  background-color: #d0dbb7;
+  width: 43%;
+  float:right;
+  padding: 10px;
+}
+
+.caregiver-expand.show {
+  display: block;
+}
+.user-expand {
+  display: none;
   background-color: #2da2db;
 
   padding: 10px;
 }
 
-.caregiver-expand.show {
+.user-expand.show {
   display: block;
 }
 
@@ -288,4 +307,5 @@ fieldset[disabled] .btn {
   background: #f4511e;
   box-shadow: none;
 }
+
 

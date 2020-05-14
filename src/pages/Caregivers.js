@@ -59,50 +59,31 @@ function CaregiverExtended(props) {
        last_name: last_input,
        gender: gender_input,
        introduction: introduction_input,
-       username: username_input,
+       username: username,
      });
   }
 
   return (
+
     <div className={`caregiver-expand ${showUpdate ? "show" : ""}`}>
       <form>
         {/* TODO - add value and onChange properties to inputs */}
-        <input type="text"
-               name="first_name"
-               value = {first_input}
-               onChange={event => {
-                   setFirstName(event.target.value);
-               }}
-        />
-        <input type="text"
-               name="last_name"
-               value = {last_input}
-               onChange={event => {
-                   setLastName(event.target.value);
-               }}
-        />
-        <input type="text"
-                 name="gender"
-                 value = {gender_input}
-                 onChange={event => {
-                     setGender(event.target.value);
-                 }}
-         />
-         <input type="text"
-                 name="introduction"
-                 value = {introduction_input}
-                 onChange={event => {
-                     setIntroduction(event.target.value);
-                 }}
-         />
-          <input type="text"
-                 name="username"
-                 value = {username_input}
-                 onChange={event => {
-                     setUsername(event.target.value);
-                 }}
-          />
-
+        <p>
+            <label className="label_input">first name</label>
+        <input type="text" name="first_name" value = {first_input} onChange={event => {setFirstName(event.target.value);}}/>
+        </p>
+        <p>
+            <label className="label_input">last name</label>
+        <input type="text" name="last_name" value = {last_input} onChange={event => {setLastName(event.target.value);}}/>
+        </p>
+        <p>
+            <label className="label_input">gender</label>
+        <input type="text" name="gender" value = {gender_input} onChange={event => {setGender(event.target.value);}}/>
+        </p>
+        <p>
+         <label className="label_input">introduction</label>
+         <input type="text" name="introduction" value = {introduction_input} onChange={event => {setIntroduction(event.target.value);}}/>
+        </p>
         <Button className={"btn-warning"} onClick={onSubmit}>
           Update
         </Button>
@@ -110,6 +91,8 @@ function CaregiverExtended(props) {
       <Button className={"btn-danger"} onClick={() => deleteCaregiver(username)}>
         Delete
       </Button>
-    </div>
+
+
+      </div>
   );
 }

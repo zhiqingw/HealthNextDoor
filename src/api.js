@@ -62,8 +62,8 @@ export function updateUser(user) {
 }
 
 
-export function getUser(username) {
-  const endpoint = BASE_URL + `/findCaregiver/${username}`;
+export function getUser() {
+  const endpoint = BASE_URL + `/login`;
   return fetch(endpoint).then(res => {
     console.log(res);
     return res.json();
