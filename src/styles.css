@@ -108,6 +108,7 @@ div.author .info {
 .caregiver-expand.show {
   display: block;
 }
+
 .user-expand {
   display: none;
   background-color: #2da2db;

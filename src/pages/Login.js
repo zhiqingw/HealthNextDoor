@@ -3,6 +3,10 @@ import {loginCheck} from "../api";
 import Button from "../components/Button";
 
 export default function Login() {
+    if(window.sessionStorage.getItem("username")){
+        window.location.href = `user-management/${window.sessionStorage.getItem("username")}`;
+    }
+    else{
     return (
         <div id="login_frame">
             <form method="post" action="login.js">
@@ -12,7 +16,7 @@ export default function Login() {
                 </p>
                 <p>
                     <label className="label_input">Password</label>
-                    <input type="text" id="password" className="text_field" />
+                    <input type="password" id="password" className="text_field" />
                 </p>
 
                 <div id="login_control">
@@ -25,7 +29,7 @@ export default function Login() {
                 </div>
             </form>
         </div>
-    );
+    );}
 }
 
 function login() {
