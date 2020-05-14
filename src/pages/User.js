@@ -29,7 +29,7 @@ export default function Users() {
 
     return (
         <div>
-            <h1>Personal Information</h1>
+            <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
             {caregivers.map(caregiver =>{
                 if(caregiver.username===name){
                     return <Caregiver key={caregiver.username} {...caregiver} />

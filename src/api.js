@@ -30,6 +30,7 @@ export function loginCheck(username, password) {
       /**let history = this.props.history;
       history.push('/${username}');**/
       //<User {...username}/>
+      window.sessionStorage.setItem("username",username);
       window.location.href = `user-management/${username}`;
       //let handleGoToDetail;
     }
