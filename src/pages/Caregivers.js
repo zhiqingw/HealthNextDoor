@@ -66,7 +66,7 @@ function CaregiverExtended(props) {
   return (
 
     <div className={`caregiver-expand ${showUpdate ? "show" : ""}`}>
-      <form>
+      <form className={"caregiver-expand-left"}>
         {/* TODO - add value and onChange properties to inputs */}
         <p>
             <label className="label_input">first name</label>
@@ -87,10 +87,11 @@ function CaregiverExtended(props) {
         <Button className={"btn-warning"} onClick={onSubmit}>
           Update
         </Button>
-      </form>
+
       <Button className={"btn-danger"} onClick={() => deleteCaregiver(username)}>
         Delete
       </Button>
+      </form><form className={"caregiver-expand-right"}></form>
 
 
       </div>

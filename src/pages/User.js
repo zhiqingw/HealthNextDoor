@@ -32,6 +32,7 @@ export default function Users() {
     let match;
     return (
         <div>
+            <h1>Your post</h1>
             {caregivers.map(caregiver =>{
                 if(caregiver.username===name){
                     return <Caregiver key={caregiver.username} {...caregiver} />
