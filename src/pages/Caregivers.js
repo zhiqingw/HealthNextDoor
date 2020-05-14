@@ -27,7 +27,7 @@ export default function Caregivers() {
       </div> );
 }
 
-function Caregiver(caregiver) {
+export function Caregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username} = caregiver;
   const [showUpdate, setShowUpdate] = useState(false);
 

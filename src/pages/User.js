@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import {updateUser, useCaregivers, useUser} from "../api";
 import Button from "../components/Button";
-import Header from "../components/Header";
-import Caregivers from "./Caregivers";
+import {Caregiver} from "./Caregivers";
 
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
@@ -30,11 +29,10 @@ export default function Users() {
 
     return (
         <div>
-            <Header />
             <h1>Personal Information</h1>
             {caregivers.map(caregiver =>{
                 if(caregiver.username===name){
-                    return <Caregivers key={caregiver.username} {...caregiver} />
+                    return <Caregiver key={caregiver.username} {...caregiver} />
                 }
                 else{
                     return
