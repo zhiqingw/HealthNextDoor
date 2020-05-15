@@ -6,7 +6,7 @@ export default function Login() {
   return (
       <div className={"login_frame"} id={"sign_version"}>
         <h1> Join Us </h1>
-      <div id="login_box">
+      <div className="login_box">
         <h2>SignUp</h2>
         <div id="form">
           <div id = "input_box">
@@ -20,10 +20,10 @@ export default function Login() {
           </div>
         </div>
 
-          <Button id="login_button" onClick={onSubmit}>
+          <Button className="login_button" onClick={onSubmit}>
             Submit
           </Button>
-          <Button id="login_button" onClick={onsubmit}>
+          <Button className="login_button" onClick={onsubmit}>
             Reset
           </Button>
 

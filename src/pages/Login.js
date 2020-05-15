@@ -10,7 +10,7 @@ export default function Login() {
         return (
             <div className={"login_frame"}>
                 <h1> Join Us </h1>
-                <div id="login_box">
+                <div className="login_box">
                     <h2>LOGIN</h2>
                     <div id="form">
                         <div id = "input_box">
@@ -20,10 +20,10 @@ export default function Login() {
                             <input type="password" id="password" placeholder="Password" />
                         </div>
                     </div>
-                    <Button id="login_button" onClick={login}>
+                    <Button className="login_button" onClick={login}>
                         Log in
                     </Button>
-                    <Button id="login_button" onClick={toCurrent}>
+                    <Button className="login_button" onClick={toCurrent}>
                         Sign up
                     </Button>
                 </div>

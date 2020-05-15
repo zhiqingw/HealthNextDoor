@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
+import {Logout} from "../pages/User";
+
 export default function Nav() {
     if(window.sessionStorage.getItem("username")){
         return (
@@ -13,6 +15,9 @@ export default function Nav() {
                     <NavLink to="/findCaregivers">Caregivers</NavLink>
                     <h id="hello">Hello, </h>
                     <Button id="user_button" onClick={showUser}>{window.sessionStorage.getItem("username")}</Button>
+                    <Button className={"logout"} onClick={Logout}>
+                        Log out
+                    </Button>
                 </nav>
 
             </div>

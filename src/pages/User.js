@@ -56,7 +56,7 @@ export default function Users() {
         </div>
     );
 }
-function Logout(){
+export function Logout(){
     window.sessionStorage.removeItem("username");
     window.location.assign('http://localhost:3000/')
 
@@ -68,17 +68,19 @@ function User(user) {
 
     return (
         <div className={`user user-${username}`} key={username}>
-            <h2 id={"one_line"}>Posting Record</h2>
-            <div className="reset_pas" id={"one_line"}>
+            <div>
+                <h2 id={"htwo"}>Posting Record</h2>
+            </div>
+
+            <div>
                 <Button className={"btn"} id={"reset"} onClick={() => setShowUpdate(!showUpdate)}>
                     {showUpdate ? "reset password" : "reset password"}
                 </Button>
             </div>
-            <Button className={"btn-warning"} onClick={Logout}>
-                Log out
-            </Button>
-            <div className={"posts"}></div>
-            <UserExtended {...user} showUpdate={showUpdate} />
+
+            <div className={"posts"}>
+                <UserExtended {...user} showUpdate={showUpdate} />
+            </div>
         </div>
     );
 }
@@ -103,20 +105,24 @@ function UserExtended(props) {
 
     return (
         <div className={`user-expand ${showUpdate ? "show" : ""}`}>
-            <form className={`right`}>
+            <div id={"reset_box"} className={"login_box"}>
                 {/* TODO - add value and onChange properties to inputs */}
-                <p>
-                    <label className="label_input">Password</label>
+                <div>
+                    <label id="label_input" className={"login_button"}>Password</label>
                 <input type="password" name="password" value={password_input} onChange = {event => {setPassword(event.target.value)}} />
-                </p>
-                <p>
-                    <label className="label_input">Confirm Password</label>
+                </div>
+                <div>
+                    <label id="label_input" className={"login_button"}>Confirm Password</label>
                 <input type="password" id="confirmed_password" className="text_field"/>
-                </p>
+                </div>
+                <div>
                 <Button className={"btn-warning"} onClick={onSubmit}>
                     Update
                 </Button>
-            </form>
+                </div>
+            </div>
         </div>
     );
 }
+
+

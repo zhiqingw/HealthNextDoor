@@ -125,7 +125,7 @@ nav {
   position: absolute;
   margin-top: 160px;
   margin-left: 0;
-  width: 1440px;
+  width: 1425px;
   background-color: #a1c019;
 }
 
@@ -212,9 +212,9 @@ div.author .info {
 
 .user-expand {
   display: none;
-  background-color: #2da2db;
+  background-color: transparent;
 
-  padding: 10px;
+
 }
 
 .user-expand.show {
@@ -374,30 +374,23 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 
-#one_line{
-  display: inline-flex;
+#htwo{
+  margin-top: 100px;
+  margin-bottom: 0;
 }
 
-.reset_pas{
 
-  position: absolute;
-
-  margin-left: 380px;
-  margin-top: 95px;
-
-
-}
 
 #reset{
+  margin-left: 1200px;
+  color: #cbd4e6;
 
-  color: #e8f5e9;
-  background-color: transparent;
 }
 
 #reset:hover,
 #reset:active,
 #reset.focus {
-  color: blue;
+  background-color: #9ec5c4;
 }
 
 
@@ -443,7 +436,7 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 
-#login_box
+.login_box
 {
   width:20%;
   heighgt: 400px;
@@ -456,18 +449,18 @@ fieldset[disabled] .btn {
   font-family: fantasy;
 }
 
-#login_box h2
+.login_box h2
 {
   color:#dbdadb;
   margin-top: 5%;
 }
 
-#login_box #form #input_box
+.login_box #form #input_box
 {
   margin-top: 5%;
 }
 
-#login_box #form #input_box input
+.login_box #form #input_box input
 {
   border: 0;
   width:60%;
@@ -479,7 +472,7 @@ fieldset[disabled] .btn {
   margin-top: 10px;
 }
 
-#login_box #login_button
+.login_box .login_button
 {
   margin-top: 50px;
   width:40%;
@@ -502,14 +495,37 @@ fieldset[disabled] .btn {
 
 #user_button
 {
+  background-color: transparent;
   position: absolute;
-  margin-left: 29%;
+  margin-left: 28%;
   margin-top: 3px;
 }
 
 #hello
 {
+  color: #388e3c;
   margin-top: 10px;
   position: absolute;
   margin-left: 25%;
 }
+
+.logout{
+  position: absolute;
+  background-color: transparent;
+  margin-left: 36%;
+
+}
+
+.logout:active,
+.logout:hover,
+.logout:focus{
+  background-color: transparent;
+}
+
+
+#reset_box{
+  position: relative;
+  margin-top: 0;
+  height: 100px;
+}
+
