@@ -2,18 +2,37 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
 export default function Nav() {
+    if(window.sessionStorage.getItem("username")){
+        return (
+            <div>
+                <nav id="head">
+                    <NavLink exact to="/">
+                        Home
+                    </NavLink>
+                    <NavLink to="/login">Login</NavLink>
+                    <NavLink to="/findCaregivers">Caregivers</NavLink>
+                    <h id="hello">Hello, </h>
+                    <Button id="user_button" onClick={showUser}>{window.sessionStorage.getItem("username")}</Button>
+                </nav>
+
+            </div>
+
+        );
+    }
   return (
-    <nav>
-      <NavLink exact to="/">
-        Home
-      </NavLink>
-      <NavLink to="/login">Login</NavLink>
-      <NavLink to="/findCaregivers">Caregivers</NavLink>
-    </nav>
+      <div>
+        <nav id="head">
+          <NavLink exact to="/">
+            Home
+          </NavLink>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/findCaregivers">Caregivers</NavLink>
+        </nav>
+      </div>
 
   );
 }
-/*
+
 function showUser(){
     var username = window.sessionStorage.getItem("username");
 
@@ -22,4 +41,4 @@ function showUser(){
             window.location.href = `user-management/${window.sessionStorage.getItem("username")}`
         );
     }
-}*/
+}

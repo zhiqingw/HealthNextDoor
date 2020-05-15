@@ -365,3 +365,18 @@ fieldset[disabled] .btn {
   background-image: linear-gradient(to right, #b8cbb8 0%, #b465da 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
   border-radius: 20px;
 }
+
+
+#user_button
+{
+  position: absolute;
+  margin-left: 39%;
+  margin-top: 3px;
+}
+
+#hello
+{
+  margin-top: 10px;
+  position: absolute;
+  margin-left: 36%;
+}
