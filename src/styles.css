@@ -380,3 +380,31 @@ fieldset[disabled] .btn {
   position: absolute;
   margin-left: 36%;
 }
+/*#careGiverTable{
+  border: 0;
+  cellspacing: 0;
+  cellpadding:0
+}
+#careGiverList{
+  background-color:skyblue;
+  float: left;
+  height:600px;
+  width:1650px;
+}*/
+#listrow{
+  width: 20%;
+}
+
+.list{
+  width:33.3%;
+  float:left;
+}
+#listbutton{
+  background-color: transparent;
+  border:0
+}
+#listbutton:active,
+#listbutton:hover{
+  background-color: #81c784;
+}
+

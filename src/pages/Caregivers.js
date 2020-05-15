@@ -17,15 +17,30 @@ export default function Caregivers() {
   console.log(caregivers);
 
   // Display a list of the authors
+
   return (
       <div>
         <Header />
         <h1>Caregivers List</h1>
+          <div id="careGiverList">
+
           {caregivers.map(caregiver => (
-              <Caregiver key={caregiver.username} {...caregiver} />
+              <div className="list">
+                  <button id="listbutton">
+                        firstname : {caregiver.first_name}<br/><br/>
+                        lastname : {caregiver.last_name}<br/><br/>
+                        gender : {caregiver.gender}<br/><br/>
+                        introduction : {caregiver.introduction}<br/><br/>
+                        username: {caregiver.username}<br/><br/>
+                </button>
+              </div>
           ))}
-      </div> );
+
+          </div>
+      </div>
+  );
 }
+
 
 export function Caregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username} = caregiver;
@@ -34,7 +49,10 @@ export function Caregiver(caregiver) {
   return (
     <div className={`caregiver caregiver-${username}`} key={username}>
       <div className="info">
-        ({first_name} {last_name}) {gender} {introduction}{username}
+        ({username}) {first_name} {last_name} {gender} {introduction}
+        <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
+          {showUpdate ? "-" : "+"}
+        </Button>
       </div>
       <CaregiverExtended {...caregiver} showUpdate={showUpdate} />
     </div>
