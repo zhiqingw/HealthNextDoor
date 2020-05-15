@@ -6,7 +6,6 @@ export default function HomePage() {
     return (
 
         <div className="homepage_form">
-            <Logo />
             <div className={"h1_form"}>
                 <h1> HEALTH NEXT DOOR</h1>
             </div>
