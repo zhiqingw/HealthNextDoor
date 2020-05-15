@@ -32,6 +32,7 @@ export default function Users() {
     let match;
     return (
         <div>
+            <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
             <h1>Your post</h1>
             {caregivers.map(caregiver =>{
                 if(caregiver.username===name){
@@ -49,10 +50,17 @@ export default function Users() {
             <p>
            <User {...match} />
            </p>
+            <Button className={"btn-warning"} onClick={Logout}>
+                Log out
+            </Button>
         </div>
     );
 }
+function Logout(){
+    window.sessionStorage.removeItem("username");
+    window.location.assign('http://localhost:3000/')
 
+}
 
 function User(user) {
     const {username, password} = user;
