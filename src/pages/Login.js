@@ -7,25 +7,38 @@ export default function Login() {
         window.location.href = `user-management/${window.sessionStorage.getItem("username")}`;
     }
     else{
-    return (
-        <div id="login_box">
-                <h2>LOGIN</h2>
-            <div id="form">
-                <div id = "input_box">
-                    <input type="text" id="username" placeholder="Username" />
+        return (
+            <div>
+
+                <div>
+                    <h1 id={"h1_login"}> Join Us </h1>
                 </div>
-                <div id = "input_box">
-                    <input type="password" id="password" placeholder="Password" />
+
+                <div id="login_frame">
+
+                    <form method="post" action="login.js">
+
+                        <p>
+                            <label className="label_input">Username</label>
+                            <input type="text" id="username" className="text_field" />
+                        </p>
+                        <p>
+                            <label className="label_input">Password</label>
+                            <input type="password" id="password" className="text_field" />
+                        </p>
+
+                        <div id="login_control">
+                            <Button className={"btn-logIn"} onClick={login}>
+                                Log in
+                            </Button>
+                            <Button className={"btn-signUp"} onClick={toCurrent}>
+                                Sign up
+                            </Button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <Button id="login_button" onClick={login}>
-                        Log in
-            </Button>
-            <Button id="login_button" onClick={toCurrent}>
-                        Sign up
-            </Button>
-        </div>
-    );}
+        );}
 }
 
 function login() {
