@@ -17,17 +17,14 @@ export default function Caregivers() {
   console.log(caregivers);
 
   // Display a list of the authors
-    return (
-        <div>
-
-            <h1>Caregivers List</h1>
-            <Header />
-            <div>
-                {caregivers.map(caregiver => (
-                    <Caregiver key={caregiver.username} {...caregiver} />
-                ))}
-            </div>
-        </div> );
+  return (
+      <div>
+        <Header />
+        <h1>Caregivers List</h1>
+          {caregivers.map(caregiver => (
+              <Caregiver key={caregiver.username} {...caregiver} />
+          ))}
+      </div> );
 }
 
 export function Caregiver(caregiver) {
