@@ -499,3 +499,17 @@ fieldset[disabled] .btn {
 .posts{
   height: 500px;
 }
+
+#user_button
+{
+  position: absolute;
+  margin-left: 29%;
+  margin-top: 3px;
+}
+
+#hello
+{
+  margin-top: 10px;
+  position: absolute;
+  margin-left: 25%;
+}
