@@ -11,6 +11,7 @@ export default function Nav() {
       <NavLink to="/findCaregivers">Caregivers</NavLink>
     </nav>
 
+
   );
 }
 /*

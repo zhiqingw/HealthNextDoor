@@ -33,7 +33,8 @@ export default function Users() {
     return (
         <div>
             <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
-            <h1>Your post</h1>
+
+            <div>
             {caregivers.map(caregiver =>{
                 if(caregiver.username===name){
                     return <Caregiver key={caregiver.username} {...caregiver} />
@@ -42,6 +43,7 @@ export default function Users() {
                     return
                 }
             })}
+            </div>
             {user.map(used =>{
                 if(used.username===name){
                     match = used;
@@ -50,9 +52,7 @@ export default function Users() {
             <p>
            <User {...match} />
            </p>
-            <Button className={"btn-warning"} onClick={Logout}>
-                Log out
-            </Button>
+
         </div>
     );
 }
@@ -68,12 +68,16 @@ function User(user) {
 
     return (
         <div className={`user user-${username}`} key={username}>
-            <div className="info">
-                reset password
-                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
-                    {showUpdate ? "-" : "+"}
+            <h2 id={"one_line"}>Posting Record</h2>
+            <div className="reset_pas" id={"one_line"}>
+                <Button className={"btn"} id={"reset"} onClick={() => setShowUpdate(!showUpdate)}>
+                    {showUpdate ? "reset password" : "reset password"}
                 </Button>
             </div>
+            <Button className={"btn-warning"} onClick={Logout}>
+                Log out
+            </Button>
+            <div className={"posts"}></div>
             <UserExtended {...user} showUpdate={showUpdate} />
         </div>
     );
