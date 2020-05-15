@@ -40,6 +40,43 @@ export function loginCheck(username, password) {
   });
 
 }
+export function signupCheck(username, password, confirmed_password) {
+
+
+  if (username.value === "") {
+    alert("please input a username!");
+  } else if (password.value === "") {
+    alert("please input a password!");
+  } else if (confirmed_password.value === "") {
+    alert("please confirm your password!");
+    //window.location.href="welcome.html";
+  } else if (password.value !== confirmed_password.value) {
+    alert("password and confirmed password does not match");
+  }
+
+  const endpoint = BASE_URL + `/signup`;
+  // return fetch query to update an author
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      username,
+      password
+    })
+  }).then(res =>{
+    if(res.ok){
+      /**let history = this.props.history;
+       history.push('/${username}');**/
+      //<User {...username}/>
+      window.sessionStorage.setItem("username",username);
+      window.location.href = `user-management/${username}`;
+      //let handleGoToDetail;
+    }
+  });
+
+}
 
 export function updateUser(user) {
   const { username, password} = user;
