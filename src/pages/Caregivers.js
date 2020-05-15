@@ -34,10 +34,7 @@ export function Caregiver(caregiver) {
   return (
     <div className={`caregiver caregiver-${username}`} key={username}>
       <div className="info">
-        ({username}) {first_name} {last_name} {gender} {introduction}
-        <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
-          {showUpdate ? "-" : "+"}
-        </Button>
+        ({first_name} {last_name}) {gender} {introduction}{username}
       </div>
       <CaregiverExtended {...caregiver} showUpdate={showUpdate} />
     </div>
