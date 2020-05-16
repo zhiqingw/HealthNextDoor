@@ -21,10 +21,12 @@ export default function Caregivers() {
             <div className={"list_style"}>
             <h1>Caregivers List</h1>
 
+            <div id={"join_button"}>
+                <Button className={"btn-addCaregiver"} id={"jjj"} onClick={toAdd}>
+                    Let's Join Us Today!
+                </Button>
+            </div>
 
-            <Button className={"btn-addCaregiver"} onClick={toAdd}>
-                Join
-            </Button>
 
 
 
@@ -48,7 +50,7 @@ export default function Caregivers() {
 
             <div className="filter_style">
                 <h2>Filter</h2>
-                <h3>Find a nurse who suits you best!</h3>
+
                 <form id="filter_form"className="filter_form_style">
                     <label className="label_input">Gender:</label><br/>
                     <label className="label_input">Male:</label>
