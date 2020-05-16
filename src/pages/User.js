@@ -66,43 +66,39 @@ function User(user) {
     return (
         <div className={`user user-${username}`} key={username}>
             <div id={"reset"}>
-                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
-                    {showUpdate ? "reset password" : "reset password"}
+                <Button id={"btn-resetpassword"} onClick={toReset}>
+                    Reset Password
                 </Button>
-            </div>
-
-            <div className={"posts"}>
-                <UserExtended {...user} showUpdate={showUpdate} />
             </div>
         </div>
     );
 }
 
-function UserExtended(props) {
-    const { username, password, showUpdate} = props;
-
-    const [password_input, setPassword] = useState(password);
-
+export function UserExtended() {
     function onSubmit() {
+        var username = window.sessionStorage.getItem("username");
         var confirmed_password = document.getElementById("confirmed_password");
-        if(confirmed_password.value !== password_input){
+        var password = document.getElementById("password");
+        if(confirmed_password.value !== password.value){
             alert("password and confirmed password does not match");
+        }else{
+            updateUser({
+                username: username,
+                password: password.value,
+            });
+            window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+
         }
         // call upate user function
-        updateUser({
-            username: username,
-            password: password_input
-        });
+
     }
 
     return (
-        <div className={`user-expand ${showUpdate ? "show" : ""}`}>
             <div id={"reset_box"} className={"login_box"}>
-                {/* TODO - add value and onChange properties to inputs */}
                 <div id="reset_info">
                     <div>
                         <label id="label_input">Password</label>
-                        <input type="password" name="password" value={password_input} onChange = {event => {setPassword(event.target.value)}} />
+                        <input type="password" id="password" className="text_field"/>
                     </div>
                     <div>
                         <label id="label_input" >Confirm Password</label>
@@ -115,8 +111,9 @@ function UserExtended(props) {
                     </Button>
                 </div>
             </div>
-        </div>
     );
 }
 
-
+function toReset() {
+    window.location.assign("http://localhost:3000/resetPassword")
+}

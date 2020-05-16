@@ -13,6 +13,7 @@ import "./loginStyle.css"
 import "./homeStyle.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
+import ResetPassword from "./pages/resetPassword"
 
 export default function App() {
   return (
@@ -40,6 +41,9 @@ export default function App() {
             </Route>
             <Route path='/searchCaregivers'>
               <SearchCaregivers/>
+            </Route>
+            <Route path='/resetPassword'>
+              <ResetPassword/>
             </Route>
           </Switch>
         </div>
