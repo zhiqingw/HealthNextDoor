@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Caregivers from "./pages/Caregivers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import NewCaregiver from "./pages/newCaregiver"
 import "./styles.css";
 import "./userStyle.css";
 import "./caregiverStyle.css"
@@ -27,6 +28,9 @@ export default function App() {
             </Route>
             <Route path="/signup">
               <SignUp />
+            </Route>
+            <Route path="/AddCaregiver">
+              <NewCaregiver />
             </Route>
             <Route path='/user-management'>
               <User />

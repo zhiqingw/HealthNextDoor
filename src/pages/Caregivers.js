@@ -20,7 +20,13 @@ export default function Caregivers() {
         <div>
             <div className={"list_style"}>
             <h1>Caregivers List</h1>
-            <Header />
+
+
+            <Button className={"btn-addCaregiver"} onClick={toAdd}>
+                Join
+            </Button>
+
+
 
                 <div id="careGiverList">
 
@@ -239,4 +245,8 @@ function CaregiverExtended(props) {
 
         </div>
     );
+}
+
+function toAdd() {
+    window.location.href = "AddCaregiver";
 }
