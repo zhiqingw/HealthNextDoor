@@ -5,6 +5,8 @@
 }
 
 #listbutton{
+    position: relative;
+    margin-top: 50px;
     background-color: transparent;
     border:0
 }
@@ -58,7 +60,7 @@
 .filter_style{
     width: 18%;
     height: 900px;
-    float: right;
+    /*float: right;*/
     background: greenyellow;
 }
 .filter_form_style{
@@ -253,11 +255,16 @@ body{
     background-color: transparent;
 }
 
-/*#filter_place{
-    position: relative;
+#filter_place{
+    position: absolute;
+    margin-left: 50%;
 }
 
-*/
+.label_input{
+    display: inline;
+    position: relative;
+    margin-left: -200px;
+}
 
 
 

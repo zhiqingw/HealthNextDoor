@@ -20,13 +20,15 @@ export default function Caregivers() {
     return (
         <div>
             <div className={"list_style"}>
-            <h1>Caregivers List</h1>
+                <h1>Caregivers List</h1>
 
-            <div id={"join_button"}>
-                <Button className={"btn-addCaregiver"} id={"jjj"} onClick={toAdd}>
-                    Let's Join Us Today!
-                </Button>
-            </div>
+                <div id={"filter_place"}><Filter/></div>
+
+                <div id={"join_button"}>
+                    <Button className={"btn-addCaregiver"} id={"jjj"} onClick={toAdd}>
+                        Let's Join Us Today!
+                    </Button>
+                </div>
 
 
 
@@ -47,10 +49,10 @@ export default function Caregivers() {
                     ))}
 
                 </div>
-                <div id={"filter_place"}><Filter/></div>
+
             </div>
 
-            <div className="filter_style">
+            {/*<div className="filter_style">
                 <h2>Filter</h2>
 
                 <form id="filter_form"className="filter_form_style">
@@ -83,7 +85,7 @@ export default function Caregivers() {
                         Search
                     </Button>
                 </form>
-            </div>
+            </div>*/}
 
         </div>
     );
