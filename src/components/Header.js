@@ -24,6 +24,7 @@ export default function Header() {
         <div className="addCaregiver">
             Add New Caregiver
             <form>
+                <p>
                 <input
                     type="text"
                     placeholder="First Name"
@@ -33,6 +34,8 @@ export default function Header() {
                         setFirstName(event.target.value);
                     }}
                 />
+                </p>
+                <p>
                 <input
                     type="text"
                     placeholder="Last Name"
@@ -42,6 +45,8 @@ export default function Header() {
                         setLastName(event.target.value);
                     }}
                 />
+                </p>
+                <p>
                 <input
                     type="text"
                     placeholder="gender"
@@ -51,6 +56,8 @@ export default function Header() {
                         setGender(event.target.value);
                     }}
                 />
+                </p>
+                <p>
                 <input
                     type="text"
                     placeholder="introduction"
@@ -60,6 +67,8 @@ export default function Header() {
                         setIntroduction(event.target.value);
                     }}
                 />
+                </p>
+                <p>
                 <input
                     type="text"
                     placeholder="username"
@@ -69,6 +78,7 @@ export default function Header() {
                         setUsername(event.target.value);
                     }}
                 />
+                </p>
                 <Button className={"btn-success"} onClick={onSubmit}>
                     Save
                 </Button>
