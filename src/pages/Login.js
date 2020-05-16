@@ -38,23 +38,8 @@ function login() {
     var username = document.getElementById("username");
     var pass = document.getElementById("password");
     loginCheck(username.value, pass.value);
-    /*
-      if (username.value === "") {
-        alert("please input username!");
-      } else if (pass.value === "") {
-        alert("please input password!");
-      } else if (username.value === "gmy" && pass.value === "123456") {
-        //window.location.href="welcome.html";
-      } else {
-        alert("please input correct username and password!");
-      }*/
 }
 
 function toCurrent() {
     window.location.href = "SignUp";
-}
-
-function toNew() {
-    const w = window.open("about:blank");
-    w.location.href = "SignUp";
 }

@@ -18,11 +18,6 @@ export default function Users() {
     if (errors) {
         return <p>Something went wrong: {error.message}</p>;
     }
-
-    // use this to make sure you are getting the right data
-    // Display a list of the authors
-
-    // Display a list of the users
     let username;
     username = window.location.pathname;
     let index;
@@ -94,7 +89,7 @@ function UserExtended(props) {
         if(confirmed_password.value !== password_input){
             alert("password and confirmed password does not match");
         }
-        // call upate author function
+        // call upate user function
         updateUser({
             username: username,
             password: password_input

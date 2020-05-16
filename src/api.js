@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // TODO - update this to be your url
 const BASE_URL = "https://healthnextdoortest.herokuapp.com";
 
+/*login check used to validate the input with data from the database and let the user log in*/
 export function loginCheck(username, password) {
 
   if (!username) {
@@ -27,21 +28,17 @@ export function loginCheck(username, password) {
     })
   }).then(res =>{
     if(res.ok){
-      /**let history = this.props.history;
-       history.push('/${username}');**/
-      //<User {...username}/>
       window.sessionStorage.setItem("username",username);
       window.location.assign(`user-management/${username}`)
-      //let handleGoToDetail;
     }
     else{
       alert("wrong password or username");
     }
   });
-
 }
-export function signupCheck(username, password, confirmed_password) {
 
+/*sign up check used to validate the input and let the user sign up*/
+export function signupCheck(username, password, confirmed_password) {
 
   if (username.value) {
     alert("please input a username!");
@@ -49,13 +46,11 @@ export function signupCheck(username, password, confirmed_password) {
     alert("please input a password!");
   } else if (confirmed_password.value) {
     alert("please confirm your password!");
-    //window.location.href="welcome.html";
   } else if (password.value !== confirmed_password.value) {
     alert("password and confirmed password does not match");
   }
 
   const endpoint = BASE_URL + `/signup`;
-  // return fetch query to update an author
   return fetch(endpoint, {
     method: "POST",
     headers: {
@@ -67,12 +62,8 @@ export function signupCheck(username, password, confirmed_password) {
     })
   }).then(res =>{
     if(res.ok){
-      /**let history = this.props.history;
-       history.push('/${username}');**/
-      //<User {...username}/>
       window.sessionStorage.setItem("username",username);
       window.location.href = `user-management/${username}`;
-      //let handleGoToDetail;
     }
     else{
       alert("This username has already been taken!");
@@ -110,9 +101,6 @@ export function getUser() {
     console.log(res);
     return res.json();
   });
-  // TODO
-  // return fetch statement to get an author by the id
-
 }
 
 export function useUser() {
@@ -143,20 +131,13 @@ function getCaregivers() {
   const endpoint = BASE_URL + `/findCaregiver`;
 
   // TODO
-  // return fetch call that gets author list
+  // return fetch call that gets caregivers list
   return fetch(endpoint).then(res => {
     console.log(res);
     return res.json();
   });
 }
-
-export function getCaregiver(id) {
-  const endpoint = BASE_URL + `/findCaregiver/${id}`;
-
-  // TODO
-  // return fetch statement to get an author by the id
-}
-
+/*addCaregiver used to let user to make a post*/
 export function addCaregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username } = caregiver;
   if ( !gender|| !first_name || !last_name || !introduction || !username) {
@@ -179,20 +160,14 @@ export function addCaregiver(caregiver) {
     })
   }).then(res =>{
     if(res.ok){
-      /**let history = this.props.history;
-       history.push('/${username}');**/
-      //<User {...username}/>
       window.location.href = `user-management/${username}`;
-      //let handleGoToDetail;
     }
     else{
       alert("You already have a post, please update or delete the existed post in user home page!");
     }
   });
-  // TODO
-  // return fetch statement to add an author
 }
-
+/*updataeCarever used to let user to update post*/
 export function updateCaregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username } = caregiver;
   if (!username) {
@@ -236,7 +211,6 @@ export function deleteCaregiver(username) {
   return fetch(endpoint, {
     method: "DELETE",
   });
-  // return fetch query
 }
 
 export function useCaregivers() {

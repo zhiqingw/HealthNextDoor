@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "../components/Button";
-import {loginCheck, signupCheck} from "../api";
+import {signupCheck} from "../api";
 
-export default function Login() {
+export default function Signup() {
   return (
       <div className={"login_frame"} id={"sign_version"}>
         <h1> Join Us </h1>
@@ -29,31 +29,6 @@ export default function Login() {
 
         </div>
       </div>
-      /*<div id="login_frame" className={"right"}>
-        <form method="post" action="login.js">
-          <p>
-            <label class="label_input">Username</label>
-            <input type="text" id="username" class="text_field" />
-          </p >
-          <p>
-            <label class="label_input">Password</label>
-            <input type="password" id="password" class="text_field" />
-          </p >
-          <p>
-            <label class="label_input">Confirm Password</label>
-            <input type="password" id="confirmed_password" class="text_field" />
-          </p >
-
-          <div id="login_control">
-            <Button className={"btn-logIn"} onClick={onSubmit}>
-              Submit
-            </Button>
-            <Button className={"btn-signUp"} onClick={onsubmit}>
-              Reset
-            </Button>
-          </div>
-        </form>
-      </div>*/
   );
 }
 

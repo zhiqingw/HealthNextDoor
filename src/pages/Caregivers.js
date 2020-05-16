@@ -14,10 +14,7 @@ export default function Caregivers() {
         return <p>Something went wrong: {error.message}</p>;
     }
 
-    // use this to make sure you are getting the right data
-    console.log(caregivers);
-
-    // Display a list of the authors
+    // Display a list of the caregivers
 
     return (
         <div>
@@ -98,11 +95,6 @@ export function Caregiver(caregiver) {
     );
 }
 
-function callSubmitFilter(caregivers){
-
-    window.location.href = "SearchCaregivers"
-}
-
 export function SubmitFilter(caregivers) {
     console.log(caregivers);
     var address = document.getElementById("address");
@@ -114,7 +106,6 @@ export function SubmitFilter(caregivers) {
     var female = document.getElementById("gender_female");
     var gender_result = caregivers;
     if (male && female) {
-
         if (male.checked && !female.checked) {
             gender_result = caregivers.filter(function (caregiver) {
                 return caregiver.gender === "male";
@@ -200,14 +191,12 @@ export function SubmitFilter(caregivers) {
 
 function CaregiverExtended(props) {
     const { first_name, last_name, gender, introduction, username, showUpdate } = props;
-
-    const [username_input, setUsername] = useState(username);
     const [first_input, setFirstName] = useState(first_name);
     const [last_input, setLastName] = useState(last_name);
     const [gender_input, setGender] = useState(gender);
     const [introduction_input,setIntroduction] = useState(introduction);
     function onSubmit() {
-        // call upate author function
+        // call upate caregiver function
         updateCaregiver({
             first_name: first_input,
             last_name: last_input,

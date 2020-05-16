@@ -18,9 +18,6 @@ export default function App() {
       <Router>
         <div className="App">
           <Nav />
-          {/* the content */}
-          {/* A <Switch> looks through its children <Route>s and
-   renders the first one that matches the current URL. */}
           <Switch>
             <Route exact path="/">
               <Home />
