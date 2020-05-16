@@ -3,6 +3,7 @@ import {loginCheck} from "../api";
 import Button from "../components/Button";
 
 export default function Login() {
+    /*if the user already log in, redirect to the user home page*/
     if(window.sessionStorage.getItem("username")){
         window.location.href = `user-management/${window.sessionStorage.getItem("username")}`;
     }
@@ -40,6 +41,7 @@ function login() {
     loginCheck(username.value, pass.value);
 }
 
+/*if the user not have an account yet, click the sign up button and go to the sign up page*/
 function toCurrent() {
     window.location.assign("SignUp")
 }

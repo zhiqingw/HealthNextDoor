@@ -19,7 +19,6 @@ export default function Signup() {
               <input type="password" id="confirmed_password" placeholder="Confirm Password" />
             </div>
           </div>
-
           <Button className="login_button" onClick={onSubmit}>
             Submit
           </Button>

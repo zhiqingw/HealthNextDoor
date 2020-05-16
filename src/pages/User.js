@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {updateUser, useCaregivers, useUser} from "../api";
 import Button from "../components/Button";
 import {Caregiver} from "./Caregivers";
-
+/*user home page*/
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
     const { loadings, user, errors } = useUser();
@@ -51,19 +51,20 @@ export default function Users() {
         </div>
     );
 }
+
+/*log out and redirect to home page*/
 export function Logout(){
     window.sessionStorage.removeItem("username");
     window.location.assign('http://localhost:3000/')
 }
 
+/*reset password*/
 function User(user) {
     const {username, password} = user;
     const [showUpdate, setShowUpdate] = useState(false);
 
     return (
         <div className={`user user-${username}`} key={username}>
-
-
             <div id={"reset"}>
                 <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
                     {showUpdate ? "reset password" : "reset password"}
