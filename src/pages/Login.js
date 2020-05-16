@@ -23,9 +23,12 @@ export default function Login() {
                     <Button className="login_button" onClick={login}>
                         Log in
                     </Button>
-                    <Button className="login_button" onClick={toCurrent}>
+                    <div id="signup">
+                        Don't have account?
+                        <Button className="signup_button" onClick={toCurrent}>
                         Sign up
-                    </Button>
+                        </Button>
+                    </div>
                 </div>
             </div>
         );}

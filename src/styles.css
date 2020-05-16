@@ -497,7 +497,7 @@ fieldset[disabled] .btn {
 {
   background-color: transparent;
   position: absolute;
-  margin-left: 28%;
+  margin-left: 32%;
   margin-top: 3px;
 }
 
@@ -506,13 +506,14 @@ fieldset[disabled] .btn {
   color: #388e3c;
   margin-top: 10px;
   position: absolute;
-  margin-left: 25%;
+  margin-left: 29%;
 }
 
 .logout{
   position: absolute;
   background-color: transparent;
   margin-left: 36%;
+  margin-top: 3px;
 
 }
 
@@ -545,4 +546,18 @@ fieldset[disabled] .btn {
 #listbutton:active,
 #listbutton:hover{
   background-color: #81c784;
+}
+
+#try
+{
+  margin-top: 200px;
+}
+
+.signup_button{
+  background-color: transparent;
+}
+
+#signup
+{
+  margin-top: 20%;
 }

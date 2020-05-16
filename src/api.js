@@ -43,11 +43,11 @@ export function loginCheck(username, password) {
 export function signupCheck(username, password, confirmed_password) {
 
 
-  if (username.value === "") {
+  if (username.value) {
     alert("please input a username!");
-  } else if (password.value === "") {
+  } else if (password.value) {
     alert("please input a password!");
-  } else if (confirmed_password.value === "") {
+  } else if (confirmed_password.value) {
     alert("please confirm your password!");
     //window.location.href="welcome.html";
   } else if (password.value !== confirmed_password.value) {
@@ -73,6 +73,10 @@ export function signupCheck(username, password, confirmed_password) {
       window.sessionStorage.setItem("username",username);
       window.location.href = `user-management/${username}`;
       //let handleGoToDetail;
+    }
+    else{
+      alert("This username has already been taken!");
+      window.location.href = `SignUp/`;
     }
   });
 
