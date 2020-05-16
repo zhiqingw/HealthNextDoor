@@ -7,7 +7,7 @@
 {
     width:30%;
     height: 500px;
-    background: #aaaaab;
+    background: #a3bac0;
     margin : auto;
     margin-top: 8%;
     text-align: center;
@@ -47,7 +47,7 @@
     border: 0;
     color: #ffffff;
     font-size: 15px;
-    background-image: linear-gradient(to right, #b8cbb8 0%, #b465da 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    background-image: linear-gradient(to right, #19c3cb 0%, #7397da 0%, #92bbda 0%, #86c5cf 70%);
     border-radius: 20px;
 }
 
