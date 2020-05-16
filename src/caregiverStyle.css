@@ -212,3 +212,21 @@ body{
   background-color: #b61d1d;
 }
 */
+
+.info
+{
+    width:20%;
+    height: 250px;
+    background: #aaaaab;
+    margin : auto;
+    margin-top: 0%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 50px 50px;
+    font-family: fantasy;
+    color:rgba(0,0,0,0.97);
+}
+#li
+{
+    text-align: left;
+}
