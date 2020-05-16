@@ -9,6 +9,7 @@ import "./styles.css";
 import "./userStyle.css";
 import "./caregiverStyle.css"
 import "./loginStyle.css"
+import "./homeStyle.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 
