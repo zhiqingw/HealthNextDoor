@@ -1,6 +1,7 @@
 #htwo{
     margin-top: 100px;
     margin-bottom: 0;
+    display: inline;
 }
 
 #tryy {
@@ -21,8 +22,7 @@
 }
 
 #reset{
-    margin-left: 80%;
-    margin-top: -50%;
+    margin-left: 1200px;
     color: #cbd4e6;
 }
 

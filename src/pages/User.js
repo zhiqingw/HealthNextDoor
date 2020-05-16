@@ -28,8 +28,8 @@ export default function Users() {
     return (
         <div>
             <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
-            <div>
-                <h2 id={"htwo"}>Posting Record</h2>
+            <div id={"htwo"}>
+                <h2>Posting Record</h2>
             </div>
 
             <div id={"tryy"}>
@@ -64,8 +64,8 @@ function User(user) {
         <div className={`user user-${username}`} key={username}>
 
 
-            <div>
-                <Button className={"btn"} id={"reset"} onClick={() => setShowUpdate(!showUpdate)}>
+            <div id={"reset"}>
+                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
                     {showUpdate ? "reset password" : "reset password"}
                 </Button>
             </div>
