@@ -40,13 +40,16 @@ export function loginCheck(username, password) {
 /*sign up check used to validate the input and let the user sign up*/
 export function signupCheck(username, password, confirmed_password) {
 
-  if (username.value) {
+  if (username === "") {
     alert("please input a username!");
-  } else if (password.value) {
+  }
+  if (password === "") {
     alert("please input a password!");
-  } else if (confirmed_password.value) {
+  }
+  if (confirmed_password === "") {
     alert("please confirm your password!");
-  } else if (password.value !== confirmed_password.value) {
+  }
+  if (password !== confirmed_password) {
     alert("password and confirmed password does not match");
   }
 

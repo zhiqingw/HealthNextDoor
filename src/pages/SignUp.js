@@ -23,10 +23,6 @@ export default function Signup() {
           <Button className="login_button" onClick={onSubmit}>
             Submit
           </Button>
-          <Button className="login_button" onClick={onsubmit}>
-            Reset
-          </Button>
-
         </div>
       </div>
   );
