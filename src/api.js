@@ -31,7 +31,7 @@ export function loginCheck(username, password) {
        history.push('/${username}');**/
       //<User {...username}/>
       window.sessionStorage.setItem("username",username);
-      window.location.href = `user-management/${username}`;
+      window.location.assign(`user-management/${username}`)
       //let handleGoToDetail;
     }
     else{
