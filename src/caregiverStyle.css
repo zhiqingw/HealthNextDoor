@@ -62,7 +62,7 @@
     background: greenyellow;
 }
 .filter_form_style{
-    width: 100%;
+
     float: right;
     text-align: left;
 }
@@ -228,6 +228,24 @@ body{
     display: inline-block;
     margin: 20px;
 
+}
+
+#join_button{
+    position: absolute;
+
+    margin-left: 85%;
+
+    background-color: transparent;
+}
+
+#jjj{
+    background-color: transparent;
+    font-size: large;
+    text-decoration: underline;
+}
+
+.filter_style{
+    background-color: transparent;
 }
 
 
