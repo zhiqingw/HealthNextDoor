@@ -53,7 +53,7 @@ export default function Users() {
 }
 export function Logout(){
     window.sessionStorage.removeItem("username");
-    window.location.assign('https://localhost:3000')
+    window.location.assign('http://localhost:3000/')
 }
 
 function User(user) {
