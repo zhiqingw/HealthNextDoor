@@ -220,18 +220,19 @@ body{
 
 .info
 {
-    width:20%;
-    height: 250px;
+    width:60%;
     background: #aaaaab;
     margin : auto;
-    margin-top: 0%;
     text-align: center;
     border-radius: 10px;
-    padding: 50px 50px;
+    padding: 40px 40px;
     font-family: fantasy;
     color:rgba(0,0,0,0.97);
+    display: inline;
 }
-#li
+#txt
 {
-    text-align: left;
+    display: inline-block;
+    margin: 20px;
 }
+

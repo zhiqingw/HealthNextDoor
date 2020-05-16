@@ -90,16 +90,15 @@ export function Caregiver(caregiver) {
 
     return (
         <div className={`caregiver caregiver-${username}`} key={username}>
-            <ul className="info">
-                <li id="li">Username: {username}</li>
-                <li id="li">First_name: {first_name}</li>
-                <li id="li">Last_name: {last_name} </li>
-                <li id="li">Gender: {gender}</li>
-                <li id="li">Introduction: {introduction}</li>
+            <div className="info">
+                <div id="txt">Username: {username}</div>
+                <div id="txt">First_name: {first_name}</div>
+                <div id="txt">Last_name: {last_name}</div>
+                <div id="txt">Gender: {gender}</div>
                 <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
                     {showUpdate ? "-" : "+"}
                 </Button>
-            </ul>
+            </div>
             <CaregiverExtended {...caregiver} showUpdate={showUpdate} />
         </div>
     );
