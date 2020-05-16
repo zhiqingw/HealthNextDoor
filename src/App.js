@@ -14,30 +14,30 @@ import User from "./pages/User";
 
 export default function App() {
   return (
-    <Router>
-      <div className="App">
-        <Nav />
-        {/* the content */}
-        {/* A <Switch> looks through its children <Route>s and
+      <Router>
+        <div className="App">
+          <Nav />
+          {/* the content */}
+          {/* A <Switch> looks through its children <Route>s and
    renders the first one that matches the current URL. */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route path='/user-management'>
-            <User />
-          </Route>
-          <Route path='/findCaregivers'>
-            <Caregivers />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
+            </Route>
+            <Route path='/user-management'>
+              <User />
+            </Route>
+            <Route path='/findCaregivers'>
+              <Caregivers />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
   );
 }
