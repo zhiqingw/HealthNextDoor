@@ -54,7 +54,6 @@ export default function Users() {
 export function Logout(){
     window.sessionStorage.removeItem("username");
     window.location.assign('http://localhost:3000/')
-
 }
 
 function User(user) {
@@ -82,7 +81,6 @@ function UserExtended(props) {
     const { username, password, showUpdate} = props;
 
     const [password_input, setPassword] = useState(password);
-
 
     function onSubmit() {
         var confirmed_password = document.getElementById("confirmed_password");

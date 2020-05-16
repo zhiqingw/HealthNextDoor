@@ -211,17 +211,6 @@ div.author .info {
   display: block;
 }
 
-.user-expand {
-  display: none;
-  background-color: transparent;
-
-
-}
-
-.user-expand.show {
-  display: block;
-}
-
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -375,26 +364,6 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 
-#htwo{
-  margin-top: 100px;
-  margin-bottom: 0;
-}
-
-
-
-#reset{
-  margin-left: 1200px;
-  color: #cbd4e6;
-
-}
-
-#reset:hover,
-#reset:active,
-#reset.focus {
-  background-color: #9ec5c4;
-}
-
-
 .btn-danger {
   color: #fbe9e7;
   border-color: #f4511e;
@@ -490,10 +459,6 @@ fieldset[disabled] .btn {
   margin-bottom: 10px;
 }
 
-.posts{
-  height: 500px;
-}
-
 #user_button
 {
   background-color: transparent;
@@ -522,13 +487,6 @@ fieldset[disabled] .btn {
 .logout:hover,
 .logout:focus{
   background-color: transparent;
-}
-
-
-#reset_box{
-  position: relative;
-  margin-top: 0;
-  height: 100px;
 }
 
 #listrow{
@@ -561,11 +519,5 @@ fieldset[disabled] .btn {
 
 #signup {
   margin-top: 20%;
-}
-
-
-#tryy {
-  position: relative;
-  color: #e64a19;
 }
 

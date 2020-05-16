@@ -1,15 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import Nav from "./components/Nav";
-import Header from "./components/Header";
-
 import Home from "./pages/Home";
 import Caregivers from "./pages/Caregivers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-
 import "./styles.css";
+import "./userStyle.css";
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 
