@@ -29,7 +29,7 @@ export function loginCheck(username, password) {
   }).then(res =>{
     if(res.ok){
       window.sessionStorage.setItem("username",username);
-      window.location.assign(`user-management/${username}`)
+      window.location.assign(`https://healthnextdoorfront.herokuapp.com/user-management/${username}`)
     }
     else{
       alert("wrong password or username");
