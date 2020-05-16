@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import "./styles.css";
 import "./userStyle.css";
+import "./caregiverStyle.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 

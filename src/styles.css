@@ -4,7 +4,7 @@
 }
 
 * {
-  box-sizing: "border-box";
+  box-sizing: border-box;
 }
 
 html,
@@ -181,35 +181,6 @@ div.author .info {
   padding: 10px;
 }
 
-.caregiver-expand {
-  display: none;
-  background-color: #ffffff;
-  width: 100%;
-  float: bottom;
-  text-align: center;
-  padding: 10px;
-}
-
-.caregiver-expand-right {
-  /*display: none;*/
-  background-color: #d0dbb7;
-  width: 43%;
-  height:272px;
-  float:right;
-  /*padding: 10px;*/
-}
-.caregiver-expand-left {
-  /*display: none;*/
-  background-color: #d0dbb7;
-  width: 57%;
-  text-align:right;
-  float:left;
-  /*padding: 10px;*/
-}
-
-.caregiver-expand.show {
-  display: block;
-}
 
 .btn {
   display: inline-block;
@@ -491,20 +462,6 @@ fieldset[disabled] .btn {
 
 #listrow{
   width: 20%;
-}
-
-.list{
-  width:33.3%;
-  float:left;
-  margin-top: 80px;
-}
-#listbutton{
-  background-color: transparent;
-  border:0
-}
-#listbutton:active,
-#listbutton:hover{
-  background-color: #81c784;
 }
 
 
