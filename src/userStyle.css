@@ -1,7 +1,6 @@
 #htwo{
     margin-top: 100px;
     margin-bottom: 0;
-    display: inline;
 }
 
 #tryy {
@@ -43,4 +42,7 @@
 }
 #reset_but{
     margin-top: 5%;
+}
+#reset_info{
+    text-align: right;
 }

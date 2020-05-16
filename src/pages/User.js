@@ -98,13 +98,15 @@ function UserExtended(props) {
         <div className={`user-expand ${showUpdate ? "show" : ""}`}>
             <div id={"reset_box"} className={"login_box"}>
                 {/* TODO - add value and onChange properties to inputs */}
-                <div>
-                    <label id="label_input">Password</label>
-                    <input type="password" name="password" value={password_input} onChange = {event => {setPassword(event.target.value)}} />
-                </div>
-                <div>
-                    <label id="label_input" >Confirm Password</label>
-                    <input type="password" id="confirmed_password" className="text_field"/>
+                <div id="reset_info">
+                    <div>
+                        <label id="label_input">Password</label>
+                        <input type="password" name="password" value={password_input} onChange = {event => {setPassword(event.target.value)}} />
+                    </div>
+                    <div>
+                        <label id="label_input" >Confirm Password</label>
+                        <input type="password" id="confirmed_password" className="text_field"/>
+                    </div>
                 </div>
                 <div>
                     <Button id={"reset_but"} className={"login_button"} onClick={onSubmit}>

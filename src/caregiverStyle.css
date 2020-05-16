@@ -225,14 +225,17 @@ body{
     margin : auto;
     text-align: center;
     border-radius: 10px;
-    padding: 40px 40px;
+    padding: 20px 20px;
     font-family: fantasy;
     color:rgba(0,0,0,0.97);
     display: inline;
+    position: center;
 }
 #txt
 {
     display: inline-block;
     margin: 20px;
 }
+
+
 
