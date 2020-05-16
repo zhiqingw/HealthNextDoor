@@ -33,14 +33,11 @@ export default function Users() {
     return (
         <div>
             <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
-
-
             <div>
                 <h2 id={"htwo"}>Posting Record</h2>
             </div>
 
             <div id={"tryy"}>
-
                 {caregivers.map(caregiver =>{
                     if(caregiver.username===name){
                         return <Caregiver key={caregiver.username} {...caregiver} />
@@ -56,8 +53,6 @@ export default function Users() {
                 }
             })}
             <User id={"user_h2"} {...match} />
-
-
         </div>
     );
 }

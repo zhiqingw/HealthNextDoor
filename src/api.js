@@ -177,6 +177,17 @@ export function addCaregiver(caregiver) {
       introduction,
       username
     })
+  }).then(res =>{
+    if(res.ok){
+      /**let history = this.props.history;
+       history.push('/${username}');**/
+      //<User {...username}/>
+      window.location.href = `user-management/${username}`;
+      //let handleGoToDetail;
+    }
+    else{
+      alert("You already have a post, please update or delete the existed post in user home page!");
+    }
   });
   // TODO
   // return fetch statement to add an author
