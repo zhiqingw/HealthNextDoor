@@ -79,6 +79,7 @@ h2{
   position: relative;
   margin-left: 0;
   margin-top: 50px;
+  margin-bottom: 0;
   font-size: 350%;
   color: #e8f5e9;
 }
@@ -545,4 +546,14 @@ fieldset[disabled] .btn {
 #listbutton:active,
 #listbutton:hover{
   background-color: #81c784;
+}
+
+#user_h2{
+  margin-bottom: 0;
+}
+
+#tryy{
+  position: relative;
+  color: #e64a19;
+
 }

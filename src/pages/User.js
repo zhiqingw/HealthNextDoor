@@ -35,6 +35,10 @@ export default function Users() {
             <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
 
             <div>
+                <h2 id={"htwo"}>Posting Record</h2>
+            </div>
+
+            <div id={"tryy"}>
                 {caregivers.map(caregiver =>{
                     if(caregiver.username===name){
                         return <Caregiver key={caregiver.username} {...caregiver} />
@@ -49,9 +53,8 @@ export default function Users() {
                     match = used;
                 }
             })}
-            <p>
-                <User {...match} />
-            </p>
+            <User id={"user_h2"} {...match} />
+
 
         </div>
     );
@@ -68,9 +71,7 @@ function User(user) {
 
     return (
         <div className={`user user-${username}`} key={username}>
-            <div>
-                <h2 id={"htwo"}>Posting Record</h2>
-            </div>
+
 
             <div>
                 <Button className={"btn"} id={"reset"} onClick={() => setShowUpdate(!showUpdate)}>
