@@ -8,15 +8,20 @@ export default function Header() {
     const [last_name, setLastName] = useState("");
     const [gender, setGender] = useState("");
     const [introduction, setIntroduction] = useState("");
-    const [username, setUsername] = useState("");
-
+    const username = window.sessionStorage.getItem("username");
+    const [age, setAge] = useState("");
+    const [address, setAddress] = useState("");
+    const [salary, setSalary] = useState("");
     function onSubmit() {
         addCaregiver({
             first_name,
             last_name,
             gender,
             introduction,
-            username
+            username,
+            age,
+            address,
+            salary,
         });
     }
 
@@ -69,15 +74,37 @@ export default function Header() {
                 />
                 </p>
                 <p>
-                <input
-                    type="text"
-                    placeholder="username"
-                    name="username"
-                    value={username}
-                    onChange={event => {
-                        setUsername(event.target.value);
-                    }}
-                />
+                    <input
+                        type="text"
+                        placeholder="age"
+                        name="age"
+                        value={age}
+                        onChange={event => {
+                            setAge(event.target.value);
+                        }}
+                    />
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="address"
+                        name="address"
+                        value={address}
+                        onChange={event => {
+                            setAddress(event.target.value);
+                        }}
+                    />
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="salary"
+                        name="salary"
+                        value={salary}
+                        onChange={event => {
+                            setSalary(event.target.value);
+                        }}
+                    />
                 </p>
                 <Button className={"btn-success"} onClick={onSubmit}>
                     Save

@@ -41,5 +41,5 @@ function login() {
 }
 
 function toCurrent() {
-    window.location.href = "SignUp";
+    window.location.assign("SignUp")
 }

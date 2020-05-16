@@ -142,8 +142,8 @@ function getCaregivers() {
 }
 /*addCaregiver used to let user to make a post*/
 export function addCaregiver(caregiver) {
-  const { first_name, last_name, gender, introduction, username } = caregiver;
-  if ( !gender|| !first_name || !last_name || !introduction || !username) {
+  const { first_name, last_name, gender, introduction, username, age, address, salary } = caregiver;
+  if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !salary) {
     alert("must include all fields");
     return;
   }
@@ -159,7 +159,10 @@ export function addCaregiver(caregiver) {
       last_name,
       gender,
       introduction,
-      username
+      username,
+      age,
+      address,
+      salary,
     })
   }).then(res =>{
     if(res.ok){
@@ -172,7 +175,7 @@ export function addCaregiver(caregiver) {
 }
 /*updataeCarever used to let user to update post*/
 export function updateCaregiver(caregiver) {
-  const { first_name, last_name, gender, introduction, username } = caregiver;
+  const { first_name, last_name, gender, introduction, username, age, address, salary } = caregiver;
   if (!username) {
     alert("must include a username");
     return;
@@ -189,6 +192,18 @@ export function updateCaregiver(caregiver) {
     alert("must include an introduction");
     return;
   }
+  if (!age){
+    alert("must include an age");
+    return;
+  }
+  if (!address){
+    alert("must include an address");
+    return;
+  }
+  if (!salary){
+    alert("must include a salary");
+    return;
+  }
 
   const endpoint = BASE_URL + `/findCaregiver/${username}`;
 
@@ -203,7 +218,10 @@ export function updateCaregiver(caregiver) {
       last_name,
       gender,
       introduction,
-      username
+      username,
+      age,
+      address,
+      salary,
     })
   });
 

@@ -36,8 +36,9 @@ export default function Caregivers() {
                                 firstname : {caregiver.first_name}<br/><br/>
                                 lastname : {caregiver.last_name}<br/><br/>
                                 gender : {caregiver.gender}<br/><br/>
-                                introduction : {caregiver.introduction}<br/><br/>
-                                username: {caregiver.username}<br/><br/>
+                                age : {caregiver.age}<br/><br/>
+                                address : {caregiver.address}<br/><br/>
+                                salary : {caregiver.salary}<br/><br/>
                             </button>
                         </div>
                     ))}
@@ -199,11 +200,14 @@ export function SubmitFilter(caregivers) {
 }
 
 function CaregiverExtended(props) {
-    const { first_name, last_name, gender, introduction, username, showUpdate } = props;
+    const { first_name, last_name, gender, introduction, username, age, address, salary, showUpdate } = props;
     const [first_input, setFirstName] = useState(first_name);
     const [last_input, setLastName] = useState(last_name);
     const [gender_input, setGender] = useState(gender);
     const [introduction_input,setIntroduction] = useState(introduction);
+    const [age_input,setAge] = useState(age);
+    const [address_input,setAddress] = useState(address);
+    const [salary_input,setSalary] = useState(salary);
     function onSubmit() {
         // call upate caregiver function
         updateCaregiver({
@@ -212,6 +216,9 @@ function CaregiverExtended(props) {
             gender: gender_input,
             introduction: introduction_input,
             username: username,
+            age: age_input,
+            address: address_input,
+            salary: salary_input,
         });
     }
 
@@ -236,6 +243,18 @@ function CaregiverExtended(props) {
                     <label className="label_input">introduction</label>
                     <input type="text" name="introduction" value = {introduction_input} onChange={event => {setIntroduction(event.target.value);}}/>
                 </p>
+                <p>
+                    <label className="label_input">age</label>
+                    <input type="text" name="age" value = {age_input} onChange={event => {setAge(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="label_input">address</label>
+                    <input type="text" name="introduction" value = {address_input} onChange={event => {setAddress(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="label_input">salary</label>
+                    <input type="text" name="salary" value = {salary_input} onChange={event => {setSalary(event.target.value);}}/>
+                </p>
 
                 <Button className={"btn-danger"} onClick={onSubmit}>
                     Update
@@ -252,5 +271,10 @@ function CaregiverExtended(props) {
 }
 
 function toAdd() {
-    window.location.href = "AddCaregiver";
+    if(window.sessionStorage.getItem("username")){
+        window.location.href = "AddCaregiver";
+    }else{
+        alert("please log in first!");
+    }
+
 }
