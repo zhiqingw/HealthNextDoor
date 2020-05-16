@@ -261,8 +261,9 @@ body{
 }
 
 .label_input{
-    display: inline;
-    position: relative;
+
+    display: inline-block;
+
     margin-left: -200px;
 }
 
