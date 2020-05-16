@@ -236,7 +236,8 @@ function CaregiverExtended(props) {
                     <label className="label_input">introduction</label>
                     <input type="text" name="introduction" value = {introduction_input} onChange={event => {setIntroduction(event.target.value);}}/>
                 </p>
-                <Button className={"btn-warning"} onClick={onSubmit}>
+
+                <Button className={"btn-danger"} onClick={onSubmit}>
                     Update
                 </Button>
 
