@@ -79,6 +79,11 @@
     height:10px;
 }
 
+.addCaregiver{
+    position: relative;
+    margin-top: 150px;
+}
+
 /**{
   margin: 0;
   padding: 0;
