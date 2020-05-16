@@ -22,7 +22,7 @@ export default function Header() {
 
     return (
         <div className="addCaregiver">
-            Add New Caregiver
+
             <form>
                 <p>
                 <input
