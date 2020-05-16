@@ -4,6 +4,7 @@ import { useCaregivers, updateCaregiver, deleteCaregiver } from "../api";
 import Button from "../components/Button";
 import Header from "../components/Header";
 
+
 export default function Caregivers() {
     const { loading, caregivers, error } = useCaregivers();
     if (loading) {
@@ -113,6 +114,7 @@ export function SubmitFilter(caregivers) {
     var female = document.getElementById("gender_female");
     var gender_result = caregivers;
     if (male && female) {
+
         if (male.checked && !female.checked) {
             gender_result = caregivers.filter(function (caregiver) {
                 return caregiver.gender === "male";

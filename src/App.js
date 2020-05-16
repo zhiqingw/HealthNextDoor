@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp";
 
 import "./styles.css";
 import User from "./pages/User";
+import SearchCaregivers from "./pages/searchCaregivers";
 
 export default function App() {
   return (
@@ -35,6 +36,9 @@ export default function App() {
             </Route>
             <Route path='/findCaregivers'>
               <Caregivers />
+            </Route>
+            <Route path='/searchCaregivers'>
+              <SearchCaregivers/>
             </Route>
           </Switch>
         </div>
