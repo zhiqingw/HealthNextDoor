@@ -3,6 +3,7 @@ import { useCaregivers, updateCaregiver, deleteCaregiver } from "../api";
 
 import Button from "../components/Button";
 import Header from "../components/Header";
+import Filter from "../components/Filter";
 
 
 export default function Caregivers() {
@@ -46,6 +47,7 @@ export default function Caregivers() {
                     ))}
 
                 </div>
+                <div id={"filter_place"}><Filter/></div>
             </div>
 
             <div className="filter_style">
@@ -102,7 +104,10 @@ export function Caregiver(caregiver) {
                     {showUpdate ? "-" : "+"}
                 </Button>
             </div>
-            <CaregiverExtended {...caregiver} showUpdate={showUpdate} />
+            <div id={"list_front"}>
+                <CaregiverExtended {...caregiver} showUpdate={showUpdate} />
+            </div>
+
         </div>
     );
 }

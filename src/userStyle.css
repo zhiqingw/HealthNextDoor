@@ -21,15 +21,12 @@
 }
 
 #reset{
+    position: relative;
     margin-left: 1200px;
     color: #cbd4e6;
 }
 
-#reset:hover,
-#reset:active,
-#reset.focus {
-    background-color: #9ec5c4;
-}
+
 
 .posts{
     height: 500px;
