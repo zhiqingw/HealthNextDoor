@@ -5,8 +5,8 @@
 }*/
 .login_box
 {
-    width:20%;
-    height: 400px;
+    width:30%;
+    height: 500px;
     background: #aaaaab;
     margin : auto;
     margin-top: 8%;
@@ -42,11 +42,12 @@
 .login_box .login_button
 {
     margin-top: 50px;
-    width:40%;
-    height: 20px;
+    width:50%;
+    height: 30px;
     border: 0;
     color: #ffffff;
     font-size: 15px;
     background-image: linear-gradient(to right, #b8cbb8 0%, #b465da 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
     border-radius: 20px;
 }
+
