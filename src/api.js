@@ -145,8 +145,8 @@ function getCaregivers() {
 }
 /*addCaregiver used to let user to make a post*/
 export function addCaregiver(caregiver) {
-  const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience } = caregiver;
-  if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !salary || !working_experience) {
+  const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience,contact_information } = caregiver;
+  if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !salary || !working_experience || !contact_information) {
     alert("must include all fields");
     return;
   }
@@ -167,6 +167,7 @@ export function addCaregiver(caregiver) {
       address,
       salary,
       working_experience,
+      contact_information,
     })
   }).then(res =>{
     if(res.ok){
@@ -179,7 +180,7 @@ export function addCaregiver(caregiver) {
 }
 /*updataeCarever used to let user to update post*/
 export function updateCaregiver(caregiver) {
-  const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience } = caregiver;
+  const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience, contact_information } = caregiver;
   if (!username) {
     alert("must include a username");
     return;
@@ -209,7 +210,11 @@ export function updateCaregiver(caregiver) {
     return;
   }
   if (!working_experience){
-    alert("must include a salary");
+    alert("must include a working experience");
+    return;
+  }
+  if (!contact_information){
+    alert("must include a contact information");
     return;
   }
 
@@ -231,6 +236,7 @@ export function updateCaregiver(caregiver) {
       address,
       salary,
       working_experience,
+      contact_information,
     })
   });
 
