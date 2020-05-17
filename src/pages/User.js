@@ -55,7 +55,7 @@ export default function Users() {
 /*log out and redirect to home page*/
 export function Logout(){
     window.sessionStorage.removeItem("username");
-    window.location.assign('http://localhost:3000/')
+    window.location.assign('http://healthnextdoorfront.herokuapp.com/')
 }
 
 /*reset password*/
@@ -86,7 +86,7 @@ export function UserExtended() {
                 username: username,
                 password: password.value,
             });
-            window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+            window.location.assign(`http://healthnextdoorfront.herokuapp.com/user-management/${window.sessionStorage.getItem("username")}`)
         }
     }
 
@@ -110,5 +110,5 @@ export function UserExtended() {
 }
 
 function toReset() {
-    window.location.assign("http://localhost:3000/resetPassword")
+    window.location.assign("http://healthnextdoorfront.herokuapp.com/resetPassword")
 }
