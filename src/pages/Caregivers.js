@@ -218,11 +218,11 @@ function CaregiverExtended(props) {
                 </p>
                 <p>
                     <label className="update_input">working_experience</label>
-                    <input type="text" name="salary" value = {working_input} onChange={event => {setWorking_experience(event.target.value);}}/>
+                    <input type="text" name="working_experience" value = {working_input} onChange={event => {setWorking_experience(event.target.value);}}/>
                 </p>
                 <p>
                     <label className="update_input">contact information</label>
-                    <input type="text" name="salary" value = {contact_input} onChange={event => {setContact_information(event.target.value);}}/>
+                    <input type="text" name="contact_information" value = {contact_input} onChange={event => {setContact_information(event.target.value);}}/>
                 </p>
 
                 <Button className={"btn-danger"} onClick={onSubmit}>
