@@ -14,12 +14,13 @@ export default function HomePage() {
             </div>
 
             <div className={"blank"}>
-                <h6>Hello</h6>
-                <p>dshjdakdakdskakl</p>
-                <p>dshjdakdakdskakl</p>
-                <p>dshjdakdakdskakl</p>
-                <p>dshjdakdakdskakl</p>
-                <p>dshjdakdakdskakl</p>
+                <h6>
+                    Health Next Door would like to provide you a convenient way
+                    to approach the modern healthcare facility!
+                </h6>
+                <p>
+                    Hope you can enjoy our services! Cheers!
+                </p>
             </div>
 
             <div className={"credit_form"}>
