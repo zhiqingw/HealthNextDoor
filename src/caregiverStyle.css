@@ -261,7 +261,7 @@ body{
 }
 
 #filter_place{
-    position: absolute;
+    position: relative;
     /*margin-left: 50%;*/
 }
 
@@ -276,16 +276,24 @@ body{
     text-align: center;
     float:left;
     margin-left: 40px;
+    color: #e8f5e9;
 }
 .title_input{
     /*margin-left:-850px;*/
 
     font-size: 30px;
+    font-family: fantasy;
+    color: #86ab89;
+
 
 }
 #search_botton_style{
-    height : 700px;
-    background-color: transparent;
+    font-size: 12px;
+    background-color: #99abab;
+}
+
+#careGiverList{
+    margin-top: -50px;
 }
 
 

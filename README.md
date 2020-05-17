@@ -10,6 +10,6 @@ This is the current version of our project. We are team HealthNextDoor,
  For Deliverable 3, we just developed 3 main pages, which can 
  be seen 
  ### Core Function
-    1. Login & Signup
+    1. Login 
         a. 
     

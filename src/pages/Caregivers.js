@@ -57,7 +57,7 @@ export function Caregiver(caregiver) {
                 <div id="txt">Gender: {gender}</div>
 
                 <div id="txt">Age: {age}</div>
-                
+
                 <div id="txt">Salary: {salary}</div>
 
                 <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
