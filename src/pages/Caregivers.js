@@ -28,14 +28,14 @@ export default function Caregivers() {
                     {caregivers.map(caregiver => (
                         <div className="list">
                             <button id="listbutton">
-                                firstname : {caregiver.first_name}<br/><br/>
-                                lastname : {caregiver.last_name}<br/><br/>
-                                gender : {caregiver.gender}<br/><br/>
-                                age : {caregiver.age}<br/><br/>
-                                address : {caregiver.address}<br/><br/>
-                                salary : {caregiver.salary}<br/><br/>
-                                working_experience : {caregiver.working_experience}<br/><br/>
-                                contact_information : {caregiver.contact_information}<br/><br/>
+                                Firstname : {caregiver.first_name}<br/><br/>
+                                Lastname : {caregiver.last_name}<br/><br/>
+                                Gender : {caregiver.gender}<br/><br/>
+                                Age : {caregiver.age}<br/><br/>
+                                Address : {caregiver.address}<br/><br/>
+                                Salary : {caregiver.salary}<br/><br/>
+                                Working_Experience : {caregiver.working_experience}<br/><br/>
+                                Contact_Information : {caregiver.contact_information}<br/><br/>
                             </button>
                         </div>
                     ))}
