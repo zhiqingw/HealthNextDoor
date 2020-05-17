@@ -236,7 +236,7 @@ export function updateCaregiver(caregiver) {
       address,
       salary,
       working_experience,
-      contact_information,
+      contact_information
     })
   });
 
