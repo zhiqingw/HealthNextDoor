@@ -177,6 +177,7 @@ function CaregiverExtended(props) {
             salary: salary_input,
             working_experience: working_input,
         });
+        window.location.href = `user-management/${username}`;
     }
 
     return (
