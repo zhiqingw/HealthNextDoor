@@ -26,7 +26,7 @@ export default function Filter() {
     return (
         <div className="addFilter">
 
-            <div>
+
                 <div className={"label_input"}>Filter</div>
                 {/*<h3>Find a nurse who suits you best!</h3>*/}
                 <div id="filter_form"className="filter_form_style">
@@ -71,7 +71,7 @@ export default function Filter() {
                     </div>
                 </div>
 
-            </div>
+
         </div>
     );
 }
