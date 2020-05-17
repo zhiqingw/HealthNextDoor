@@ -27,7 +27,7 @@ export default function Filter() {
         <div className="addFilter">
 
 
-            <div className={"title_input"}>Filter</div>
+            <div className={"title_input"}>Find a nurse who suits you best!</div>
             {/*<h3>Find a nurse who suits you best!</h3>*/}
             <div><form className={"label_input"}>
                 Gender:
@@ -59,15 +59,17 @@ export default function Filter() {
                     <option value="2">below 20 AUD</option>
                     <option value="3">20-40 AUD</option>
                     <option value="4">40-60 AUD</option>
-                    <option value="5">aove 60 AUD</option>
+                    <option value="5">above 60 AUD</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;
+            </form>
+            </div>
 
-
-                <Button className={"btn-logIn"} onClick={() => SubmitFilter(caregivers)}>
+            <div >
+                <Button className={"btn-logIn"} id={"search_botton_style"} onClick={() => SubmitFilter(caregivers)}>
                     Search
                 </Button>
-            </form>
+
             </div>
 
 

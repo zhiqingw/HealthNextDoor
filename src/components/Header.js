@@ -12,6 +12,7 @@ export default function Header() {
     const [age, setAge] = useState("");
     const [address, setAddress] = useState("");
     const [salary, setSalary] = useState("");
+    const [working_experience, setWorking_experience] = useState("");
     function onSubmit() {
         addCaregiver({
             first_name,
@@ -22,6 +23,7 @@ export default function Header() {
             age,
             address,
             salary,
+            working_experience,
         });
     }
 
@@ -30,48 +32,48 @@ export default function Header() {
 
             <form>
                 <p>
-                <input
-                    type="text"
-                    placeholder="First Name"
-                    name="first_name"
-                    value={first_name}
-                    onChange={event => {
-                        setFirstName(event.target.value);
-                    }}
-                />
+                    <input
+                        type="text"
+                        placeholder="First Name"
+                        name="first_name"
+                        value={first_name}
+                        onChange={event => {
+                            setFirstName(event.target.value);
+                        }}
+                    />
                 </p>
                 <p>
-                <input
-                    type="text"
-                    placeholder="Last Name"
-                    name="last_name"
-                    value={last_name}
-                    onChange={event => {
-                        setLastName(event.target.value);
-                    }}
-                />
+                    <input
+                        type="text"
+                        placeholder="Last Name"
+                        name="last_name"
+                        value={last_name}
+                        onChange={event => {
+                            setLastName(event.target.value);
+                        }}
+                    />
                 </p>
                 <p>
-                <input
-                    type="text"
-                    placeholder="gender"
-                    name="gender"
-                    value={gender}
-                    onChange={event => {
-                        setGender(event.target.value);
-                    }}
-                />
+                    <input
+                        type="text"
+                        placeholder="gender"
+                        name="gender"
+                        value={gender}
+                        onChange={event => {
+                            setGender(event.target.value);
+                        }}
+                    />
                 </p>
                 <p>
-                <input
-                    type="text"
-                    placeholder="introduction"
-                    name="introduction"
-                    value={introduction}
-                    onChange={event => {
-                        setIntroduction(event.target.value);
-                    }}
-                />
+                    <input
+                        type="text"
+                        placeholder="introduction"
+                        name="introduction"
+                        value={introduction}
+                        onChange={event => {
+                            setIntroduction(event.target.value);
+                        }}
+                    />
                 </p>
                 <p>
                     <input
@@ -103,6 +105,17 @@ export default function Header() {
                         value={salary}
                         onChange={event => {
                             setSalary(event.target.value);
+                        }}
+                    />
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="working experience"
+                        name="working_experience"
+                        value={working_experience}
+                        onChange={event => {
+                            setWorking_experience(event.target.value);
                         }}
                     />
                 </p>
