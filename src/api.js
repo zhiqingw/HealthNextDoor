@@ -219,7 +219,7 @@ export function updateCaregiver(caregiver) {
   }
 
   const endpoint = BASE_URL + `/findCaregiver/${username}`;
-
+  console.log(contact_information);
   // return fetch query to update an author
   return fetch(endpoint, {
     method: "POST",
