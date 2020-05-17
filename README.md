@@ -10,7 +10,9 @@ This is the current version of our project. We are team HealthNextDoor,
  For Deliverable 3, we just developed 3 main pages, which can 
  be seen from the web navigation, Home, Login, and Caregivers. 
  And we also develop two core functions.
+ 
  ### Core Function
+ 
  1. Login 
  
         a. When you click into Login page, you will see the Login
@@ -48,3 +50,20 @@ This is the current version of our project. We are team HealthNextDoor,
             After posting the information, you can get to the login 
             page to see your post.
      e.g. try any information by yourself
+     
+### Set Up
+
+    Please cd into the repo first. Then install dependencies.
+    -- npm install
+    
+### Running
+
+    please run npm start and then visit the website in the browser:
+    -- http://healthnextdoorfront.herokuapp.com/
+    
+### Acknowledgement
+
+    This project completed by Jiayi Lu(962535), Mingyue Gu(1025397), 
+    Xuxu Xue(956595), Zhiqing Wu(931919).
+    
+     
