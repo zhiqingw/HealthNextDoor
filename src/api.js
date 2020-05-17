@@ -237,6 +237,8 @@ export function deleteCaregiver(username) {
   const endpoint = BASE_URL + `/findCaregiver/${username}`;
   return fetch(endpoint, {
     method: "DELETE",
+  }).then(res =>{
+      window.location.href = `user-management/${username}`;
   });
 }
 
