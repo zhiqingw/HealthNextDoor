@@ -78,8 +78,9 @@ h2{
 h3 {
   font-family: fantasy;
   position: absolute;
+  width: 100%;
   margin-top: 140px;
-  margin-left: 470px;
+
   top: 10px;
   font-size: 200%;
   color: #98c5c2;

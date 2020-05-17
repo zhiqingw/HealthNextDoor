@@ -21,9 +21,8 @@
 }
 
 #reset{
-    position: relative;
-    margin-top: 10%;
-    align-content: center;
+    position: absolute;
+    margin-left: 88%;
     color: #cbd4e6;
 }
 
@@ -39,6 +38,7 @@
     height: 200px;
 }
 #reset_but{
+
     margin-top: 5%;
 }
 #reset_info{
