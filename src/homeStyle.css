@@ -4,10 +4,25 @@
 }*/
 
 .blank{
-    margin-top: 10%;
+    margin-top: 20%;
+    margin-left: 20%;
+    width: 60%;
+    position: center;
+    /*background-color: #cbd4e6;*/
+    background-color: transparent;
+    color: #e8f5e9;
+    border-radius: 10px;
     height:500px;
 
+    font-family: "Times New Roman";
+    font-size: 30px;
+
 }
+
+h6{
+    font-size: 30px;
+}
+
 
 .credit_form{
     float: top;
