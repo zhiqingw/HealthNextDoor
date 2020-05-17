@@ -43,5 +43,5 @@ function login() {
 
 /*if the user not have an account yet, click the sign up button and go to the sign up page*/
 function toCurrent() {
-    window.location.assign("SignUp")
+    window.location.href = "SignUp";
 }
