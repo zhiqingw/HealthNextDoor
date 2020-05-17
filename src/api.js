@@ -227,16 +227,16 @@ export function updateCaregiver(caregiver) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      first_name: first_name,
-      last_name: last_name,
-      gender: gender,
-      introduction: introduction,
-      username: username,
-      age: age,
-      address: address,
-      salary: salary,
-      working_experience: working_experience,
-      contact_information: contact_information,
+      first_name,
+      last_name,
+      gender,
+      introduction,
+      username,
+      age,
+      address,
+      salary,
+      working_experience,
+      contact_information,
     })
   });
 
