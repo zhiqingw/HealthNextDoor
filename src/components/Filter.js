@@ -27,49 +27,48 @@ export default function Filter() {
         <div className="addFilter">
 
 
-                <div className={"label_input"}>Filter</div>
-                {/*<h3>Find a nurse who suits you best!</h3>*/}
-                <div id="filter_form"className="filter_form_style">
+            <div className={"title_input"}>Filter</div>
+            {/*<h3>Find a nurse who suits you best!</h3>*/}
+            <div><form className={"label_input"}>
+                Gender:
+                Male:&nbsp;
+                <input type = "checkbox" value = "male" id = "gender_male"/>&nbsp;
+                Female:&nbsp;
+                <input type = "checkbox" value = "female" id = "gender_female"/>
+                &nbsp;&nbsp;&nbsp;
 
-                    <div className="label_input">Gender:</div>
-
-                    <div className="label_input">Male:
-                    <input type = "checkbox" value = "male" id = "gender_male"/>
-                    </div>
-
-                    <div className="label_input">Female:
-                    <input type = "checkbox" value = "female" id = "gender_female"/>
-                    </div>
-
-                    <div className="label_input">Age:
-                    <input type = "text" id = "min_age" className="small_textframe" placeholder="0"></input>-
-                    <input type = "text" id = "max_age" className="small_textframe" placeholder="99"></input>
-                    </div>
-
-                    <div className="label_input">Address:
-                    <input type = "text" id = "address" placeholder="Carlton"/>
-                    </div>
+                Age:
+                <input type = "number" id = "min_age" min="0"className="small_textframe" placeholder="0"/>&nbsp;-&nbsp;
+                <input type = "number" id = "max_age" min="0"className="small_textframe" placeholder="99"/>
+                &nbsp;&nbsp;&nbsp;
 
 
-                    <div className="label_input">Working experience:
-                    more than <input type = "text" id="working_experience" className="small_textframe"></input>&nbsp;years
-                    </div>
+                Address:&nbsp;
+                <input type = "text" id = "address" placeholder="Carlton"/>
+                &nbsp;&nbsp;&nbsp;
 
-                    <div className="label_input">Salary (per hour):
-                        <select id="salary">
-                            <option value="1"></option>
-                            <option value="2">below 20 AUD</option>
-                            <option value="3">20-40 AUD</option>
-                            <option value="4">40-60 AUD</option>
-                            <option value="5">aove 60 AUD</option>
-                        </select>
-                    </div>
-                    <div className={"label_input"}>
-                        <Button className={"btn-logIn"} onClick={() => SubmitFilter(caregivers)}>
-                            Search
-                        </Button>
-                    </div>
-                </div>
+
+
+                Working experience:&nbsp;
+                More than <input type = "number" min="0" id="working_experience" className="small_textframe"></input>&nbsp;years
+                &nbsp;&nbsp;&nbsp;
+
+                Salary (per hour):&nbsp;
+                <select id="salary">
+                    <option value="1"></option>
+                    <option value="2">below 20 AUD</option>
+                    <option value="3">20-40 AUD</option>
+                    <option value="4">40-60 AUD</option>
+                    <option value="5">aove 60 AUD</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;
+
+
+                <Button className={"btn-logIn"} onClick={() => SubmitFilter(caregivers)}>
+                    Search
+                </Button>
+            </form>
+            </div>
 
 
         </div>
