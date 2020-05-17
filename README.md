@@ -36,4 +36,15 @@ This is the current version of our project. We are team HealthNextDoor,
             
         b. You can also use the filter function, above the 
             caregiivers' information, to filter some conditions
-            to find a caregivers who suits you best.
+            to find a caregivers who suits you best, also press
+            back button to return to the full list page.
+     e.g. click female condition, and press search, it will only 
+        show female caregivers
+        
+        c. If you want to join the caregiver team, and show your 
+            information on this page, you can click "Let's Join Us
+            Today" button, and it will link to a new page with the 
+            information form, and you can post your information. 
+            After posting the information, you can get to the login 
+            page to see your post.
+     e.g. try any information by yourself
