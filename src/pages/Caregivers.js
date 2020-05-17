@@ -35,7 +35,7 @@ export default function Caregivers() {
                                 address : {caregiver.address}<br/><br/>
                                 salary : {caregiver.salary}<br/><br/>
                                 working_experience : {caregiver.working_experience}<br/><br/>
-                                contact_information : {caregiver.contact_information}<br/><br/>
+                                contact me : {caregiver.contact_information}<br/><br/>
                             </button>
                         </div>
                     ))}
