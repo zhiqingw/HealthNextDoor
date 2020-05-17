@@ -6,11 +6,11 @@ import Caregivers from "./pages/Caregivers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import NewCaregiver from "./pages/newCaregiver"
-import "./styles.css";
-import "./userStyle.css";
-import "./caregiverStyle.css"
-import "./loginStyle.css"
-import "./homeStyle.css"
+import "./views/styles.css";
+import "./views/userStyle.css";
+import "./views/caregiverStyle.css"
+import "./views/loginStyle.css"
+import "./views/homeStyle.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 import ResetPassword from "./pages/resetPassword"
