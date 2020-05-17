@@ -13,6 +13,7 @@ export default function Header() {
     const [address, setAddress] = useState("");
     const [salary, setSalary] = useState("");
     const [working_experience, setWorking_experience] = useState("");
+    const [contact_information, setContact_information] = useState("");
     function onSubmit() {
         addCaregiver({
             first_name,
@@ -24,6 +25,7 @@ export default function Header() {
             address,
             salary,
             working_experience,
+            contact_information,
         });
     }
 
@@ -116,6 +118,17 @@ export default function Header() {
                         value={working_experience}
                         onChange={event => {
                             setWorking_experience(event.target.value);
+                        }}
+                    />
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="contact information"
+                        name="contact_information"
+                        value={contact_information}
+                        onChange={event => {
+                            setContact_information(event.target.value);
                         }}
                     />
                 </p>
