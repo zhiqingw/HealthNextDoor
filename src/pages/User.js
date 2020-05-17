@@ -94,12 +94,10 @@ export function UserExtended() {
             <div id={"reset_box"} className={"login_box"}>
                 <div id="reset_info">
                     <div>
-                        <label id="label_input">Password</label>
-                        <input type="password" id="password" className="text_field"/>
+                        <input type="password" id="password" placeholder="Password" className="text_field"/>
                     </div>
                     <div>
-                        <label id="label_input" >Confirm Password</label>
-                        <input type="password" id="confirmed_password" className="text_field"/>
+                        <input type="password" id="confirmed_password" placeholder="Confirm password"className="text_field"/>
                     </div>
                 </div>
                 <div>

@@ -22,7 +22,8 @@
 
 #reset{
     position: relative;
-    margin-left: 1200px;
+    margin-top: 10%;
+    align-content: center;
     color: #cbd4e6;
 }
 
@@ -41,5 +42,5 @@
     margin-top: 5%;
 }
 #reset_info{
-    text-align: right;
+    text-align: center;
 }
