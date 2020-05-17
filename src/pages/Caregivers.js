@@ -179,7 +179,7 @@ function CaregiverExtended(props) {
             address: address_input,
             salary: salary_input,
             working_experience: working_input,
-            contact_information: contact_input
+            contact_information: contact_input,
         });
         window.location.assign(`http://healthnextdoorfront.herokuapp.com/user-management/${window.sessionStorage.getItem("username")}`)
     }
