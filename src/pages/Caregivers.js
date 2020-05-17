@@ -20,13 +20,15 @@ export default function Caregivers() {
     return (
         <div>
             <div className={"list_style"}>
-            <h1>Caregivers List</h1>
+                <h1>Caregivers List</h1>
 
-            <div id={"join_button"}>
-                <Button className={"btn-addCaregiver"} id={"jjj"} onClick={toAdd}>
-                    Let's Join Us Today!
-                </Button>
-            </div>
+                <div id={"filter_place"}><Filter/></div>
+
+                <div id={"join_button"}>
+                    <Button className={"btn-addCaregiver"} id={"jjj"} onClick={toAdd}>
+                        Let's Join Us Today!
+                    </Button>
+                </div>
 
 
 
@@ -47,10 +49,10 @@ export default function Caregivers() {
                     ))}
 
                 </div>
-                <div id={"filter_place"}><Filter/></div>
+
             </div>
 
-            <div className="filter_style">
+            {/*<div className="filter_style">
                 <h2>Filter</h2>
 
                 <form id="filter_form"className="filter_form_style">
@@ -83,14 +85,14 @@ export default function Caregivers() {
                         Search
                     </Button>
                 </form>
-            </div>
+            </div>*/}
 
         </div>
     );
 }
 
 export function Caregiver(caregiver) {
-    const { first_name, last_name, gender, introduction, username} = caregiver;
+    const { first_name, last_name, gender, introduction, username, age, address, salary} = caregiver;
     const [showUpdate, setShowUpdate] = useState(false);
 
     return (
@@ -100,6 +102,10 @@ export function Caregiver(caregiver) {
                 <div id="txt">First_name: {first_name}</div>
                 <div id="txt">Last_name: {last_name}</div>
                 <div id="txt">Gender: {gender}</div>
+                <div id="txt">Age: {age}</div>
+                <div id="txt">Address: {address}</div>
+                <div id="txt">Salary: {salary}</div>
+                <div id="txt">Introduction: {introduction}</div>
                 <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
                     {showUpdate ? "-" : "+"}
                 </Button>
