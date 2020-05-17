@@ -87,10 +87,7 @@ export function UserExtended() {
                 password: password.value,
             });
             window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
-
         }
-        // call upate user function
-
     }
 
     return (
