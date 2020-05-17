@@ -35,6 +35,7 @@ export default function Caregivers() {
                                 address : {caregiver.address}<br/><br/>
                                 salary : {caregiver.salary}<br/><br/>
                                 working_experience : {caregiver.working_experience}<br/><br/>
+                                contact_information : {caregiver.contact_information}<br/><br/>
                             </button>
                         </div>
                     ))}
@@ -45,7 +46,7 @@ export default function Caregivers() {
 }
 
 export function Caregiver(caregiver) {
-    const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience} = caregiver;
+    const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience, contact_information} = caregiver;
     const [showUpdate, setShowUpdate] = useState(false);
 
     return (
@@ -155,7 +156,7 @@ export function SubmitFilter(caregivers) {
 }
 
 function CaregiverExtended(props) {
-    const { first_name, last_name, gender, introduction, username, age, address, salary, showUpdate, working_experience} = props;
+    const { first_name, last_name, gender, introduction, username, age, address, salary, showUpdate, working_experience, contact_information} = props;
     const [first_input, setFirstName] = useState(first_name);
     const [last_input, setLastName] = useState(last_name);
     const [gender_input, setGender] = useState(gender);
@@ -164,6 +165,7 @@ function CaregiverExtended(props) {
     const [address_input,setAddress] = useState(address);
     const [salary_input,setSalary] = useState(salary);
     const [working_input,setWorking_experience] = useState(working_experience);
+    const [contact_input,setContact_information] = useState(contact_information);
     function onSubmit() {
         // call upate caregiver function
         updateCaregiver({
@@ -176,6 +178,7 @@ function CaregiverExtended(props) {
             address: address_input,
             salary: salary_input,
             working_experience: working_input,
+            contact_information: contact_input,
         });
         window.location.href = `user-management/${username}`;
     }
@@ -216,6 +219,10 @@ function CaregiverExtended(props) {
                 <p>
                     <label className="update_input">working_experience</label>
                     <input type="text" name="salary" value = {working_input} onChange={event => {setWorking_experience(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">contact information</label>
+                    <input type="text" name="salary" value = {contact_input} onChange={event => {setContact_information(event.target.value);}}/>
                 </p>
 
                 <Button className={"btn-danger"} onClick={onSubmit}>
