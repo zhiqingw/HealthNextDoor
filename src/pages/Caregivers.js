@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useCaregivers, updateCaregiver, deleteCaregiver } from "../api";
 
 import Button from "../components/Button";
-import Header from "../components/Header";
 import Filter from "../components/Filter";
 
 
@@ -14,27 +13,18 @@ export default function Caregivers() {
     if (error) {
         return <p>Something went wrong: {error.message}</p>;
     }
-
     // Display a list of the caregivers
-
     return (
         <div>
             <div className={"list_style"}>
                 <h1>Caregivers List</h1>
-
                 <div id={"filter_place"}><Filter/></div>
-
                 <div id={"join_button"}>
                     <Button className={"btn-addCaregiver"} id={"jjj"} onClick={toAdd}>
                         Let's Join Us Today!
                     </Button>
                 </div>
-
-
-
-
                 <div id="careGiverList">
-
                     {caregivers.map(caregiver => (
                         <div className="list">
                             <button id="listbutton">
@@ -47,46 +37,8 @@ export default function Caregivers() {
                             </button>
                         </div>
                     ))}
-
                 </div>
-
             </div>
-
-            {/*<div className="filter_style">
-                <h2>Filter</h2>
-
-                <form id="filter_form"className="filter_form_style">
-                    <label className="label_input">Gender:</label><br/>
-                    <label className="label_input">Male:</label>
-                    <input type = "checkbox" value = "male" id = "gender_male"/>
-                    <label className="label_input">Female: </label>
-                    <input type = "checkbox" value = "female" id = "gender_female"/><br/>
-
-                    <label className="label_input">Age: </label><br/>
-                    <input type = "text" id = "min_age" className="small_textframe" placeholder="0"></input>-
-                    <input type = "text" id = "max_age" className="small_textframe" placeholder="99"></input><br/>
-
-                    <label className="label_input">Address: </label><br/>
-                    <input type = "text" id = "address" placeholder="Carlton"/>
-                    <br/><br/>
-
-                    <label className="label_input">Working experience: </label><br/>
-                    more than <input type = "text" id="working_experience" className="small_textframe"></input>&nbsp;years<br/>
-
-                    <label className="label_input">Salary (per hour): </label><br/>
-                    <select id="salary">
-                        <option value="1"></option>
-                        <option value="2">below 20 AUD</option>
-                        <option value="3">20-40 AUD</option>
-                        <option value="4">40-60 AUD</option>
-                        <option value="5">aove 60 AUD</option>
-                    </select><br/><br/>
-                    <Button className={"btn-logIn"} onClick={() => SubmitFilter(caregivers)}>
-                        Search
-                    </Button>
-                </form>
-            </div>*/}
-
         </div>
     );
 }
@@ -113,7 +65,6 @@ export function Caregiver(caregiver) {
             <div id={"list_front"}>
                 <CaregiverExtended {...caregiver} showUpdate={showUpdate} />
             </div>
-
         </div>
     );
 }
@@ -193,18 +144,7 @@ export function SubmitFilter(caregivers) {
     } else {
         working_experience_result = salary_result;
     }
-
     console.log(working_experience_result);
-    //console.log(name_result);
-
-
-    //console.log(working_experience_result)
-
-    //window.location.href = "SearchCaregivers"
-    //return name_result;
-    //return (gender_result);
-    //var getInput = gender_result
-    //console.log(working_experience_result)
     var string_type = JSON.stringify(working_experience_result);
     console.log(string_type);
     sessionStorage.setItem("targetData",string_type);
