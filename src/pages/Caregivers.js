@@ -168,6 +168,7 @@ function CaregiverExtended(props) {
     const [contact_input,setContact_information] = useState(contact_information);
     function onSubmit() {
         // call upate caregiver function
+        console.log(contact_input);
         updateCaregiver({
             first_name: first_input,
             last_name: last_input,
