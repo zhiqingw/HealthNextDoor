@@ -20,7 +20,7 @@ export default function Caregivers() {
                 <h1>Caregivers List</h1>
                 <div id={"filter_place"}><Filter/></div>
                 <div id={"join_button"}>
-                    <Button className={"btn-addCaregiver"} id={"jjj"} onClick={toAdd}>
+                    <Button className={"btn-addCaregiver"} id={"join_us"} onClick={toAdd}>
                         Let's Join Us Today!
                     </Button>
                 </div>

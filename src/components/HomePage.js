@@ -13,7 +13,14 @@ export default function HomePage() {
                 <h3> Care about your and your families! </h3>
             </div>
 
-            <div className={"blank"}></div>
+            <div className={"blank"}>
+                <h6>Hello</h6>
+                <p>dshjdakdakdskakl</p>
+                <p>dshjdakdakdskakl</p>
+                <p>dshjdakdakdskakl</p>
+                <p>dshjdakdakdskakl</p>
+                <p>dshjdakdakdskakl</p>
+            </div>
 
             <div className={"credit_form"}>
                 <p>2020 HealthNextDoor © All Rights Reserved</p>
