@@ -8,8 +8,32 @@ This is the current version of our project. We are team HealthNextDoor,
  ## Features
  
  For Deliverable 3, we just developed 3 main pages, which can 
- be seen 
+ be seen from the web navigation, Home, Login, and Caregivers. 
+ And we also develop two core functions.
  ### Core Function
-    1. Login 
-        a. 
+ 1. Login 
+ 
+        a. When you click into Login page, you will see the Login
+            box, you can use login button log into our web. 
+    e.g. try username: jack, password: 1234
+        
+        b. If you are not our user, you can click sign up button 
+            to sign up your account.
+    e.g. try to enter any username and password by yourself
+ 
+        c. After you login or signup, page will link to your user
+            center, which will display your post recording. 
+    e.g. try username: jack, password: 1234
     
+        d. Also in your user center, you can change your password
+            by click Reset Password button.
+    e.g. try click and change it by yourself
+    
+ 2. Caregivers
+ 
+        a. When you click into Caregivers page, you will see the
+            information list of our caregivers.
+            
+        b. You can also use the filter function, above the 
+            caregiivers' information, to filter some conditions
+            to find a caregivers who suits you best.

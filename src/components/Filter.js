@@ -27,8 +27,7 @@ export default function Filter() {
         <div className="addFilter">
 
 
-            <div className={"title_input"}>Find a nurse who suits you best!</div>
-            {/*<h3>Find a nurse who suits you best!</h3>*/}
+            <div className={"title_input"}>Find a caregiver who suits you best!</div>
             <div><form className={"label_input"}>
                 Gender:
                 Male:&nbsp;
