@@ -16,7 +16,7 @@ export function loginCheck(username, password) {
   }
 
   const endpoint = BASE_URL + `/login`;
-  // return fetch query to update an author
+  // return fetch query to check whether the password is correct
   return fetch(endpoint, {
     method: "POST",
     headers: {
@@ -28,6 +28,7 @@ export function loginCheck(username, password) {
     })
   }).then(res =>{
     if(res.ok){
+      //store current login status
       window.sessionStorage.setItem("username",username);
       window.location.assign(`user-management/${username}`)
     }
@@ -65,6 +66,7 @@ export function signupCheck(username, password, confirmed_password) {
     })
   }).then(res =>{
     if(res.ok){
+      //redirect to user page after user create an account
       window.sessionStorage.setItem("username",username);
       window.location.href = `user-management/${username}`;
     }
@@ -75,7 +77,7 @@ export function signupCheck(username, password, confirmed_password) {
   });
 
 }
-
+//reset the user password
 export function updateUser(user) {
   const { username, password} = user;
   if (!password) {
@@ -94,10 +96,9 @@ export function updateUser(user) {
       password
     })
   });
-  //.then(res => location.reload());
 }
 
-
+//return all the user
 export function getUser() {
   const endpoint = BASE_URL + `/login`;
   return fetch(endpoint).then(res => {
@@ -130,6 +131,8 @@ export function useUser() {
     error
   };
 }
+
+//get all caregivers
 function getCaregivers() {
   const endpoint = BASE_URL + `/findCaregiver`;
 
@@ -233,6 +236,7 @@ export function updateCaregiver(caregiver) {
 
 }
 
+//use username to delete a post
 export function deleteCaregiver(username) {
   const endpoint = BASE_URL + `/findCaregiver/${username}`;
   return fetch(endpoint, {
