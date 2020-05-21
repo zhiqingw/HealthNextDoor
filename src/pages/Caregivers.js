@@ -8,7 +8,7 @@ import Filter from "../components/Filter";
 export default function Caregivers() {
     const { loading, caregivers, error } = useCaregivers();
     if (loading) {
-        return Loading;
+        return Loading();
     }
     if (error) {
         return <p>Something went wrong: {error.message}</p>;

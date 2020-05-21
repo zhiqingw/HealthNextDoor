@@ -8,13 +8,13 @@ export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
     const { loadings, user, errors } = useUser();
     if (loading) {
-        return Loading;
+        return Loading();
     }
     if (error) {
         return <p>Something went wrong: {error.message}</p>;
     }
     if (loadings) {
-        return Loading;
+        return Loading();
     }
     if (errors) {
         return <p>Something went wrong: {error.message}</p>;
