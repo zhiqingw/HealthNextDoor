@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCaregivers, updateCaregiver, deleteCaregiver } from "../api";
-
+import Loading from "../components/Loading";
 import Button from "../components/Button";
 import Filter from "../components/Filter";
 
@@ -8,7 +8,7 @@ import Filter from "../components/Filter";
 export default function Caregivers() {
     const { loading, caregivers, error } = useCaregivers();
     if (loading) {
-        return <p>Loading...</p>;
+        return Loading;
     }
     if (error) {
         return <p>Something went wrong: {error.message}</p>;

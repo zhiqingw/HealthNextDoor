@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import {updateUser, useCaregivers, useUser} from "../api";
 import Button from "../components/Button";
 import {Caregiver} from "./Caregivers";
+import Loading from "../components/Loading";
 /*user home page*/
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
     const { loadings, user, errors } = useUser();
     if (loading) {
-        return <p>Loading...</p>;
+        return Loading;
     }
     if (error) {
         return <p>Something went wrong: {error.message}</p>;
     }
     if (loadings) {
-        return <p>Loading...</p>;
+        return Loading;
     }
     if (errors) {
         return <p>Something went wrong: {error.message}</p>;
