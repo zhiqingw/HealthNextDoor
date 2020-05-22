@@ -11,6 +11,7 @@ import "./views/userStyle.css";
 import "./views/caregiverStyle.css"
 import "./views/loginStyle.css"
 import "./views/homeStyle.css"
+import "./views/loadingStyle.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 import ResetPassword from "./pages/resetPassword"
