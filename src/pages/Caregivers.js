@@ -56,9 +56,7 @@ function getCaregiverInformation(caregiver){
 export function Caregiver(caregiver) {
     const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience, contact_information} = caregiver;
     const [showUpdate, setShowUpdate] = useState(false);
-    console.log(caregiver);
-    var string_type = JSON.stringify(caregiver);
-    sessionStorage.setItem("Post_listing",string_type);
+
     return (
         <div className={`caregiver caregiver-${username}`} key={username}>
             <div className="info">
@@ -71,9 +69,8 @@ export function Caregiver(caregiver) {
 
                 <div id="txt">Salary: {salary}</div>
 
-                <Button className={"btn"} onClick={toPostRecord}>
-                    expand
-
+                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
+                    {showUpdate ? "-" : "+"}
                 </Button>
             </div>
             <div id={"list_front"}>
@@ -166,10 +163,7 @@ export function SubmitFilter(caregivers) {
 
 }
 
-export function CaregiverExtended(props) {
-
-    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
-
+function CaregiverExtended(props) {
     const { first_name, last_name, gender, introduction, username, age, address, salary, showUpdate, working_experience,
         contact_information} = props;
     const [first_input, setFirstName] = useState(first_name);
@@ -263,18 +257,3 @@ function toAdd() {
     }
 
 }
-
-function toPostRecord() {
-    {/*if(window.sessionStorage.getItem("username")){
-        window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
-        window.location.assign() = "PostingRecord";
-    }else{
-        alert("please log in first!");
-    }*/}
-
-
-
-    window.location.assign(`http://localhost:3000/PostingRecord/${window.sessionStorage.getItem("username")}`)
-}
-
-
