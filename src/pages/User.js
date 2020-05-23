@@ -70,8 +70,15 @@ function User(user) {
                 <Button id={"btn-resetpassword"} onClick={toReset}>
                     Reset Password
                 </Button>
+
+                <Button id={"btn-toList"} onClick={toList}>
+                List
+                </Button>
             </div>
-        </div>
+
+            </div>
+
+
     );
 }
 
@@ -112,4 +119,9 @@ export function UserExtended() {
 
 function toReset() {
     window.location.assign("http://localhost:3000/resetPassword")
+}
+
+function toList(){
+    window.location.assign("http://localhost:3000/toList")
+
 }

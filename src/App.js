@@ -15,6 +15,7 @@ import "./views/loadingStyle.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 import ResetPassword from "./pages/resetPassword"
+import ToList from "./pages/ToList";
 
 export default function App() {
   return (
@@ -45,6 +46,9 @@ export default function App() {
             </Route>
             <Route path='/resetPassword'>
               <ResetPassword/>
+            </Route>
+            <Route path='/toList'>
+              <ToList/>
             </Route>
           </Switch>
         </div>

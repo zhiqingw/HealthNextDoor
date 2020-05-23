@@ -43,7 +43,7 @@ function showUser(){
 
     if(username){
         return(
-            window.location.assign(`http://healthnextdoorfront.herokuapp.com/user-management/${window.sessionStorage.getItem("username")}`)
+            window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
         );
     }
 }
