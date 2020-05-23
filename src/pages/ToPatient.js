@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { usePatients, updateCaregiver, deleteCaregiver } from "../api";
+import React from "react";
+import { usePatients} from "../api";
 
 import Button from "../components/Button";
-import Filter from "../components/Filter";
-import HomePage from "../components/HomePage";
 
 export default function PatientInformation(){
     var data = sessionStorage.getItem("personalInformation");
@@ -20,7 +18,7 @@ export default function PatientInformation(){
                 {patients.map(patient => (
                     <div className="list">
                         <button id="listbutton" >
-                            ID : {patients.id}<br/><br/>
+                            {/*ID : {patient.id}<br/><br/>*/}
                             Firstname : {patient.first_name}<br/><br/>
                             Lastname : {patient.last_name}<br/><br/>
                             Gender : {patient.gender}<br/><br/>
@@ -36,11 +34,11 @@ export default function PatientInformation(){
     )
 }
 
-function getPatientInformation(patient){
+/*function getPatientInformation(patient){
     console.log(patient);
     var string_type = JSON.stringify(patient)
     console.log(string_type);
     sessionStorage.setItem("personalInformation",string_type);
     window.location.href = "PatientInformation";
 }
-
+*/
