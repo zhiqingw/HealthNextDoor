@@ -27,7 +27,7 @@ export default function Caregivers() {
                 <div id="careGiverList">
                     {caregivers.map(caregiver => (
                         <div className="list">
-                            <button id="listbutton">
+                            <button id="listbutton" onClick={()=>getCaregiverInformation(caregiver)}>
                                 Firstname : {caregiver.first_name}<br/><br/>
                                 Lastname : {caregiver.last_name}<br/><br/>
                                 Gender : {caregiver.gender}<br/><br/>
@@ -43,6 +43,14 @@ export default function Caregivers() {
             </div>
         </div>
     );
+}
+
+function getCaregiverInformation(caregiver){
+    console.log(caregiver);
+    var string_type = JSON.stringify(caregiver)
+    console.log(string_type);
+    sessionStorage.setItem("personalInformation",string_type);
+    window.location.href = "CaregiverInformation";
 }
 
 export function Caregiver(caregiver) {
