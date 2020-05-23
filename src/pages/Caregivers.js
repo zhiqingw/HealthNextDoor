@@ -164,6 +164,9 @@ export function SubmitFilter(caregivers) {
 }
 
 function CaregiverExtended(props) {
+    console.log(props);
+    var string_type = JSON.stringify(props);
+    sessionStorage.setItem("Post_listing",string_type);
     const { first_name, last_name, gender, introduction, username, age, address, salary, showUpdate, working_experience,
         contact_information} = props;
     const [first_input, setFirstName] = useState(first_name);

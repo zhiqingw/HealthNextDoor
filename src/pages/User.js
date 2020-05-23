@@ -78,6 +78,9 @@ function User(user) {
                 <Button id={"patient_list"} onClick={toPatient}>
                     Patient List
                 </Button>
+                <Button id={"posting_record"} onClick={toPostRecord}>
+                    Posting Record
+                </Button>
             </div>
 
             </div>
@@ -161,4 +164,10 @@ function toList(user){
 function toPatient(){
     window.location.assign("http://localhost:3000/toPatient")
 
+}
+
+function toPostRecord() {
+
+
+    window.location.assign(`http://localhost:3000/PostingRecord/${window.sessionStorage.getItem("username")}`)
 }
