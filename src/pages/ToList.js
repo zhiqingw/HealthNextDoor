@@ -10,13 +10,13 @@ export default function ToList() {
             <h1>List</h1>
             <div className={"orderlist"}>
 
-            {dict_data.orderList.map(name => (
-                <p>
-                <button>
-                {name}
-                </button>
-                </p>
-            ))}
+                {dict_data.orderList.map(name => (
+                    <p>
+                        <button>
+                            {name}
+                        </button>
+                    </p >
+                ))}
             </div>
         </div>
     );

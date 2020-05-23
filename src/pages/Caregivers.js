@@ -69,8 +69,9 @@ export function Caregiver(caregiver) {
 
                 <div id="txt">Salary: {salary}</div>
 
-                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
-                    {showUpdate ? "-" : "+"}
+                <Button className={"btn"} onClick={toPostRecord}>
+                    expand
+
                 </Button>
             </div>
             <div id={"list_front"}>
@@ -163,7 +164,12 @@ export function SubmitFilter(caregivers) {
 
 }
 
-function CaregiverExtended(props) {
+export function CaregiverExtended(props) {
+    console.log(props);
+    var string_type = JSON.stringify(props);
+    sessionStorage.setItem("Post_listing",string_type);
+    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+
     const { first_name, last_name, gender, introduction, username, age, address, salary, showUpdate, working_experience,
         contact_information} = props;
     const [first_input, setFirstName] = useState(first_name);
@@ -257,3 +263,18 @@ function toAdd() {
     }
 
 }
+
+function toPostRecord() {
+    {/*if(window.sessionStorage.getItem("username")){
+        window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+        window.location.assign() = "PostingRecord";
+    }else{
+        alert("please log in first!");
+    }*/}
+
+
+
+    window.location.assign(`http://localhost:3000/PostingRecord/${window.sessionStorage.getItem("username")}`)
+}
+
+

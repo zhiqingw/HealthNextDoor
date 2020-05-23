@@ -1,5 +1,5 @@
 import React from "react";
-import { usePatients} from "../api";
+import { usePatients, useUser} from "../api";
 
 import Button from "../components/Button";
 
@@ -8,23 +8,27 @@ export default function PatientInformation(){
     console.log(data);
     var dict_data = JSON.parse(data);
     //console.log(dict_data);
-    const { loading, patients, error } = usePatients();
+    //const { loading, patients, error } = usePatients();
+    const { loading, user, error } = useUser();
 
     return (
         <div className="list_style">
             <h1>Patients List</h1>
 
             <div id="careGiverList">
-                {patients.map(patient => (
+                {user.map(user => (
                     <div className="list">
                         <button id="listbutton" >
-                            {/*ID : {patient.id}<br/><br/>*/}
+                            {/*ID : {patient.id}<br/><br/>
                             Firstname : {patient.first_name}<br/><br/>
                             Lastname : {patient.last_name}<br/><br/>
                             Gender : {patient.gender}<br/><br/>
                             Age : {patient.age}<br/><br/>
                             Address : {patient.address}<br/><br/>
-                            Contact Me : {patient.contact_information}<br/><br/>
+                            Contact Me : {patient.contact_information}<br/><br/>*/}
+                            username : {user.username}<br/><br/>
+                            orde history : {user.orderHistory}<br/><br/>
+
                         </button>
                     </div>
                 ))}
