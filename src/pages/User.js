@@ -30,7 +30,20 @@ export default function Users() {
     return (
         <div>
             <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
+            <div id={"htwo"}>
+                <h2>Posting Record</h2>
+            </div>
 
+            <div id={"tryy"}>
+                {caregivers.map(caregiver =>{
+                    if(caregiver.username===name){
+                        return <Caregiver key={caregiver.username} {...caregiver} />
+                    }
+                    else{
+                        return
+                    }
+                })}
+            </div>
             {user.map(used =>{
                 if(used.username===name){
                     match = used;
@@ -58,24 +71,14 @@ function User(user) {
                 <Button id={"btn-resetpassword"} onClick={toReset}>
                     Reset Password
                 </Button>
-                <Button id={"posting_record"} onClick={toPostRecord}>
-                    Posting Record
+
+                <Button id={"btn-toList"} onClick={() => toList(user)}>
+                List
+                </Button>
+                <Button id={"patient_list"} onClick={toPatient}>
+                    Patient List
                 </Button>
             </div>
-            <div className={"list"}>
-            <div>
-                {user.orderList.map(name => (
-                    <p>
-                        <button>
-                            {name}
-                        </button>
-                    </p>
-                ))}
-            </div>
-
-
-            </div>
-
 
             </div>
 
@@ -158,10 +161,4 @@ function toList(user){
 function toPatient(){
     window.location.assign("http://localhost:3000/toPatient")
 
-}
-
-function toPostRecord() {
-
-
-    window.location.assign(`http://localhost:3000/PostingRecord/${window.sessionStorage.getItem("username")}`)
 }
