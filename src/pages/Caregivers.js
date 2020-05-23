@@ -56,7 +56,9 @@ function getCaregiverInformation(caregiver){
 export function Caregiver(caregiver) {
     const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience, contact_information} = caregiver;
     const [showUpdate, setShowUpdate] = useState(false);
-
+    console.log(caregiver);
+    var string_type = JSON.stringify(caregiver);
+    sessionStorage.setItem("Post_listing",string_type);
     return (
         <div className={`caregiver caregiver-${username}`} key={username}>
             <div className="info">
@@ -165,9 +167,7 @@ export function SubmitFilter(caregivers) {
 }
 
 export function CaregiverExtended(props) {
-    console.log(props);
-    var string_type = JSON.stringify(props);
-    sessionStorage.setItem("Post_listing",string_type);
+
     //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
     const { first_name, last_name, gender, introduction, username, age, address, salary, showUpdate, working_experience,

@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import React from "react";
 import Filter from "../components/Filter";
-import {CaregiverExtended} from "./Caregivers";
+import {Caregiver} from "./Caregivers";
 import {useCaregivers} from "../api";
 
 export default function newCaregiver() {
@@ -13,7 +13,7 @@ export default function newCaregiver() {
         <div>
             <h1>Posting Record</h1>
             <div id={"Post_list_front"}>
-                <CaregiverExtended {...dict_data}/>
+                <Caregiver {...dict_data}/>
             </div>
 
 
