@@ -3,6 +3,7 @@ import {updateUser, useCaregivers, useUser} from "../api";
 import Button from "../components/Button";
 import {Caregiver} from "./Caregivers";
 import Loading from "../components/Loading";
+import ToList from "../pages/ToList"
 /*user home page*/
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
@@ -71,7 +72,7 @@ function User(user) {
                     Reset Password
                 </Button>
 
-                <Button id={"btn-toList"} onClick={toList}>
+                <Button id={"btn-toList"} onClick={() => toList(user)}>
                 List
                 </Button>
                 <Button id={"patient_list"} onClick={toPatient}>
@@ -120,14 +121,42 @@ export function UserExtended() {
     );
 }
 
+/*export function UserExtendedList() {
 
+    function onSubmit() {
+        var username = window.sessionStorage.getItem("username");
+
+            updateUserList({
+                username: username,
+
+
+            });
+            window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+
+    }
+
+    return (
+        <div>
+
+        </div>
+    );
+}
+*/
 function toReset() {
     window.location.assign("http://localhost:3000/resetPassword")
 }
 
-function toList(){
+function toList(user){
+    console.log(user);
+    var string_type = JSON.stringify(user);
+    sessionStorage.setItem("listing",string_type);
     window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    /*return(
+        <div>
+            <ToList {...user}/>
+        </div>
 
+    );*/
 }
 function toPatient(){
     window.location.assign("http://localhost:3000/toPatient")
