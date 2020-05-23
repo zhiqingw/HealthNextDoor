@@ -120,15 +120,15 @@ export function UserExtended() {
     );
 }
 
+
 function toReset() {
     window.location.assign("http://localhost:3000/resetPassword")
 }
 
 function toList(){
-    window.location.assign("http://localhost:3000/toList")
+    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
 }
-
 function toPatient(){
     window.location.assign("http://localhost:3000/toPatient")
 
