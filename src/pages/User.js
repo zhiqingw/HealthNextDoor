@@ -30,20 +30,7 @@ export default function Users() {
     return (
         <div>
             <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
-            <div id={"htwo"}>
-                <h2>Posting Record</h2>
-            </div>
 
-            <div id={"tryy"}>
-                {caregivers.map(caregiver =>{
-                    if(caregiver.username===name){
-                        return <Caregiver key={caregiver.username} {...caregiver} />
-                    }
-                    else{
-                        return
-                    }
-                })}
-            </div>
             {user.map(used =>{
                 if(used.username===name){
                     match = used;
