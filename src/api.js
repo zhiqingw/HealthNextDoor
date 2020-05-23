@@ -277,3 +277,39 @@ export function useCaregivers() {
   };
 }
 
+//get all caregivers
+function getPatients() {
+  const endpoint = BASE_URL + `/findPatient`;
+
+  // TODO
+  // return fetch call that gets caregivers list
+  return fetch(endpoint).then(res => {
+    console.log(res);
+    return res.json();
+  });
+}
+
+export function usePatients() {
+  const [loading, setLoading] = useState(true);
+  const [patients, setPatients] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getPatients()
+        .then(patients => {
+          setPatients(patients);
+          setLoading(false);
+        })
+        .catch(e => {
+          console.log(e);
+          setError(e);
+          setLoading(false);
+        });
+  }, []);
+
+  return {
+    loading,
+    patients,
+    error
+  };
+}
