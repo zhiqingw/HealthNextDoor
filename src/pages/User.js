@@ -58,17 +58,24 @@ function User(user) {
                 <Button id={"btn-resetpassword"} onClick={toReset}>
                     Reset Password
                 </Button>
-
-                <Button id={"btn-toList"} onClick={() => toList(user)}>
-                List
-                </Button>
-                <Button id={"patient_list"} onClick={toPatient}>
-                    Patient List
-                </Button>
                 <Button id={"posting_record"} onClick={toPostRecord}>
                     Posting Record
                 </Button>
             </div>
+            <div className={"list"}>
+            <div>
+                {user.orderList.map(name => (
+                    <p>
+                        <button>
+                            {name}
+                        </button>
+                    </p>
+                ))}
+            </div>
+
+
+            </div>
+
 
             </div>
 
