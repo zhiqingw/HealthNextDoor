@@ -74,6 +74,9 @@ function User(user) {
                 <Button id={"btn-toList"} onClick={toList}>
                 List
                 </Button>
+                <Button id={"patient_list"} onClick={toPatient}>
+                    Patient List
+                </Button>
             </div>
 
             </div>
@@ -123,5 +126,10 @@ function toReset() {
 
 function toList(){
     window.location.assign("http://localhost:3000/toList")
+
+}
+
+function toPatient(){
+    window.location.assign("http://localhost:3000/toPatient")
 
 }
