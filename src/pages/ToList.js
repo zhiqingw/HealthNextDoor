@@ -26,6 +26,9 @@ export default function ToList() {
                             <button>
                                 {name}
                             </button>
+                            <button>
+                                accept
+                            </button>
                         </p>
                     ))}
                 </div>
