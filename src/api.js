@@ -335,3 +335,96 @@ export function acceptReq(user) {
     window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
   });
 }
+
+export function addPatient(patient) {
+  const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;
+  if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !contact_information) {
+    alert("must include all fields");
+    return;
+  }
+
+  const endpoint = BASE_URL + `/findPatient/`;
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      first_name,
+      last_name,
+      gender,
+      introduction,
+      username,
+      age,
+      address,
+      contact_information,
+    })
+  }).then(res =>{
+    if(res.ok){
+      window.location.href = `user-management/${username}`;
+    }
+    else{
+      alert("You already have a post, please update or delete the existed post in user home page!");
+    }
+  });
+}
+
+export function updatePatient(patient) {
+  const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;
+  if (!username) {
+    alert("must include a username");
+    return;
+  }
+  if (!first_name || !last_name) {
+    alert("must include a first name or last name to update");
+    return;
+  }
+  if (!gender){
+    alert("must include gender");
+    return;
+  }
+  if (!introduction){
+    alert("must include an introduction");
+    return;
+  }
+  if (!age){
+    alert("must include an age");
+    return;
+  }
+  if (!address){
+    alert("must include an address");
+    return;
+  }
+  if (!contact_information){
+    alert("must include a contact information");
+    return;
+  }
+  const endpoint = BASE_URL + `/findPatient/${username}`;
+  console.log(contact_information.value);
+  // return fetch query to update an author
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      first_name,
+      last_name,
+      gender,
+      introduction,
+      username,
+      age,
+      address,
+      contact_information
+    })
+  });
+}
+
+export function deletePatient(username) {
+  const endpoint = BASE_URL + `/findPatient/${username}`;
+  return fetch(endpoint, {
+    method: "DELETE",
+  }).then(res =>{
+    window.location.href = `user-management/${username}`;
+  });
+}

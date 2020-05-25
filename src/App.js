@@ -6,6 +6,7 @@ import Caregivers from "./pages/Caregivers";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import NewCaregiver from "./pages/newCaregiver"
+import NewPatient from "./pages/newPatient";
 import "./views/styles.css";
 import "./views/userStyle.css";
 import "./views/caregiverStyle.css"
@@ -36,6 +37,9 @@ export default function App() {
             </Route>
             <Route path="/AddCaregiver">
               <NewCaregiver />
+            </Route>
+            <Route path="/AddPatient">
+              <NewPatient />
             </Route>
             <Route path="/CaregiverInformation">
               <CaregiverInformation />

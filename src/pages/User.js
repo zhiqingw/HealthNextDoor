@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {updateUser, useCaregivers, useUser} from "../api";
+import {updatePatient, deletePatient, updateUser, useCaregivers, usePatients, useUser} from "../api";
 import Button from "../components/Button";
 import {Caregiver} from "./Caregivers";
 import Loading from "../components/Loading";
@@ -7,6 +7,7 @@ import ToList from "../pages/ToList"
 /*user home page*/
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
+    const { loading_p, patients, error_p} = usePatients();
     const { loadings, user, errors } = useUser();
     if (loading) {
         return Loading();
@@ -42,6 +43,14 @@ export default function Users() {
                     }
                     else{
                         return
+                    }
+                })}
+                {patients.map(patient =>{
+                    if(patient.username===name){
+                        return <Patient key={patient.username} {...patient} />
+                    }
+                    else{
+
                     }
                 })}
             </div>
@@ -159,4 +168,106 @@ function toList(user){
 function toPatient(){
     window.location.assign("http://localhost:3000/toPatient")
 
+}
+
+//==========================================================================================================================
+export function Patient(patient) {
+    const { first_name, last_name, gender, introduction, username, age, address, contact_information} = patient;
+    const [showUpdate, setShowUpdate] = useState(false);
+
+    return (
+        <div className={`caregiver caregiver-${username}`} key={username}>
+            <div className="info">
+                <div id="txt">Username: {username}</div>
+                <div id="txt">First_name: {first_name}</div>
+                <div id="txt">Last_name: {last_name}</div>
+                <div id="txt">Gender: {gender}</div>
+
+                <div id="txt">Age: {age}</div>
+
+
+
+                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
+                    {showUpdate ? "-" : "+"}
+                </Button>
+            </div>
+            <div id={"list_front"}>
+                <PatientExtended {...patient} showUpdate={showUpdate} />
+            </div>
+        </div>
+    );
+}
+
+function PatientExtended(props) {
+    const { first_name, last_name, gender, introduction, username, age, address,showUpdate,
+        contact_information} = props;
+    const [first_input, setFirstName] = useState(first_name);
+    const [last_input, setLastName] = useState(last_name);
+    const [gender_input, setGender] = useState(gender);
+    const [introduction_input,setIntroduction] = useState(introduction);
+    const [age_input,setAge] = useState(age);
+    const [address_input,setAddress] = useState(address);
+    const [contact_input,setContact_information] = useState(contact_information);
+    function onSubmit() {
+        // call upate caregiver function
+        console.log(contact_input);
+        updatePatient({
+            first_name: first_input,
+            last_name: last_input,
+            gender: gender_input,
+            introduction: introduction_input,
+            username: username,
+            age: age_input,
+            address: address_input,
+            contact_information: contact_input,
+        });
+        window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+    }
+
+    return (
+
+        <div className={`caregiver-expand ${showUpdate ? "show" : ""}`}>
+            <form className={"caregiver-expand-left"}>
+                {/* TODO - add value and onChange properties to inputs */}
+                <p>
+                    <label className="update_input">first name</label>
+                    <input type="text" name="first_name" value = {first_input} onChange={event => {setFirstName(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">last name</label>
+                    <input type="text" name="last_name" value = {last_input} onChange={event => {setLastName(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">gender</label>
+                    <input type="text" name="gender" value = {gender_input} onChange={event => {setGender(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">introduction</label>
+                    <input type="text" name="introduction" value = {introduction_input} onChange={event => {setIntroduction(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">age</label>
+                    <input type="text" name="age" value = {age_input} onChange={event => {setAge(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">address</label>
+                    <input type="text" name="introduction" value = {address_input} onChange={event => {setAddress(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">contact information</label>
+                    <input type="text" name="contact_information" value = {contact_input} onChange={event => {setContact_information(event.target.value);}}/>
+                </p>
+
+                <Button className={"btn-danger"} onClick={onSubmit}>
+                    Update
+                </Button>
+
+                <Button className={"btn-danger"} onClick={() => deletePatient(username)}>
+                    Delete
+                </Button>
+            </form><form className={"caregiver-expand-right"}></form>
+
+
+        </div>
+    );
 }
