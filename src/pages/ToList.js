@@ -1,49 +1,68 @@
 import React from "react";
 import {UserExtendedList} from "./User";
-import {acceptReq, updateUser} from "../api";
+import {acceptReq, updateUser, useCaregivers, useUser} from "../api";
+import Loading from "../components/Loading";
+import {Caregiver} from "./Caregivers";
 
 export default function ToList() {
     var data = sessionStorage.getItem("listing")
     var dict_data = JSON.parse(data)
     console.log(data);
+    const { loading, user, error} = useUser();
+    console.log(user);
+    if (loading) {
+        return Loading();
+    }
+    if (error) {
+        return <p>Something went wrong: {error.message}</p>;
+    }
+    let username;
+    username = window.location.pathname;
+    let index;
+    index = username.lastIndexOf('/');
+    let name;
+    name = username.slice(index+1);
     if(dict_data.identity === "Caregiver") {
         return (
             <div>
                 <h1>List</h1>
-                <div className={"orderlist"}>
-                    Order List
-                    {dict_data.orderList.map(name => (
-                        <p>
-                            <button>
-                                {name}
-                            </button>
-                        </p>
+                <div>
+                    orderList
+                    {user.filter(person => person.username === name).map(filteredPerson => (
+                        filteredPerson.orderList.map(name => (
+                                <p>
+                                    <button>
+                                        {name}
+                                    </button>
+                                </p>
+                            ))
                     ))}
                 </div>
-                <div className={"rec_req_list"}>
-                    Receive List
-                    {dict_data.receiveReq.map(name => (
-                        <p>
-                            <button>
-                                {name}
-                            </button>
-                            <button onClick={() => accept(name)}>
-                                accept
-                            </button>
-                            <button>
-                                reject
-                            </button>
-                        </p>
+                <div>
+                    Receive request
+                    {user.filter(person => person.username === name).map(filteredPerson => (
+                        filteredPerson.receiveReq.map(name => (
+                            <p>
+                                <button>
+                                    {name}
+                                </button>
+                                <button onClick={() => accept(name)}>
+                                    accept
+                                </button>
+                            </p>
+                        ))
                     ))}
                 </div>
-                <div className={"history_list"}>
-                    History List
-                    {dict_data.orderHistory.map(name => (
-                        <p>
-                            <button>
-                                {name}
-                            </button>
-                        </p>
+                <div>
+                    History
+                    {user.filter(person => person.username === name).map(filteredPerson => (
+                        filteredPerson.orderHistory.map(name => (
+                            <p>
+                                <button>
+                                    {name}
+                                </button>
+                            </p>
+                        ))
                     ))}
                 </div>
             </div>
@@ -52,34 +71,40 @@ export default function ToList() {
         return (
             <div>
                 <h1>List</h1>
-                <div className={"orderlist"}>
-                Order List
-                {dict_data.orderList.map(name => (
-                    <p>
-                        <button>
-                            {name}
-                        </button>
-                    </p>
-                ))}
-            </div>
-                <div className={"send_req_list"}>
-                    Send List
-                    {dict_data.sentReq.map(name => (
-                        <p>
-                            <button>
-                                {name}
-                            </button>
-                        </p>
+                <div>
+                    orderList
+                    {user.filter(person => person.username === name).map(filteredPerson => (
+                        filteredPerson.orderList.map(name => (
+                            <p>
+                                <button>
+                                    {name}
+                                </button>
+                            </p>
+                        ))
                     ))}
                 </div>
-                <div className={"history_list"}>
-                    History List
-                    {dict_data.orderHistory.map(name => (
-                        <p>
-                            <button>
-                                {name}
-                            </button>
-                        </p>
+                <div>
+                    sent request
+                    {user.filter(person => person.username === name).map(filteredPerson => (
+                        filteredPerson.sentReq.map(name => (
+                            <p>
+                                <button>
+                                    {name}
+                                </button>
+                            </p>
+                        ))
+                    ))}
+                </div>
+                <div>
+                    History
+                    {user.filter(person => person.username === name).map(filteredPerson => (
+                        filteredPerson.orderHistory.map(name => (
+                            <p>
+                                <button>
+                                    {name}
+                                </button>
+                            </p>
+                        ))
                     ))}
                 </div>
             </div>

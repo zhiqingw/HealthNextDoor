@@ -331,5 +331,7 @@ export function acceptReq(user) {
     body: JSON.stringify({
       action
     })
+  }).then(res =>{
+    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
   });
 }
