@@ -65,49 +65,23 @@ export function Logout(){
 function User(user) {
     const {username, password} = user;
     const [showUpdate, setShowUpdate] = useState(false);
-    if(user.identity === "Caregiver") {
-        return (
-            <div className={`user user-${username}`} key={username}>
-                <div id={"reset"}>
-                    <Button id={"btn-resetpassword"} onClick={toReset}>
-                        Reset Password
-                    </Button>
 
-                    <Button id={"btn-toList"} onClick={() => toList(user)}>
-                        List
-                    </Button>
-                    <Button id={"patient_list"} onClick={toPatient}>
-                        Patient List
-                    </Button>
-                </div>
+    return (
+        <div className={`user user-${username}`} key={username}>
+            <div id={"reset"}>
+                <Button id={"btn-resetpassword"} onClick={toReset}>
+                    Reset Password
+                </Button>
+
+                <Button id={"btn-toList"} onClick={() => toList(user)}>
+                List
+                </Button>
+            </div>
 
             </div>
 
 
-        );
-    }else{
-        return (
-            <div className={`user user-${username}`} key={username}>
-                <div id={"reset"}>
-                    <Button id={"btn-resetpassword"} onClick={toReset}>
-                        Reset Password
-                    </Button>
-
-                    <Button id={"btn-toList"} onClick={() => toList(user)}>
-                        List
-                    </Button>
-                    <Button id={"patient_list"} onClick={toPatient}>
-                        Caregiver List
-                    </Button>
-                </div>
-
-            </div>
-
-
-        );
-
-
-    }
+    );
 }
 
 export function UserExtended() {
