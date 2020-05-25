@@ -17,6 +17,7 @@ import SearchCaregivers from "./pages/searchCaregivers";
 import ResetPassword from "./pages/resetPassword"
 import ToList from "./pages/ToList";
 import ToPatient from "./pages/ToPatient";
+import CaregiverInformation from "./pages/CaregiverInformation";
 
 export default function App() {
   return (
@@ -35,6 +36,9 @@ export default function App() {
             </Route>
             <Route path="/AddCaregiver">
               <NewCaregiver />
+            </Route>
+            <Route path="/CaregiverInformation">
+              <CaregiverInformation />
             </Route>
             <Route path='/user-management'>
               <User />
