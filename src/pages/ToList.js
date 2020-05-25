@@ -9,7 +9,7 @@ export default function ToList() {
         <div>
             <h1>List</h1>
             <div className={"orderlist"}>
-
+            Order List
             {dict_data.orderList.map(name => (
                 <p>
                 <button>
