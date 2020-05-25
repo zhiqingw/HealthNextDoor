@@ -1,5 +1,6 @@
 import React from "react";
 import {UserExtendedList} from "./User";
+import {acceptReq, updateUser} from "../api";
 
 export default function ToList() {
     var data = sessionStorage.getItem("listing")
@@ -26,8 +27,11 @@ export default function ToList() {
                             <button>
                                 {name}
                             </button>
-                            <button>
+                            <button onClick={() => accept(name)}>
                                 accept
+                            </button>
+                            <button>
+                                reject
                             </button>
                         </p>
                     ))}
@@ -81,5 +85,20 @@ export default function ToList() {
             </div>
         );
     }
+}
+
+function accept(name){
+    let username;
+    username = window.location.pathname;
+    let index;
+    index = username.lastIndexOf('/');
+    username = username.slice(index+1);
+    acceptReq({
+        username: username,
+        name: name,
+        state: "accept",
+    });
+
+
 }
 

@@ -313,3 +313,21 @@ export function usePatients() {
     error
   };
 }
+
+export function acceptReq(user) {
+  const { username, name, state} = user;
+  const endpoint = BASE_URL + `/login/${username}`;
+// return fetch query
+  console.log(name);
+  console.log(state);
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      state,
+      name
+    })
+  });
+}
