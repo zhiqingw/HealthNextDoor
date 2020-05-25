@@ -27,6 +27,7 @@ export default function Users() {
     let name;
     name = username.slice(index+1);
     let match;
+
     return (
         <div>
             <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
@@ -64,26 +65,49 @@ export function Logout(){
 function User(user) {
     const {username, password} = user;
     const [showUpdate, setShowUpdate] = useState(false);
+    if(user.identity === "Caregiver") {
+        return (
+            <div className={`user user-${username}`} key={username}>
+                <div id={"reset"}>
+                    <Button id={"btn-resetpassword"} onClick={toReset}>
+                        Reset Password
+                    </Button>
 
-    return (
-        <div className={`user user-${username}`} key={username}>
-            <div id={"reset"}>
-                <Button id={"btn-resetpassword"} onClick={toReset}>
-                    Reset Password
-                </Button>
+                    <Button id={"btn-toList"} onClick={() => toList(user)}>
+                        List
+                    </Button>
+                    <Button id={"patient_list"} onClick={toPatient}>
+                        Patient List
+                    </Button>
+                </div>
 
-                <Button id={"btn-toList"} onClick={() => toList(user)}>
-                List
-                </Button>
-                <Button id={"patient_list"} onClick={toPatient}>
-                    Patient List
-                </Button>
             </div>
 
+
+        );
+    }else{
+        return (
+            <div className={`user user-${username}`} key={username}>
+                <div id={"reset"}>
+                    <Button id={"btn-resetpassword"} onClick={toReset}>
+                        Reset Password
+                    </Button>
+
+                    <Button id={"btn-toList"} onClick={() => toList(user)}>
+                        List
+                    </Button>
+                    <Button id={"patient_list"} onClick={toPatient}>
+                        Caregiver List
+                    </Button>
+                </div>
+
             </div>
 
 
-    );
+        );
+
+
+    }
 }
 
 export function UserExtended() {
