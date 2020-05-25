@@ -320,14 +320,16 @@ export function acceptReq(user) {
 // return fetch query
   console.log(name);
   console.log(state);
+  var action = [state, name];
+  console.log(action);
+  console.log(JSON.stringify([state, name]));
   return fetch(endpoint, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      state,
-      name
+      action
     })
   });
 }

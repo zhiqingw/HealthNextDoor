@@ -98,7 +98,7 @@ function accept(name){
         name: name,
         state: "accept",
     });
-
+    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
 }
 
