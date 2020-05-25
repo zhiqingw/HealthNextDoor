@@ -304,8 +304,33 @@ body{
     margin-top: -50px;
 }
 
-.caregiver_infor_style{
+.image_block{
+    position: relative;
+    width: 33.3%;
+    margin-top: 150px;
+    float:left;
+    padding: 10px 10px;
     color: #c6e3e6;
+
+    border-radius: 10px;
+}
+.caregiver_infor_style{
+    position: relative;
+    width:33.3%;
+    margin-top: 100px;
+    float: left;
+    padding: 10px 10px;
+    color: #c6e3e6;
+    border: 5px solid #d2cfcf;
+    border-radius: 10px;
+}
+
+.image_area{
+    border: 2px solid #d2cfcf;
+    position: relative;
+    margin-left: 35%;
+    width: 30%;
+    height: 150px;
 }
 
 
