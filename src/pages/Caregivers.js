@@ -44,10 +44,13 @@ export default function Caregivers() {
 
 function getCaregiverInformation(caregiver){
     console.log(caregiver);
-    var string_type = JSON.stringify(caregiver)
+    console.log(caregiver.username);
+    var string_type = JSON.stringify(caregiver);
+    //var string_type_username = JSON.stringify(caregiver.username);
     console.log(string_type);
     sessionStorage.setItem("personalInformation",string_type);
-    window.location.href = "CaregiverInformation";
+    //sessionStorage.setItem("caregiverUsername", string_type_username);
+    window.location.assign(`http://localhost:3000/CaregiverInformation/${caregiver.username}`);
 }
 
 export function Caregiver(caregiver) {

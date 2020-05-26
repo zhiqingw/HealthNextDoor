@@ -31,7 +31,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderList.map(name => (
                                 <p>
-                                    <button>
+                                    <button onClick={() => toUserPage(name)}>
                                         {name}
                                     </button>
                                 </p>
@@ -43,7 +43,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.receiveReq.map(name => (
                             <p>
-                                <button>
+                                <button onClick={() => toUserPage(name)}>
                                     {name}
                                 </button>
                                 <button onClick={() => accept(name)}>
@@ -58,7 +58,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderHistory.map(name => (
                             <p>
-                                <button>
+                                <button onClick={() => toUserPage(name)}>
                                     {name}
                                 </button>
                             </p>
@@ -76,7 +76,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderList.map(name => (
                             <p>
-                                <button>
+                                <button onClick={() => toUserPage(name)}>
                                     {name}
                                 </button>
                             </p>
@@ -88,7 +88,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.sentReq.map(name => (
                             <p>
-                                <button>
+                                <button onClick={() => toUserPage(name)}>
                                     {name}
                                 </button>
                             </p>
@@ -100,7 +100,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderHistory.map(name => (
                             <p>
-                                <button>
+                                <button onClick={() => toUserPage(name)}>
                                     {name}
                                 </button>
                             </p>
@@ -131,4 +131,10 @@ function accept(name){
     //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
 }
+
+function toUserPage(name){
+    window.location.assign  (`http://localhost:3000/CaregiverInformation/${name}`);
+}
+
+
 
