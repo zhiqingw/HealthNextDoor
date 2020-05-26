@@ -1,6 +1,6 @@
 import React from "react";
 import {UserExtendedList} from "./User";
-import {acceptReq, updateUser, useCaregivers, useUser} from "../api";
+import {acceptReq, acceptReqPatient, updateUser, useCaregivers, useUser} from "../api";
 import Loading from "../components/Loading";
 import {Caregiver} from "./Caregivers";
 
@@ -121,6 +121,11 @@ function accept(name){
     acceptReq({
         username: username,
         name: name,
+        state: "accept",
+    });
+    acceptReqPatient({
+        username: name,
+        name: username,
         state: "accept",
     });
     //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
