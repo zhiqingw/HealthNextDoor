@@ -9,10 +9,10 @@ export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
     const { loading_p, patients, error_p} = usePatients();
     const { loadings, user, errors } = useUser();
-    if (loading) {
+    if (loading || loading_p) {
         return Loading();
     }
-    if (error) {
+    if (error || error_p) {
         return <p>Something went wrong: {error.message}</p>;
     }
     if (loadings) {
@@ -28,40 +28,55 @@ export default function Users() {
     let name;
     name = username.slice(index+1);
     let match;
+    if(user.identity === "caregiver"){
+        return (
+            <div>
+                <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
+                <div id={"htwo"}>
+                    <h2>Posting Record</h2>
+                </div>
 
-    return (
-        <div>
-            <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
-            <div id={"htwo"}>
-                <h2>Posting Record</h2>
-            </div>
+                <div id={"tryy"}>
+                    {caregivers.map(caregiver =>{
+                        if(caregiver.username===name){
+                            return <Caregiver key={caregiver.username} {...caregiver} />
+                        }
+                    })}
 
-            <div id={"tryy"}>
-                {caregivers.map(caregiver =>{
-                    if(caregiver.username===name){
-                        return <Caregiver key={caregiver.username} {...caregiver} />
-                    }
-                    else{
-                        return
+                </div>
+                {user.map(used =>{
+                    if(used.username===name){
+                        match = used;
                     }
                 })}
-                {patients.map(patient =>{
-                    if(patient.username===name){
-                        return <Patient key={patient.username} {...patient} />
-                    }
-                    else{
+                <User id={"user_h2"} {...match} />
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
+                <div id={"htwo"}>
+                    <h2>Posting Record</h2>
+                </div>
 
+                <div id={"tryy"}>
+                    {patients.map(patient =>{
+                        if(patient.username===name){
+                            return <Patient key={patient.username} {...patient} />
+                        }
+                    })}
+
+                </div>
+                {user.map(used =>{
+                    if(used.username===name){
+                        match = used;
                     }
                 })}
+                <User id={"user_h2"} {...match} />
             </div>
-            {user.map(used =>{
-                if(used.username===name){
-                    match = used;
-                }
-            })}
-            <User id={"user_h2"} {...match} />
-        </div>
-    );
+        );
+    }
 }
 
 /*log out and redirect to home page*/

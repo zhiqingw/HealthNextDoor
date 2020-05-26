@@ -20,9 +20,6 @@ export default function Caregivers() {
                 <h1>Caregivers List</h1>
                 <div id={"filter_place"}><Filter/></div>
                 <div id={"join_button"}>
-                    <Button className={"btn-addCaregiver"} id={"join_us"} onClick={toAdd}>
-                        Let's Join Us Today!
-                    </Button>
                 </div>
                 <div id="careGiverList">
                     {caregivers.map(caregiver => (
@@ -247,13 +244,4 @@ function CaregiverExtended(props) {
 
         </div>
     );
-}
-
-function toAdd() {
-    if(window.sessionStorage.getItem("username")){
-        window.location.href = "AddCaregiver";
-    }else{
-        alert("please log in first!");
-    }
-
 }
