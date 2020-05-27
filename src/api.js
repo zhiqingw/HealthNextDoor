@@ -39,7 +39,7 @@ export function loginCheck(username, password) {
 }
 
 /*sign up check used to validate the input and let the user sign up*/
-export function signupCheck(username, password, confirmed_password) {
+export function signupCheck(username, password, confirmed_password, identity) {
 
   if (username === "") {
     alert("please input a username!");
@@ -53,7 +53,6 @@ export function signupCheck(username, password, confirmed_password) {
   if (password !== confirmed_password) {
     alert("password and confirmed password does not match");
   }
-
   const endpoint = BASE_URL + `/signup`;
   return fetch(endpoint, {
     method: "POST",
@@ -62,13 +61,20 @@ export function signupCheck(username, password, confirmed_password) {
     },
     body: JSON.stringify({
       username,
-      password
+      password,
+      identity
     })
   }).then(res =>{
     if(res.ok){
-      //redirect to user page after user create an account
-      window.sessionStorage.setItem("username",username);
-      window.location.href = `user-management/${username}`;
+      window.sessionStorage.setItem("username", username);
+      if (identity==="caregiver") {
+        //redirect to user page after user create an account
+        window.sessionStorage.setItem("username", username);
+        //window.location.href = `user-management/${username}`;
+        window.location.href = `AddCaregiver`;
+      } else {
+        window.location.href ="AddPatient";
+      }
     }
     else{
       alert("This username has already been taken!");
