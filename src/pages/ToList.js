@@ -1,6 +1,6 @@
 import React from "react";
 import {UserExtendedList} from "./User";
-import {acceptReq, acceptReqPatient, updateUser, useCaregivers, useUser} from "../api";
+import {acceptReq, acceptReqPatient, declineReq, declineReqPatient, updateUser, useCaregivers, useUser} from "../api";
 import Loading from "../components/Loading";
 import {Caregiver} from "./Caregivers";
 
@@ -48,6 +48,9 @@ export default function ToList() {
                                 </button>
                                 <button onClick={() => accept(name)}>
                                     accept
+                                </button>
+                                <button onClick={() => decline(name)}>
+                                    decline
                                 </button>
                             </p>
                         ))
@@ -127,6 +130,26 @@ function accept(name){
         username: name,
         name: username,
         state: "accept",
+    });
+    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+
+}
+
+function decline(name){
+    let username;
+    username = window.location.pathname;
+    let index;
+    index = username.lastIndexOf('/');
+    username = username.slice(index+1);
+    declineReq({
+        username: username,
+        name: name,
+        state: "decline",
+    });
+    declineReqPatient({
+        username: name,
+        name: username,
+        state: "decline",
     });
     //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
