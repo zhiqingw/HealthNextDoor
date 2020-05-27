@@ -41,6 +41,7 @@ function onSubmit() {
   var caregiver = document.getElementById("caregiver");
   var patient = document.getElementById("patient");
   if(caregiver.checked){
+    //console.log(caregiver.value);
     signupCheck(username.value, password.value, confirmed_password.value, caregiver.value);
     //window.location.href = "AddCaregiver"
   } else{

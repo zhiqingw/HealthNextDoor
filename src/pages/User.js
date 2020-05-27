@@ -27,8 +27,13 @@ export default function Users() {
     index = username.lastIndexOf('/');
     let name;
     name = username.slice(index+1);
+    console.log(name);
     let match;
+    var identity = user.identity;
+    console.log(identity);
+    console.log(user);
     if(user.identity === "caregiver"){
+
         return (
             <div>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
@@ -39,7 +44,7 @@ export default function Users() {
                 <div id={"tryy"}>
                     {caregivers.map(caregiver =>{
                         if(caregiver.username===name){
-                            return <Caregiver key={caregiver.username} {...caregiver} />
+                           return <Caregiver key={caregiver.username} {...caregiver} />
                         }
                     })}
 

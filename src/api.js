@@ -69,7 +69,7 @@ export function signupCheck(username, password, confirmed_password, identity) {
       window.sessionStorage.setItem("username", username);
       if (identity==="caregiver") {
         //redirect to user page after user create an account
-        window.sessionStorage.setItem("username", username);
+        //window.sessionStorage.setItem("username", username);
         //window.location.href = `user-management/${username}`;
         window.location.href = `AddCaregiver`;
       } else {
