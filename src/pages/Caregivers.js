@@ -42,7 +42,7 @@ export default function Caregivers() {
     );
 }
 
-function getCaregiverInformation(caregiver){
+export function getCaregiverInformation(caregiver){
     console.log(caregiver);
     console.log(caregiver.username);
     var string_type = JSON.stringify(caregiver);

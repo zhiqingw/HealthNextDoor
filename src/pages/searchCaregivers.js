@@ -1,7 +1,7 @@
 import React from "react";
 import {getCaregivers} from "../api";
 import Button from "../components/Button";
-import {SubmitFilter} from "./Caregivers";
+import {getCaregiverInformation, SubmitFilter} from "./Caregivers";
 
 export default function SearchCaregivers() {
     var data = sessionStorage.getItem("targetData")
@@ -13,11 +13,15 @@ export default function SearchCaregivers() {
 
                 {dict_data.map(caregiver => (
                     <div className="list">
-                        <button id="listbutton">
-                            firstname : {caregiver.first_name}<br/><br/>
-                            lastname : {caregiver.last_name}<br/><br/>
-                            gender : {caregiver.gender}<br/><br/>
-                            introduction : {caregiver.introduction}<br/><br/>
+                        <button id="listbutton" onClick={()=>getCaregiverInformation(caregiver)}>
+                            Firstname : {caregiver.first_name}<br/><br/>
+                            Lastname : {caregiver.last_name}<br/><br/>
+                            Gender : {caregiver.gender}<br/><br/>
+                            Age : {caregiver.age}<br/><br/>
+                            Address : {caregiver.address}<br/><br/>
+                            Salary : {caregiver.salary}<br/><br/>
+                            Working Experience : {caregiver.working_experience}<br/><br/>
+                            Contact Me : {caregiver.contact_information}<br/><br/>
                             username: {caregiver.username}<br/><br/>
                         </button>
                     </div>
