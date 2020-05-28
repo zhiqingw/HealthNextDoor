@@ -31,6 +31,7 @@ export default function ToList() {
         return (
             <div>
                 <h1>List</h1>
+                <div id={"together_block"}>
                 <div id={"order_list"}>
                     <div id={"order_list_title"}>
                         orderList
@@ -49,7 +50,9 @@ export default function ToList() {
                 </div>
 
                 <div id={"receive_req"}>
-                    <h7>Receive request</h7>
+                    <div id={"order_list_title"}>
+                        Receive request
+                    </div>
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.receiveReq.map(name => (
                             <p>
@@ -66,8 +69,11 @@ export default function ToList() {
                         ))
                     ))}
                 </div>
-                <div>
-                    History
+
+                <div id={"history_list"}>
+                    <div id={"order_list_title"}>
+                        History
+                    </div>
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderHistory.map(name => (
                             <p>
@@ -77,6 +83,7 @@ export default function ToList() {
                             </p>
                         ))
                     ))}
+                </div>
                 </div>
             </div>
         );
