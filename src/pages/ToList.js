@@ -22,7 +22,7 @@ export default function ToList() {
     index = username.lastIndexOf('/');
     let name;
     name = username.slice(index+1);
-    if(dict_data.identity === "Caregiver") {
+    if(dict_data.identity === "caregiver") {
         return (
             <div>
                 <h1>List</h1>
