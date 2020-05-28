@@ -11,6 +11,7 @@ export default function CaregiverInformation(){
     console.log(data);
     var dict_data = JSON.parse(data);
 
+
     const { loading, user, error} = useUser();
     console.log(user);
     if (loading) {
@@ -45,6 +46,7 @@ export default function CaregiverInformation(){
     console.log("!!!!!!!!!!!");
 
     if(userIdentity === "patient") {
+
         return (
             <div>
                 <h1>Caregivers List</h1>
