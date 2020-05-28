@@ -30,7 +30,7 @@ export default function CaregiverInformation(){
                         Contact Me : {dict_data.contact_information}<br/><br/>
                     </form>
                 </form>
-            <button onClick={}> Apply for help </button>
+
 
             </div>
         </div>
@@ -38,6 +38,3 @@ export default function CaregiverInformation(){
 
 }
 
-function sendReq(){
-
-}
