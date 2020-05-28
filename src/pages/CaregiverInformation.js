@@ -117,12 +117,12 @@ function sentReq(name){
     sendRequest({
         username: username,
         name: name,
-        state: "decline",
+        state: "send",
     });
     sentRequestPatient({
         username: name,
         name: username,
-        state: "decline",
+        state: "send",
     });
 
 

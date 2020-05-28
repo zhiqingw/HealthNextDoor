@@ -1,6 +1,8 @@
 #order_list{
     position: relative;
+    float: left;
     color: #e64a19;
+    width: 33%;
 }
 
 #order_list_title{
@@ -8,5 +10,20 @@
 }
 
 #receive_req{
+    position: relative;
+    float: left;
     color: #e64a19;
+    width: 33%;
 }
+
+#history_list{
+    position: relative;
+    float: left;
+    width: 33%;
+}
+
+#together_block{
+    position: relative;
+    margin-top: 10%;
+}
+
