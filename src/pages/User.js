@@ -29,11 +29,12 @@ export default function Users() {
     name = username.slice(index+1);
     console.log(name);
     let match;
-    var identity = user.identity;
-    console.log(identity);
-    console.log(user);
-    if(user.identity === "caregiver"){
-
+    var userIdentity = undefined;
+    user.map(singleuser => {
+        if (singleuser.username === name){
+            userIdentity = singleuser.identity;
+    }});
+    if (userIdentity === "caregiver"){
         return (
             <div>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
