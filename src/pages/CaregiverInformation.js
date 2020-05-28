@@ -1,15 +1,50 @@
 import React, { useState } from "react";
-import {useCaregivers, updateCaregiver, deleteCaregiver, sendRequest, sentRequestPatient} from "../api";
+import {useCaregivers, updateCaregiver, deleteCaregiver, sendRequest, sentRequestPatient, useUser} from "../api";
 
 import Button from "../components/Button";
 import Filter from "../components/Filter";
 import HomePage from "../components/HomePage";
+import Loading from "../components/Loading";
 
 export default function CaregiverInformation(){
     var data = sessionStorage.getItem("personalInformation");
     console.log(data);
     var dict_data = JSON.parse(data);
-    if(dict_data.identity === "patient") {
+
+    const { loading, user, error} = useUser();
+    console.log(user);
+    if (loading) {
+        return Loading();
+    }
+    if (error) {
+        return <p>Something went wrong: {error.message}</p>;
+    }
+    /*var identity = "caregiver";
+    if(window.sessionStorage.getItem("username")){
+        var now = user.filter(function (userr) {
+            if(userr.username === window.sessionStorage.getItem("username")){
+                return userr.identity;
+            }
+        });
+        var userIdentity = undefined;
+        user.map(singleuser => {
+            if (singleuser.username === name){
+                userIdentity = singleuser.identity;
+            }});
+
+        //var noww = JSON.parse(now);
+        //identity = now;
+    }*/
+    var userIdentity = undefined;
+    user.map(singleuser => {
+        if (singleuser.username === window.sessionStorage.getItem("username")){
+            userIdentity = singleuser.identity;
+        }});
+
+    console.log(userIdentity);
+    console.log("!!!!!!!!!!!");
+
+    if(userIdentity === "patient") {
         return (
             <div>
                 <h1>Caregivers List</h1>
