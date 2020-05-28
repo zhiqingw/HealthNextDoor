@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useCaregivers, updateCaregiver, deleteCaregiver, sendRequest, sentRequestPatient} from "../api";
+import {useCaregivers, updateCaregiver, deleteCaregiver, sendRequest, sentRequestPatient,useUser} from "../api";
 
 import Button from "../components/Button";
 import Filter from "../components/Filter";
@@ -9,6 +9,7 @@ export default function CaregiverInformation(){
     var data = sessionStorage.getItem("personalInformation");
     console.log(data);
     var dict_data = JSON.parse(data);
+
     if(dict_data.identity === "patient") {
         return (
             <div>
