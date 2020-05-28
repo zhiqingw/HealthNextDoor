@@ -32,43 +32,6 @@ export default function ToList() {
             <div>
                 <h1>List</h1>
                 <div id={"together_block"}>
-                <div id={"order_list"}>
-                    <div id={"order_list_title"}>
-                        orderList
-                    </div>
-                    <div>
-                        {user.filter(person => person.username === name).map(filteredPerson => (
-                            filteredPerson.orderList.map(name => (
-                                <p>
-                                    <button onClick={() => toPatientPage(name, patients)}>
-                                        {name}
-                                    </button>
-                                </p>
-                            ))
-                        ))}
-                    </div>
-                </div>
-
-                <div id={"receive_req"}>
-                    <div id={"order_list_title"}>
-                        Receive request
-                    </div>
-                    {user.filter(person => person.username === name).map(filteredPerson => (
-                        filteredPerson.receiveReq.map(name => (
-                            <p>
-                                <button onClick={() => toPatientPage(name)}>
-                                    {name}
-                                </button>
-                                <button onClick={() => accept(name)}>
-                                    accept
-                                </button>
-                                <button onClick={() => decline(name)}>
-                                    decline
-                                </button>
-                            </p>
-                        ))
-                    ))}
-                </div>
 
                 <div id={"history_list"}>
                     <div id={"order_list_title"}>
@@ -84,6 +47,45 @@ export default function ToList() {
                         ))
                     ))}
                 </div>
+
+                    <div id={"order_list"}>
+                        <div id={"order_list_title"}>
+                            Order List
+                        </div>
+                        <div>
+                            {user.filter(person => person.username === name).map(filteredPerson => (
+                                filteredPerson.orderList.map(name => (
+                                    <p>
+                                        <button onClick={() => toPatientPage(name, patients)}>
+                                            {name}
+                                        </button>
+                                    </p>
+                                ))
+                            ))}
+                        </div>
+                    </div>
+
+                    <div id={"receive_req"}>
+                        <div id={"order_list_title"}>
+                            Receive request
+                        </div>
+                        {user.filter(person => person.username === name).map(filteredPerson => (
+                            filteredPerson.receiveReq.map(name => (
+                                <p>
+                                    <button onClick={() => toPatientPage(name)}>
+                                        {name}
+                                    </button>
+                                    <button onClick={() => accept(name)}>
+                                        accept
+                                    </button>
+                                    <button onClick={() => decline(name)}>
+                                        decline
+                                    </button>
+                                </p>
+                            ))
+                        ))}
+                    </div>
+
                 </div>
             </div>
         );

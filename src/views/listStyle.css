@@ -1,29 +1,48 @@
+#history_list{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    width: 20%;
+    height: 300px;
+}
+
 #order_list{
     position: relative;
     float: left;
-    color: #e64a19;
-    width: 33%;
-}
+    margin-left: 5%;
+    width: 50%;
 
-#order_list_title{
+    height: 300px;
+    background: transparent;
 
+    border-radius: 10px;
+
+    padding: 20px 50px;
 }
 
 #receive_req{
     position: relative;
-    float: left;
-    color: #e64a19;
-    width: 33%;
+    float: right;
+    width: 20%;
+    margin-right: 5px;
 }
 
-#history_list{
-    position: relative;
-    float: left;
-    width: 33%;
+#order_list_title{
+    font-size: 30px;
+    font-family: fantasy;
+    color: #040506;
 }
+
 
 #together_block{
     position: relative;
     margin-top: 10%;
 }
 
+#history_list,
+#order_list,
+#receive_req{
+    border-radius: 10px;
+
+    background-color: rgba(255,255,255,0.5);
+}
