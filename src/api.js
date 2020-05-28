@@ -403,6 +403,47 @@ export function declineReqPatient(user) {
     })
   });
 }
+export function sendRequest(user) {
+  const { username, name, state} = user;
+  const endpoint = BASE_URL + `/login/${username}`;
+// return fetch query
+  console.log(name);
+  console.log(state);
+  var action = [state, name];
+  console.log(action);
+  console.log(JSON.stringify([state, name]));
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      action
+    })
+  });
+}
+
+export function sentRequestPatient(user) {
+  const { username, name, state} = user;
+  const endpoint = BASE_URL + `/login/${username}`;
+// return fetch query
+  console.log(name);
+  console.log(state);
+  var action = [state, name];
+  console.log(action);
+  console.log(JSON.stringify([state, name]));
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      action
+    })
+  }).then(res =>{
+    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+  });
+}
 
 export function addPatient(patient) {
   const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;

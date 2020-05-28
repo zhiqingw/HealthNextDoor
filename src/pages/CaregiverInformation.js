@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {useCaregivers, updateCaregiver, deleteCaregiver} from "../api";
+
+import {useCaregivers, updateCaregiver, deleteCaregiver, sendRequest, sentRequestPatient} from "../api";
 
 import Button from "../components/Button";
 import Filter from "../components/Filter";
@@ -29,6 +30,10 @@ export default function CaregiverInformation(){
                         Working Experience : {dict_data.working_experience}<br/><br/>
                         Contact Me : {dict_data.contact_information}<br/><br/>
                     </form>
+                    <button onClick={() => sentReq(dict_data.username)}>
+                        sent request
+                    </button>
+
                 </form>
 
 
@@ -38,3 +43,22 @@ export default function CaregiverInformation(){
 
 }
 
+function sentReq(name){
+    let username;
+    username = window.location.pathname;
+    let index;
+    index = username.lastIndexOf('/');
+    username = username.slice(index+1);
+    sendRequest({
+        username: username,
+        name: name,
+        state: "decline",
+    });
+    sentRequestPatient({
+        username: name,
+        name: username,
+        state: "decline",
+    });
+
+
+}
