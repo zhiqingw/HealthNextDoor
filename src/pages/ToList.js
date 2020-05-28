@@ -56,7 +56,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.receiveReq.map(name => (
                             <p>
-                                <button onClick={() => toPatientPage(name)}>
+                                <button onClick={() => toPatientPage(name,patients)}>
                                     {name}
                                 </button>
                                 <button onClick={() => accept(name)}>
@@ -77,7 +77,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderHistory.map(name => (
                             <p>
-                                <button onClick={() => toPatientPage(name)}>
+                                <button onClick={() => toPatientPage(name,patients)}>
                                     {name}
                                 </button>
                             </p>
@@ -108,7 +108,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.sentReq.map(name => (
                             <p>
-                                <button onClick={() => toCaregiverPage(name)}>
+                                <button onClick={() => toCaregiverPage(name,caregivers)}>
                                     {name}
                                 </button>
                             </p>
@@ -120,7 +120,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderHistory.map(name => (
                             <p>
-                                <button onClick={() => toCaregiverPage(name)}>
+                                <button onClick={() => toCaregiverPage(name,caregivers)}>
                                     {name}
                                 </button>
                             </p>
@@ -153,18 +153,24 @@ function accept(name){
 }
 
 function toCaregiverPage(name, caregivers) {
-
-    //var string_type_username = JSON.stringify(caregiver.username);
-    {
-        caregivers.map(caregiver => {
-            if (caregiver.username === name) {
-                var string_type = JSON.stringify(caregiver);
-                sessionStorage.setItem("personalInformation", string_type);
-                //sessionStorage.setItem("caregiverUsername", string_type_username);
-                window.location.assign(`http://localhost:3000/CaregiverInformation/${caregiver.username}`);
+    caregivers.map(caregiver => {
+        if (caregiver.username === name) {
+            var string_type = JSON.stringify(caregiver);
+            sessionStorage.setItem("personalInformation", string_type);
+            window.location.assign(`http://localhost:3000/CaregiverInformation/${caregiver.username}`);
             }
         })
-    }
+}
+
+function toPatientPage(name,patients){
+    patients.map(patient => {
+        if (patient.username === name) {
+            var string_type = JSON.stringify(patient);
+            sessionStorage.setItem("personalInformationForPatient", string_type);
+
+            window.location.assign(`http://localhost:3000/ToPatient/${patient.username}`);
+        }
+    })
 }
     //window.location.assign  (`http://localhost:3000/CaregiverInformation/${name}`);
     //console.log(caregivers);
@@ -191,9 +197,6 @@ function decline(name){
 }
 
 
-function toPatientPage(name, patients) {
-    return
-}
 
 
 

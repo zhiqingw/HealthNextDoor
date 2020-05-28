@@ -18,8 +18,9 @@ import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 import ResetPassword from "./pages/resetPassword"
 import ToList from "./pages/ToList";
-import ToPatient from "./pages/ToPatient";
+//import ToPatient from "./pages/ToPatient";
 import CaregiverInformation from "./pages/CaregiverInformation";
+import PatientInformation from "./pages/ToPatient";
 
 export default function App() {
   return (
@@ -61,7 +62,7 @@ export default function App() {
               <ToList/>
             </Route>
             <Route path='/toPatient'>
-              <ToPatient/>
+              <PatientInformation/>
             </Route>
           </Switch>
         </div>

@@ -10,8 +10,6 @@ export default function CaregiverInformation(){
     var data = sessionStorage.getItem("personalInformation");
     console.log(data);
     var dict_data = JSON.parse(data);
-
-
     const { loading, user, error} = useUser();
     console.log(user);
     if (loading) {
