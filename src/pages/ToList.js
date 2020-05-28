@@ -26,20 +26,25 @@ export default function ToList() {
         return (
             <div>
                 <h1>List</h1>
-                <div>
-                    orderList
-                    {user.filter(person => person.username === name).map(filteredPerson => (
-                        filteredPerson.orderList.map(name => (
+                <div id={"order_list"}>
+                    <div id={"order_list_title"}>
+                        orderList
+                    </div>
+                    <div>
+                        {user.filter(person => person.username === name).map(filteredPerson => (
+                            filteredPerson.orderList.map(name => (
                                 <p>
                                     <button onClick={() => toUserPage(name)}>
                                         {name}
                                     </button>
                                 </p>
                             ))
-                    ))}
+                        ))}
+                    </div>
                 </div>
-                <div>
-                    Receive request
+
+                <div id={"receive_req"}>
+                    <h7>Receive request</h7>
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.receiveReq.map(name => (
                             <p>
