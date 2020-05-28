@@ -338,7 +338,7 @@ export function acceptReq(user) {
       action
     })
   }).then(res =>{
-    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
   });
 }
