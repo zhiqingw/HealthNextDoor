@@ -52,11 +52,11 @@ export default function ToList() {
                         <div id={"order_list_title"}>
                             Order List
                         </div>
-                        <div>
+                        <div id={"order_button"}>
                             {user.filter(person => person.username === name).map(filteredPerson => (
                                 filteredPerson.orderList.map(name => (
                                     <p>
-                                        <button onClick={() => toPatientPage(name, patients)}>
+                                        <button id={"ordered_user"} onClick={() => toPatientPage(name, patients)}>
                                             {name}
                                         </button>
                                     </p>

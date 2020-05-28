@@ -9,10 +9,10 @@
 #order_list{
     position: relative;
     float: left;
-    margin-left: 5%;
-    width: 50%;
+    margin-left: 19%;
+    width: 300px;
 
-    height: 300px;
+    height: 450px;
     background: transparent;
 
     border-radius: 10px;
@@ -30,7 +30,7 @@
 #order_list_title{
     font-size: 30px;
     font-family: fantasy;
-    color: #040506;
+    color: white;
 }
 
 
@@ -45,4 +45,25 @@
     border-radius: 10px;
 
     background-color: rgba(255,255,255,0.5);
+}
+
+#order_button{
+    text-align: center;
+}
+#ordered_user{
+    border-radius: 10px;
+    background-color: #c7bfa6;
+    font-size: 30px;
+    font-style: normal;
+    font-family: "Times New Roman";
+    color: white;
+
+
+}
+
+#ordered_user:active,
+#ordered_user:hover,
+#ordered_user:focus{
+    background-color: #c7c3b5;
+
 }
