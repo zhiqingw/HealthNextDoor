@@ -67,10 +67,10 @@ export default function CaregiverInformation(){
                             Working Experience : {dict_data.working_experience}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
                         </form>
-                        <button onClick={() => sentReq(dict_data.username)}>
-                            sent request
-                        </button>
                     </form>
+                    <button onClick={() => sentReq(dict_data.username)}>
+                        sent request
+                    </button>
 
 
                 </div>
@@ -111,12 +111,12 @@ export default function CaregiverInformation(){
 function sentReq(name){
     console.log("here!!!!!!!!!!!!");
     var username = window.sessionStorage.getItem("username");
-    sendRequest({
+    sentRequestPatient({
         username: username,
         name: name,
         state: "send",
     });
-    sentRequestPatient({
+    sendRequest({
         username: name,
         name: username,
         state: "send",
