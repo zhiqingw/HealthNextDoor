@@ -338,7 +338,8 @@ export function acceptReq(user) {
       action
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+
   });
 }
 
@@ -407,6 +408,7 @@ export function sendRequest(user) {
   const { username, name, state} = user;
   const endpoint = BASE_URL + `/login/${username}`;
 // return fetch query
+  //console.log("here!!!!!!!!!!!!");
   console.log(name);
   console.log(state);
   var action = [state, name];
@@ -441,7 +443,7 @@ export function sentRequestPatient(user) {
       action
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
   });
 }
 

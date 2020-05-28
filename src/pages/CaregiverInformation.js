@@ -41,7 +41,7 @@ export default function CaregiverInformation(){
             userIdentity = singleuser.identity;
         }});
 
-    console.log(userIdentity);
+    console.log(dict_data.username);
     console.log("!!!!!!!!!!!");
 
     if(userIdentity === "patient") {
@@ -107,11 +107,8 @@ export default function CaregiverInformation(){
 
 }
 function sentReq(name){
-    let username;
-    username = window.location.pathname;
-    let index;
-    index = username.lastIndexOf('/');
-    username = username.slice(index+1);
+    console.log("here!!!!!!!!!!!!");
+    var username = window.sessionStorage.getItem("username");
     sendRequest({
         username: username,
         name: name,
