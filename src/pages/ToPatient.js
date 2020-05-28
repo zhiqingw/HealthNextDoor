@@ -4,32 +4,32 @@ import { usePatients} from "../api";
 import Button from "../components/Button";
 
 export default function PatientInformation(){
-    var data = sessionStorage.getItem("personalInformation");
+    var data = sessionStorage.getItem("personalInformationForPatient");
     console.log(data);
     var dict_data = JSON.parse(data);
     //console.log(dict_data);
     const { loading, patients, error } = usePatients();
 
     return (
-        <div className="list_style">
-            <h1>Patients List</h1>
-
-            <div id="careGiverList">
-                {patients.map(patient => (
-                    <div className="list">
-                        <button id="listbutton" >
-                            {/*ID : {patient.id}<br/><br/>*/}
-                            Firstname : {patient.first_name}<br/><br/>
-                            Lastname : {patient.last_name}<br/><br/>
-                            Gender : {patient.gender}<br/><br/>
-                            Age : {patient.age}<br/><br/>
-                            Address : {patient.address}<br/><br/>
-                            Contact Me : {patient.contact_information}<br/><br/>
-                        </button>
-                    </div>
-                ))}
+        <div>
+            <h1>Patient Information</h1>
+            <div>
+                <form className={"image_block"}>
+                </form>
+                <form className={"caregiver_infor_style"}>
+                    <form className={"image_area"}>
+                        Image
+                    </form>
+                    <form>
+                        Firstname : {dict_data.first_name}<br/><br/>
+                        Lastname : {dict_data.last_name}<br/><br/>
+                        Gender : {dict_data.gender}<br/><br/>
+                        Age : {dict_data.age}<br/><br/>
+                        Address : {dict_data.address}<br/><br/>
+                        Contact Me : {dict_data.contact_information}<br/><br/>
+                    </form>
+                </form>
             </div>
-
         </div>
     )
 }

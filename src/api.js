@@ -106,7 +106,7 @@ export function updateUser(user) {
 
 //return all the user
 export function getUser() {
-  const endpoint = BASE_URL + `/login`;
+  const endpoint = BASE_URL + `/user`;
   return fetch(endpoint).then(res => {
     console.log(res);
     return res.json();
@@ -322,7 +322,7 @@ export function usePatients() {
 
 export function acceptReq(user) {
   const { username, name, state} = user;
-  const endpoint = BASE_URL + `/login/${username}`;
+  const endpoint = BASE_URL + `/user/${username}`;
 // return fetch query
   console.log(name);
   console.log(state);
@@ -339,12 +339,13 @@ export function acceptReq(user) {
     })
   }).then(res =>{
     window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+
   });
 }
 
 export function acceptReqPatient(user) {
   const { username, name, state} = user;
-  const endpoint = BASE_URL + `/login/${username}`;
+  const endpoint = BASE_URL + `/user/${username}`;
 // return fetch query
   console.log(name);
   console.log(state);
@@ -364,7 +365,7 @@ export function acceptReqPatient(user) {
 
 export function declineReq(user) {
   const { username, name, state} = user;
-  const endpoint = BASE_URL + `/login/${username}`;
+  const endpoint = BASE_URL + `/user/${username}`;
 // return fetch query
   console.log(name);
   console.log(state);
@@ -386,7 +387,7 @@ export function declineReq(user) {
 
 export function declineReqPatient(user) {
   const { username, name, state} = user;
-  const endpoint = BASE_URL + `/login/${username}`;
+  const endpoint = BASE_URL + `/user/${username}`;
 // return fetch query
   console.log(name);
   console.log(state);
@@ -405,8 +406,9 @@ export function declineReqPatient(user) {
 }
 export function sendRequest(user) {
   const { username, name, state} = user;
-  const endpoint = BASE_URL + `/login/${username}`;
+  const endpoint = BASE_URL + `/user/${username}`;
 // return fetch query
+  //console.log("here!!!!!!!!!!!!");
   console.log(name);
   console.log(state);
   var action = [state, name];
@@ -425,7 +427,7 @@ export function sendRequest(user) {
 
 export function sentRequestPatient(user) {
   const { username, name, state} = user;
-  const endpoint = BASE_URL + `/login/${username}`;
+  const endpoint = BASE_URL + `/user/${username}`;
 // return fetch query
   console.log(name);
   console.log(state);
@@ -441,7 +443,7 @@ export function sentRequestPatient(user) {
       action
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
   });
 }
 

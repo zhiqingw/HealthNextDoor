@@ -10,7 +10,6 @@ export default function CaregiverInformation(){
     var data = sessionStorage.getItem("personalInformation");
     console.log(data);
     var dict_data = JSON.parse(data);
-
     const { loading, user, error} = useUser();
     console.log(user);
     if (loading) {
@@ -41,10 +40,11 @@ export default function CaregiverInformation(){
             userIdentity = singleuser.identity;
         }});
 
-    console.log(userIdentity);
+    console.log(dict_data.username);
     console.log("!!!!!!!!!!!");
 
     if(userIdentity === "patient") {
+
         return (
             <div>
                 <h1>Caregivers List</h1>
@@ -65,10 +65,10 @@ export default function CaregiverInformation(){
                             Working Experience : {dict_data.working_experience}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
                         </form>
-                        <button onClick={() => sentReq(dict_data.username)}>
-                            sent request
-                        </button>
                     </form>
+                    <button onClick={() => sentReq(dict_data.username)}>
+                        sent request
+                    </button>
 
 
                 </div>
@@ -107,20 +107,17 @@ export default function CaregiverInformation(){
 
 }
 function sentReq(name){
-    let username;
-    username = window.location.pathname;
-    let index;
-    index = username.lastIndexOf('/');
-    username = username.slice(index+1);
-    sendRequest({
+    console.log("here!!!!!!!!!!!!");
+    var username = window.sessionStorage.getItem("username");
+    sentRequestPatient({
         username: username,
         name: name,
-        state: "decline",
+        state: "send",
     });
-    sentRequestPatient({
+    sendRequest({
         username: name,
         name: username,
-        state: "decline",
+        state: "send",
     });
 
 
