@@ -7,8 +7,11 @@ import Button from "../components/Button";
 export default function Rate() {
 
 
+
+
     return (
         <div>
+            <h1>Rating</h1>
             <ReactStars
                 count={5}
                 size={24}
