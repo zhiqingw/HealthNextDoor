@@ -13,6 +13,7 @@
     "serve": "^11.3.0"
   },
   "devDependencies": {
+    "react-rating-stars-component": "^1.0.3",
     "typescript": "3.8.3"
   },
   "scripts": {

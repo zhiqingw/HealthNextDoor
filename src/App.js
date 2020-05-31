@@ -14,6 +14,7 @@ import "./views/loginStyle.css"
 import "./views/homeStyle.css"
 import "./views/loadingStyle.css"
 import "./views/listStyle.css"
+import "./views/rating.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 import ResetPassword from "./pages/resetPassword"
@@ -21,6 +22,7 @@ import ToList from "./pages/ToList";
 //import ToPatient from "./pages/ToPatient";
 import CaregiverInformation from "./pages/CaregiverInformation";
 import PatientInformation from "./pages/ToPatient";
+import Rate from "./components/rating";
 
 export default function App() {
   return (
@@ -63,6 +65,9 @@ export default function App() {
             </Route>
             <Route path='/toPatient'>
               <PatientInformation/>
+            </Route>
+            <Route path='/rating'>
+              <Rate/>
             </Route>
           </Switch>
         </div>

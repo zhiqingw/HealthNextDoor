@@ -13,6 +13,7 @@ export default function Nav() {
                     </NavLink>
                     <NavLink to="/login">Login</NavLink>
                     <NavLink to="/findCaregivers">Caregivers</NavLink>
+                    <NavLink to="/rating">Rating</NavLink>
                     <h id="hello">Hello, </h>
                     <Button id="user_button" onClick={showUser}>{window.sessionStorage.getItem("username")}</Button>
                     <Button className={"logout"} onClick={Logout}>
@@ -32,6 +33,8 @@ export default function Nav() {
                 </NavLink>
                 <NavLink to="/login">Login</NavLink>
                 <NavLink to="/findCaregivers">Caregivers</NavLink>
+                <NavLink to="/rating">Rating</NavLink>
+
             </nav>
         </div>
 
