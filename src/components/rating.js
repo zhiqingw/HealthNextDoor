@@ -1,6 +1,4 @@
-
 import React, { useState } from "react";
-import ReactStars from 'react-rating-stars-component'
 import { addCaregiver } from "../api";
 import Button from "../components/Button";
 
@@ -9,7 +7,7 @@ export default function Rate() {
 
 
 
-    return (
+    /*return (
         <div>
             <h1>Rating</h1>
             <ReactStars
@@ -21,6 +19,12 @@ export default function Rate() {
                 halfIcon={<i className='fa fa-star-half-alt'></i>}
                 fullIcon={<i className='fa fa-star'></i>}
                 color2={'#ffd700'} />
+        </div>
+    );*/
+    return (
+        <div>
+            <h1>Rating</h1>
+
         </div>
     );
 }
