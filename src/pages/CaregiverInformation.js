@@ -136,5 +136,5 @@ function sentReq(name){
 
 function rating(username) {
     window.sessionStorage.setItem("rating_target",username);
-    window.location.assign(`http://localhost:3000/rating`);
+    window.location.assign(`http://localhost:3000/rating/${username}`);
 }
