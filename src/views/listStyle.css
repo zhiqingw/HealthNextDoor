@@ -12,12 +12,13 @@
 ;
     width: 68%;
 
-    height: 700px;
+    height: 450px;
     background: transparent;
 
     border-radius: 10px;
 
     padding: 20px 50px;
+
 }
 
 .list_right{
@@ -26,14 +27,14 @@
 
     float: left;
     width: 28%;
-    height: 700px;
+    height: 500px;
 }
 
 #receive_req,
 #history_list{
 
     position: relative;
-    height: 350px;
+    height: 250px;
 }
 
 #history_list{
@@ -46,7 +47,7 @@
 #history_list_title{
     position: relative;
     padding: 20px 50px;
-    font-size: 40px;
+    font-size: 50px;
     font-family: Arial;
     color: white;
 }
@@ -62,7 +63,7 @@
 
 #together_block{
     position: relative;
-    margin-top: 10%;
+    margin-top: 9%;
 
 }
 
@@ -76,23 +77,94 @@
 
 #ordered_user{
     text-align: center;
-    height: 700px;
+    height: 500px;
     background-color: transparent;
 }
 #order_button{
-    border-radius: 10px;
-    background-color: #c7bfa6;
-    font-size: 30px;
+    color: #bfd8fe;
+    font-size: 40px;
     font-style: normal;
-    font-family: "Times New Roman";
-    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: underline;
 
+    border: transparent;
+    background-color: transparent;
+    letter-spacing: 3px;
 
 }
 
 #order_button:active,
 #order_button:hover,
 #order_button:focus{
-    background-color: #c7c3b5;
+    color: #90bcfe;
 
 }
+
+#rec_name{
+    color: #8a87c7;
+    font-size: 27px;
+    font-style: normal;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: underline;
+
+    border: transparent;
+    background-color: transparent;
+    float: left;
+    margin-left: 10%;
+}
+
+#rec_name:active,
+#rec_name:hover,
+#rec_name:focus{
+    color: #a1a7db;
+
+}
+
+#history_button{
+    color: #8e87a2;
+    font-size: 30px;
+    font-style: normal;
+    font-family: Arial;
+    font-weight: bold;
+    text-decoration: underline;
+
+    border: transparent;
+    background-color: transparent;
+}
+
+#history_button:active,
+#history_button:hover,
+#history_button:focus{
+    color: #9c99a2;
+
+}
+
+.rec_ac_button,
+.rec_de_button{
+    border-radius: 10px;
+    border: transparent;
+    color: #554f62;
+    font-size: 20px;
+
+}
+
+.rec_de_button{
+    margin-left: 3px;
+}
+
+.rec_ac_button:active,
+.rec_ac_button:hover,
+.rec_ac_button:focus{
+    color: #9c99a2;
+
+}
+
+.rec_de_button:active,
+.rec_de_button:hover,
+.rec_de_button:focus{
+    color: #9c99a2;
+
+}
+

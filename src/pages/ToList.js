@@ -69,13 +69,14 @@ export default function ToList() {
                             {user.filter(person => person.username === name).map(filteredPerson => (
                                 filteredPerson.receiveReq.map(name => (
                                     <p>
-                                        <button onClick={() => toPatientPage(name)}>
+                                        <button id={"rec_name"} onClick={() => toPatientPage(name)}>
                                             {name}
                                         </button>
-                                        <button onClick={() => accept(name)}>
+
+                                        <button className={"rec_ac_button"} onClick={() => accept(name)}>
                                             accept
                                         </button>
-                                        <button onClick={() => decline(name)}>
+                                        <button className={"rec_de_button"} onClick={() => decline(name)}>
                                             decline
                                         </button>
                                     </p>
@@ -89,7 +90,7 @@ export default function ToList() {
                             {user.filter(person => person.username === name).map(filteredPerson => (
                                 filteredPerson.orderHistory.map(name => (
                                     <p>
-                                        <button onClick={() => toPatientPage(name)}>
+                                        <button id={"history_button"} onClick={() => toPatientPage(name)}>
                                             {name}
                                         </button>
                                     </p>
@@ -105,45 +106,59 @@ export default function ToList() {
         return (
             <div>
                 <h1>List</h1>
-                <div>
-                    orderList
+                <div id={"together_block"}>
+                <div className={"list_left"}>
+                    <div id={"order_list"}>
+                    <div id={"order_list_title"}>
+                        Order List
+                    </div>
+                        <div id={"ordered_user"}>
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderList.map(name => (
                             <p>
-                                <button onClick={() => toCaregiverPage(name,caregivers)}>
+                                <button  id={"order_button"} onClick={() => toCaregiverPage(name,caregivers)}>
                                     {name}
                                 </button>
-                                <button onClick={() =>complete(name)}>
+                                <button className={"rec_ac_button"} onClick={() =>complete(name)}>
                                     complete
                                 </button>
 
                             </p>
                         ))
                     ))}
+                    </div>
+                    </div>
                 </div>
-                <div>
-                    sent request
+                <div className={"list_right"}>
+                    <div id={"receive_req"}>
+                        <div id={"receive_list_title"}>
+                            Send request
+                        </div>
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.sentReq.map(name => (
                             <p>
-                                <button onClick={() => toCaregiverPage(name)}>
+                                <button id={"rec_name"} onClick={() => toCaregiverPage(name)}>
+                                    {name}
+                                </button>
+                            </p>
+                        ))
+                    ))}
+                    </div>
+                    <div id={"history_list"}>
+                        <div id={"history_list_title"}>
+                            History
+                        </div>
+                    {user.filter(person => person.username === name).map(filteredPerson => (
+                        filteredPerson.orderHistory.map(name => (
+                            <p>
+                                <button id={"history_button"} onClick={() => toCaregiverPage(name)}>
                                     {name}
                                 </button>
                             </p>
                         ))
                     ))}
                 </div>
-                <div>
-                    History
-                    {user.filter(person => person.username === name).map(filteredPerson => (
-                        filteredPerson.orderHistory.map(name => (
-                            <p>
-                                <button onClick={() => toCaregiverPage(name)}>
-                                    {name}
-                                </button>
-                            </p>
-                        ))
-                    ))}
+                </div>
                 </div>
             </div>
         );
