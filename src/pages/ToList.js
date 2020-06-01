@@ -116,10 +116,10 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderList.map(name => (
                             <p>
-                                <button onClick={() => toCaregiverPage(name,caregivers)}>
+                                <button  id={"order_button"} onClick={() => toCaregiverPage(name,caregivers)}>
                                     {name}
                                 </button>
-                                <button onClick={() =>complete(name)}>
+                                <button className={"rec_ac_button"} onClick={() =>complete(name)}>
                                     complete
                                 </button>
 
@@ -137,7 +137,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.sentReq.map(name => (
                             <p>
-                                <button onClick={() => toCaregiverPage(name)}>
+                                <button id={"rec_name"} onClick={() => toCaregiverPage(name)}>
                                     {name}
                                 </button>
                             </p>
@@ -151,7 +151,7 @@ export default function ToList() {
                     {user.filter(person => person.username === name).map(filteredPerson => (
                         filteredPerson.orderHistory.map(name => (
                             <p>
-                                <button onClick={() => toCaregiverPage(name)}>
+                                <button id={"history_button"} onClick={() => toCaregiverPage(name)}>
                                     {name}
                                 </button>
                             </p>
