@@ -66,10 +66,10 @@ export default function CaregiverInformation(){
                             Contact Me : {dict_data.contact_information}<br/><br/>
                         </form>
                     </form>
-                    <button onClick={() => sentReq(dict_data.username)}>
+                    <button id="sendReq" onClick={() => sentReq(dict_data.username)}>
                         sent request
                     </button>
-                    <button onClick={() => rating(dict_data.username)}>
+                    <button id="sendReq" onClick={() => rating(dict_data.username)}>
                         Rate
                     </button>
 
