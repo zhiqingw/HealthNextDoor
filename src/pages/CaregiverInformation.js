@@ -56,7 +56,13 @@ export default function CaregiverInformation(){
                         <form className={"image_area"}>
                             Image
                         </form>
-                        <form>
+                        <button className="sendReq" id={"req_left"} onClick={() => sentReq(dict_data.username)}>
+                            Sent Request
+                        </button>
+                        <button className="sendReq" id={"req_right"} onClick={() => rating(dict_data.username)}>
+                            Rate
+                        </button>
+                        <form id={"info_format"}>
                             Firstname : {dict_data.first_name}<br/><br/>
                             Lastname : {dict_data.last_name}<br/><br/>
                             Gender : {dict_data.gender}<br/><br/>
@@ -77,12 +83,7 @@ export default function CaregiverInformation(){
                     <div>
                     review: {dict_data.comment}
                     </div>
-                    <button id="sendReq" onClick={() => sentReq(dict_data.username)}>
-                        sent request
-                    </button>
-                    <button id="sendReq" onClick={() => rating(dict_data.username)}>
-                        Rate
-                    </button>
+
 
 
                 </div>

@@ -333,8 +333,26 @@ body{
     height: 150px;
 }
 
-#sendReq{
-    margin-top: 20%;
+#info_format{
+    margin-top: 10%;
+}
+
+.sendReq{
+    margin-top: 2%;
+    border-radius: 2px;
+    border: transparent;
+    font-weight: bold;
+    font-size: 15px;
+    color: #669260;
+    background-color: #c1f3b9;
+}
+
+#req_left{
+    float: left;
+}
+
+#req_right{
+    float: right;
 }
 
 
