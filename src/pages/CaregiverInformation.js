@@ -69,6 +69,9 @@ export default function CaregiverInformation(){
                     <button onClick={() => sentReq(dict_data.username)}>
                         sent request
                     </button>
+                    <button onClick={() => rating(dict_data.username)}>
+                        Rate
+                    </button>
 
 
                 </div>
@@ -114,11 +117,12 @@ function sentReq(name){
         name: name,
         state: "send",
     });
-    sendRequest({
-        username: name,
-        name: username,
-        state: "send",
-    });
 
 
+
+}
+
+function rating(username) {
+    window.sessionStorage.setItem("rating_target",username);
+    window.location.assign(`http://localhost:3000/rating`);
 }

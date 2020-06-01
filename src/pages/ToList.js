@@ -1,6 +1,16 @@
 import React from "react";
 import {UserExtendedList} from "./User";
-import {acceptReq, acceptReqPatient, declineReq, declineReqPatient, usePatients,updateUser, useCaregivers, useUser} from "../api";
+import {
+    acceptReq,
+    acceptReqPatient,
+    declineReq,
+    declineReqPatient,
+    usePatients,
+    updateUser,
+    useCaregivers,
+    useUser,
+    completeOrder
+} from "../api";
 import Loading from "../components/Loading";
 import {Caregiver} from "./Caregivers";
 
@@ -103,6 +113,10 @@ export default function ToList() {
                                 <button onClick={() => toCaregiverPage(name,caregivers)}>
                                     {name}
                                 </button>
+                                <button onClick={() =>complete(name)}>
+                                    complete
+                                </button>
+
                             </p>
                         ))
                     ))}
@@ -142,11 +156,7 @@ function accept(name){
     let index;
     index = username.lastIndexOf('/');
     username = username.slice(index+1);
-    acceptReq({
-        username: username,
-        name: name,
-        state: "accept",
-    });
+
     acceptReqPatient({
         username: name,
         name: username,
@@ -199,5 +209,15 @@ function toPatientPage(name, patients) {
     return
 }
 
-
-
+function complete(name){
+    let username;
+    username = window.location.pathname;
+    let index;
+    index = username.lastIndexOf('/');
+    username = username.slice(index+1);
+    completeOrder({
+        username: username,
+        name: name,
+        state: "complete",
+    });
+}
