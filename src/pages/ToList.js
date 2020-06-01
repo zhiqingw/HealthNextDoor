@@ -32,58 +32,60 @@ export default function ToList() {
             <div>
                 <h1>List</h1>
                 <div id={"together_block"}>
-
-                <div id={"history_list"}>
-                    <div id={"order_list_title"}>
-                        History
-                    </div>
-                    {user.filter(person => person.username === name).map(filteredPerson => (
-                        filteredPerson.orderHistory.map(name => (
-                            <p>
-                                <button onClick={() => toPatientPage(name)}>
-                                    {name}
-                                </button>
-                            </p>
-                        ))
-                    ))}
-                </div>
-
-                    <div id={"order_list"}>
-                        <div id={"order_list_title"}>
-                            Order List
+                    <div className={"list_left"}>
+                        <div id={"order_list"}>
+                            <div id={"order_list_title"}>
+                                Order List
+                            </div>
+                            <div id={"ordered_user"}>
+                                {user.filter(person => person.username === name).map(filteredPerson => (
+                                    filteredPerson.orderList.map(name => (
+                                        <p>
+                                            <button id={"order_button"} onClick={() => toPatientPage(name, patients)}>
+                                                {name}
+                                            </button>
+                                        </p>
+                                    ))
+                                ))}
+                            </div>
                         </div>
-                        <div id={"order_button"}>
+                    </div>
+
+                    <div className={"list_right"}>
+                        <div id={"receive_req"}>
+                            <div id={"receive_list_title"}>
+                                Receive request
+                            </div>
                             {user.filter(person => person.username === name).map(filteredPerson => (
-                                filteredPerson.orderList.map(name => (
+                                filteredPerson.receiveReq.map(name => (
                                     <p>
-                                        <button id={"ordered_user"} onClick={() => toPatientPage(name, patients)}>
+                                        <button onClick={() => toPatientPage(name)}>
+                                            {name}
+                                        </button>
+                                        <button onClick={() => accept(name)}>
+                                            accept
+                                        </button>
+                                        <button onClick={() => decline(name)}>
+                                            decline
+                                        </button>
+                                    </p>
+                                ))
+                            ))}
+                        </div>
+                        <div id={"history_list"}>
+                            <div id={"history_list_title"}>
+                                History
+                            </div>
+                            {user.filter(person => person.username === name).map(filteredPerson => (
+                                filteredPerson.orderHistory.map(name => (
+                                    <p>
+                                        <button onClick={() => toPatientPage(name)}>
                                             {name}
                                         </button>
                                     </p>
                                 ))
                             ))}
                         </div>
-                    </div>
-
-                    <div id={"receive_req"}>
-                        <div id={"order_list_title"}>
-                            Receive request
-                        </div>
-                        {user.filter(person => person.username === name).map(filteredPerson => (
-                            filteredPerson.receiveReq.map(name => (
-                                <p>
-                                    <button onClick={() => toPatientPage(name)}>
-                                        {name}
-                                    </button>
-                                    <button onClick={() => accept(name)}>
-                                        accept
-                                    </button>
-                                    <button onClick={() => decline(name)}>
-                                        decline
-                                    </button>
-                                </p>
-                            ))
-                        ))}
                     </div>
 
                 </div>
