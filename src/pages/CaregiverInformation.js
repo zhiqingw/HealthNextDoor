@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import Filter from "../components/Filter";
 import HomePage from "../components/HomePage";
 import Loading from "../components/Loading";
+import ReactStars from "react-rating-stars-component";
 
 export default function CaregiverInformation(){
     var data = sessionStorage.getItem("personalInformation");
@@ -64,8 +65,18 @@ export default function CaregiverInformation(){
                             Salary : {dict_data.salary}<br/><br/>
                             Working Experience : {dict_data.working_experience}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
+                            <ReactStars
+                                count={dict_data.rate}
+                                size={24}
+                                edit={false}
+                                half={true}
+
+                                color1={'#ffd700'} />
                         </form>
                     </form>
+                    <div>
+                    review: {dict_data.comment}
+                    </div>
                     <button onClick={() => sentReq(dict_data.username)}>
                         sent request
                     </button>
@@ -97,6 +108,7 @@ export default function CaregiverInformation(){
                             Salary : {dict_data.salary}<br/><br/>
                             Working Experience : {dict_data.working_experience}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
+                            rate : {dict_data.rate}<br/><br/>
                         </form>
                     </form>
 
