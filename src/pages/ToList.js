@@ -155,9 +155,9 @@ function accept(name){
     index = username.lastIndexOf('/');
     username = username.slice(index+1);
 
-    acceptReqPatient({
-        username: name,
-        name: username,
+    acceptReq({
+        username: username,
+        name: name,
         state: "accept",
     });
     //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
