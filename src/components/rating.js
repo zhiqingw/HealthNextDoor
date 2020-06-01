@@ -23,13 +23,6 @@ export default function Rate() {
             <button onClick={submitRating}>
                 submit
             </button>
-            <ReactStars
-                count={4}
-                size={24}
-                edit={false}
-                half={true}
-
-                color1={'#ffd700'} />
         </div>
 
     );

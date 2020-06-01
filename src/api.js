@@ -490,6 +490,13 @@ export function ratingOrder(user) {
     body: JSON.stringify({
       action
     })
+  }).then(res =>{
+    if(res.ok){
+      window.location.href = `CaregiverInformation/${username}`;
+    }
+    else{
+      alert("no!");
+    }
   });
 }
 
