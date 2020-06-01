@@ -1,18 +1,18 @@
-#history_list{
+/*#history_list{
     position: relative;
     float: left;
     margin-left: 5px;
     width: 20%;
     height: 300px;
-}
+}*/
 
-#order_list{
+.list_left{
     position: relative;
     float: left;
-    margin-left: 19%;
-    width: 300px;
+;
+    width: 68%;
 
-    height: 450px;
+    height: 700px;
     background: transparent;
 
     border-radius: 10px;
@@ -20,16 +20,42 @@
     padding: 20px 50px;
 }
 
-#receive_req{
+.list_right{
     position: relative;
-    float: right;
-    width: 20%;
-    margin-right: 5px;
+    margin-top: 2%;
+
+    float: left;
+    width: 28%;
+    height: 700px;
 }
 
-#order_list_title{
+#receive_req,
+#history_list{
+
+    position: relative;
+    height: 350px;
+}
+
+#history_list{
+    margin-top: 5%;
+ }
+
+
+
+#order_list_title,
+#history_list_title{
+    position: relative;
+    padding: 20px 50px;
+    font-size: 40px;
+    font-family: Arial;
+    color: white;
+}
+
+#receive_list_title{
+    position: relative;
+    padding: 20px 0px;
     font-size: 30px;
-    font-family: fantasy;
+    font-family: Arial;
     color: white;
 }
 
@@ -37,6 +63,7 @@
 #together_block{
     position: relative;
     margin-top: 10%;
+
 }
 
 #history_list,
@@ -47,10 +74,12 @@
     background-color: rgba(255,255,255,0.5);
 }
 
-#order_button{
-    text-align: center;
-}
 #ordered_user{
+    text-align: center;
+    height: 700px;
+    background-color: transparent;
+}
+#order_button{
     border-radius: 10px;
     background-color: #c7bfa6;
     font-size: 30px;
@@ -61,9 +90,9 @@
 
 }
 
-#ordered_user:active,
-#ordered_user:hover,
-#ordered_user:focus{
+#order_button:active,
+#order_button:hover,
+#order_button:focus{
     background-color: #c7c3b5;
 
 }
