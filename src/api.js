@@ -474,14 +474,14 @@ export function completeOrder(user) {
 
 export function ratingOrder(user) {
   const { username, name, rate, state} = user;
-  const endpoint = BASE_URL + `/user/${username}`;
+  const endpoint = BASE_URL + `/user/${name}`;
 // return fetch query
   console.log(username);
   console.log(rate);
   console.log(state);
-  var action = [state, name, rate];
+  var action = [state, username, rate];
   console.log(action);
-  console.log(JSON.stringify([state, name, rate]));
+  console.log(JSON.stringify([state, username, rate]));
   return fetch(endpoint, {
     method: "POST",
     headers: {
@@ -503,14 +503,14 @@ export function ratingOrder(user) {
 
 export function reviewOrder(user) {
   const { username, name, review, state} = user;
-  const endpoint = BASE_URL + `/user/${username}`;
+  const endpoint = BASE_URL + `/user/${name}`;
 // return fetch query
   console.log(username);
   console.log(review);
   console.log(state);
-  var action = [state, name, review];
+  var action = [state, username, review];
   console.log(action);
-  console.log(JSON.stringify([state, name, review]));
+  console.log(JSON.stringify([state, username, review]));
   return fetch(endpoint, {
     method: "POST",
     headers: {
