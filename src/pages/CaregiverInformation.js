@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useCaregivers, updateCaregiver, deleteCaregiver, sendRequest, sentRequestPatient, useUser} from "../api";
-
+import Box from 'react-styled-box';
 import Button from "../components/Button";
 import Filter from "../components/Filter";
 import HomePage from "../components/HomePage";
@@ -75,7 +75,13 @@ export default function CaregiverInformation(){
                         </form>
                     </form>
                     <div>
-                    review: {dict_data.comment}
+                    review:
+                        {dict_data.comment.map(comment => (
+                        <p>
+                           Anonymous: {comment}
+                            <hr />
+                        </p>
+                    ))}
                     </div>
                     <button id="sendReq" onClick={() => sentReq(dict_data.username)}>
                         sent request
@@ -129,9 +135,6 @@ function sentReq(name){
         name: name,
         state: "send",
     });
-
-
-
 }
 
 function rating(username) {
