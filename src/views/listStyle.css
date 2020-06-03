@@ -34,7 +34,7 @@
 #history_list{
 
     position: relative;
-    height: 250px;
+    height: 220px;
 }
 
 #history_list{
@@ -47,7 +47,7 @@
 #history_list_title{
     position: relative;
     padding: 20px 50px;
-    font-size: 50px;
+    font-size: 20px;
     font-family: Arial;
     color: white;
 }
@@ -55,7 +55,7 @@
 #receive_list_title{
     position: relative;
     padding: 20px 0px;
-    font-size: 30px;
+    font-size: 20px;
     font-family: Arial;
     color: white;
 }
@@ -72,17 +72,18 @@
 #receive_req{
     border-radius: 10px;
 
-    background-color: rgba(255,255,255,0.5);
+    background-color: #98c5c2
 }
 
 #ordered_user{
     text-align: center;
-    height: 500px;
-    background-color: transparent;
+    height: 400px;
+    width: 300px;
+    background-color: #98c5c2;
 }
 #order_button{
     color: #bfd8fe;
-    font-size: 40px;
+    font-size: 23px;
     font-style: normal;
     font-family: Arial;
     font-weight: bold;
@@ -103,7 +104,7 @@
 
 #rec_name{
     color: #8a87c7;
-    font-size: 27px;
+    font-size: 23px;
     font-style: normal;
     font-family: Arial;
     font-weight: bold;
@@ -124,7 +125,7 @@
 
 #history_button{
     color: #8e87a2;
-    font-size: 30px;
+    font-size: 23px;
     font-style: normal;
     font-family: Arial;
     font-weight: bold;
