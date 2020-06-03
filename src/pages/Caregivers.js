@@ -32,6 +32,7 @@ export default function Caregivers() {
                                 Age : {caregiver.age}<br/><br/>
                                 Address : {caregiver.address}<br/><br/>
                                 Salary : {caregiver.salary}<br/><br/>
+                                Working Experience : {caregiver.working_experience}<br/><br/>
                                 Contact Me : {caregiver.contact_information}<br/><br/>
                                 <ReactStars
                                     count={caregiver.rate}
