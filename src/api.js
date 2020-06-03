@@ -360,6 +360,9 @@ export function acceptReqPatient(user) {
     body: JSON.stringify({
       action
     })
+  }).then(res =>{
+    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+
   });
 }
 
@@ -444,6 +447,78 @@ export function sentRequestPatient(user) {
     })
   }).then(res =>{
     //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+  });
+}
+
+export function completeOrder(user) {
+  const { username, name, state} = user;
+  const endpoint = BASE_URL + `/user/${username}`;
+// return fetch query
+  console.log(name);
+  console.log(state);
+  var action = [state, name];
+  console.log(action);
+  console.log(JSON.stringify([state, name]));
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      action
+    })
+  }).then(res =>{
+    window.location.assign(`http://localhost:3000/rating/${name}`)
+  });
+}
+
+export function ratingOrder(user) {
+  const { username, name, rate, state} = user;
+  const endpoint = BASE_URL + `/user/${name}`;
+// return fetch query
+  console.log(username);
+  console.log(rate);
+  console.log(state);
+  var action = [state, username, rate];
+  console.log(action);
+  console.log(JSON.stringify([state, username, rate]));
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      action
+    })
+  }).then(res =>{
+    if(res.ok){
+      window.location.href = `CaregiverInformation/${username}`;
+    }
+    else{
+      alert("no!");
+    }
+  });
+}
+
+
+export function reviewOrder(user) {
+  const { username, name, review, state} = user;
+  const endpoint = BASE_URL + `/user/${name}`;
+// return fetch query
+  console.log(username);
+  console.log(review);
+  console.log(state);
+  var action = [state, username, review];
+  console.log(action);
+  console.log(JSON.stringify([state, username, review]));
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      action
+    })
   });
 }
 

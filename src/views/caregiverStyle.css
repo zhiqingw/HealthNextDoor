@@ -319,6 +319,7 @@ body{
     width:33.3%;
     margin-top: 80px;
     float: left;
+    margin-left: -20%;
     padding: 10px 10px;
     color: #c6e3e6;
     border: 5px solid #d2cfcf;
@@ -333,9 +334,27 @@ body{
     height: 150px;
 }
 
+#info_format{
+    margin-top: 10%;
+}
 
+.sendReq{
+    margin-top: 2%;
+    border-radius: 2px;
+    border: transparent;
+    font-weight: bold;
+    font-size: 15px;
+    color: #669260;
+    background-color: #c1f3b9;
+}
 
+#req_left{
+    float: left;
+}
 
+#req_right{
+    float: right;
+}
 
 
 

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import {useCaregivers, updateCaregiver, deleteCaregiver, sendRequest, sentRequestPatient, useUser} from "../api";
-
+import Box from 'react-styled-box';
 import Button from "../components/Button";
 import Filter from "../components/Filter";
 import HomePage from "../components/HomePage";
 import Loading from "../components/Loading";
+import ReactStars from "react-rating-stars-component";
 
 export default function CaregiverInformation(){
     var data = sessionStorage.getItem("personalInformation");
@@ -64,10 +65,29 @@ export default function CaregiverInformation(){
                             Salary : {dict_data.salary}<br/><br/>
                             Working Experience : {dict_data.working_experience}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
+                            <ReactStars
+                                count={dict_data.rate}
+                                size={24}
+                                edit={false}
+                                half={true}
+
+                                color1={'#ffd700'} />
                         </form>
                     </form>
-                    <button onClick={() => sentReq(dict_data.username)}>
+                    <div>
+                    review:
+                        {dict_data.comment.map(comment => (
+                        <p>
+                           Anonymous: {comment}
+                            <hr />
+                        </p>
+                    ))}
+                    </div>
+                    <button id="sendReq" onClick={() => sentReq(dict_data.username)}>
                         sent request
+                    </button>
+                    <button id="sendReq" onClick={() => rating(dict_data.username)}>
+                        Rate
                     </button>
 
 
@@ -94,6 +114,7 @@ export default function CaregiverInformation(){
                             Salary : {dict_data.salary}<br/><br/>
                             Working Experience : {dict_data.working_experience}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
+                            rate : {dict_data.rate}<br/><br/>
                         </form>
                     </form>
 
@@ -114,11 +135,9 @@ function sentReq(name){
         name: name,
         state: "send",
     });
-    sendRequest({
-        username: name,
-        name: username,
-        state: "send",
-    });
+}
 
-
+function rating(username) {
+    window.sessionStorage.setItem("rating_target",username);
+    window.location.assign(`http://localhost:3000/rating/${username}`);
 }
