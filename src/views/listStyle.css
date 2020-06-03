@@ -72,14 +72,14 @@
 #receive_req{
     border-radius: 10px;
 
-    background-color: #98c5c2
+    background-color: #a3bac0
 }
 
 #ordered_user{
     text-align: center;
     height: 400px;
     width: 300px;
-    background-color: #98c5c2;
+    background-color: #a3bac0
 }
 #order_button{
     color: #bfd8fe;
