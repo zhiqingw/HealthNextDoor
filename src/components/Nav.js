@@ -11,7 +11,7 @@ export default function Nav() {
                     <NavLink exact to="/">
                         Home
                     </NavLink>
-                    <NavLink to="/login">Login</NavLink>
+                    <NavLink to="/login">User Center</NavLink>
                     <NavLink to="/findCaregivers">Caregivers</NavLink>
                     <NavLink to="/rating">Rating</NavLink>
                     <h id="hello">Hello, </h>

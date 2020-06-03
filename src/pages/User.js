@@ -36,7 +36,7 @@ export default function Users() {
     }});
     if (userIdentity === "caregiver"){
         return (
-            <div>
+            <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
                 <div id={"htwo"}>
                     <h2>Posting Record</h2>
@@ -50,17 +50,19 @@ export default function Users() {
                     })}
 
                 </div>
+                <div>
                 {user.map(used =>{
                     if(used.username===name){
                         match = used;
                     }
                 })}
+                </div>
                 <User id={"user_h2"} {...match} />
             </div>
         );
     } else {
         return (
-            <div>
+            <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
                 <div id={"htwo"}>
                     <h2>Posting Record</h2>

@@ -66,7 +66,7 @@ export function Caregiver(caregiver) {
     const [showUpdate, setShowUpdate] = useState(false);
 
     return (
-        <div className={`caregiver caregiver-${username}`} key={username}>
+        <div id={"block_caregiver"} className={`caregiver caregiver-${username}`} key={username}>
             <div className="info">
                 <div id="txt">Username: {username}</div>
                 <div id="txt">First_name: {first_name}</div>

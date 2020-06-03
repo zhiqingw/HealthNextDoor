@@ -228,13 +228,13 @@ body{
 .info
 {
     width:60%;
-    background: #aaaaab;
+    background: #9eab91;
     margin : auto;
     text-align: center;
     border-radius: 10px;
     padding: 20px 20px;
-    font-family: fantasy;
-    color:rgba(0,0,0,0.97);
+    font-family: Arial;
+    color: rgba(74, 115, 120, 0.97);
     display: inline;
     position: center;
 }
@@ -276,21 +276,26 @@ body{
 
 .update_input{
     text-align: center;
-    color: #e8f5e9;
+    color: #88c193;
 }
 
 .label_input{
     /*margin-left: -650px;*/
     text-align: center;
     float:left;
-    margin-left: 40px;
-    color: #e8f5e9;
+    margin-left: 2%;
+    color: #3e7a62;
+    font-weight: bold;
+    margin-top: 2%;
+    background-color: #98c5c2;
+    border-radius: 5px;
 }
 .title_input{
     /*margin-left:-850px;*/
-
+    position: relative;
+    margin-top: 8.5%;
     font-size: 30px;
-    font-family: fantasy;
+    font-family: "Andale Mono";
     color: #86ab89;
 
 
@@ -298,6 +303,8 @@ body{
 #search_botton_style{
     font-size: 12px;
     background-color: #99abab;
+    color: #dfe0fe;
+    margin-top: 1%;
 }
 
 #careGiverList{
@@ -355,6 +362,7 @@ body{
 #req_right{
     float: right;
 }
+
 
 
 

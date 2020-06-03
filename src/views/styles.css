@@ -40,19 +40,21 @@ body{
   -o-background-size: cover;
   min-height: 100%;
 }*/
-.homepage_form{
+.homepage_form,
+.login_frame{
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(../pictures/2.png) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   overflow: hidden;
+
 }
 
 h1 {
-  font-family: fantasy;
+  font-family: "Andale Mono";
   position: relative;
-  margin-top: 50px;
+  margin-top: 1%;
   font-size: 500%;
-  color: #c8d1be;
+  color: #88b68a;
 }
 
 /*#h1_login{
@@ -71,23 +73,23 @@ h1 {
 }*/
 
 h2{
-  font-family: fantasy;
+  font-family: "Andale Mono";
   position: relative;
   margin-left: 0;
-  margin-top: 50px;
+  margin-top: 10%;
   margin-bottom: 0;
   font-size: 350%;
-  color: #e8f5e9;
+  color: #88b68a;
 }
 
 h3 {
-  font-family: fantasy;
+  font-family: "Andale Mono";
   position: absolute;
   width: 100%;
-  margin-top: 140px;
+  margin-top: 7.5%;
 
   top: 10px;
-  font-size: 200%;
+  font-size: 150%;
   color: #98c5c2;
 }
 
@@ -364,22 +366,22 @@ fieldset[disabled] .btn {
 {
   background-color: transparent;
   position: absolute;
-  margin-left: 32%;
+  margin-left: 22%;
   margin-top: 3px;
 }
 
 #hello
 {
-  color: #388e3c;
+  color: #6cb256;
   margin-top: 10px;
   position: absolute;
-  margin-left: 29%;
+  margin-left: 19%;
 }
 
 .logout{
   position: absolute;
   background-color: transparent;
-  margin-left: 36%;
+  margin-left: 30%;
   margin-top: 3px;
 
 }
