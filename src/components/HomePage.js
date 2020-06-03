@@ -5,7 +5,7 @@ import Logo from "./Logo";
 export default function HomePage() {
     return (
 
-        <div className="homepage_form">
+        <body  className="homepage_form">
             <div className={"h1_form"}>
                 <h1> HEALTH NEXT DOOR</h1>
             </div>
@@ -26,7 +26,7 @@ export default function HomePage() {
             <div className={"credit_form"}>
                 <p>2020 HealthNextDoor © All Rights Reserved</p>
             </div>
-        </div>
+        </body>
 
     );
 }

@@ -10,19 +10,31 @@ export default function Rate() {
     return (
         <div>
             <h1>Rating</h1>
+            <div className="rating_box">
+                <div id="rate">
+                Giving your rate
+                </div>
+            <div id="rating_star">
             <ReactStars
                 count={5}
-                size={24}
+                size={38}
                 onChange={ratingChanged}
                 half={true}
                 emptyIcon={<i className='far fa-star'></i>}
                 halfIcon={<i className='fa fa-star-half-alt'></i>}
                 fullIcon={<i className='fa fa-star'></i>}
                 color2={'#ffd700'} />
-            <input type = "text" id = "review" placeholder="please enter review"/>
-            <button onClick={submitRating}>
+                </div>
+                <div id="rate">
+                    review
+                </div>
+                <textarea rows = "5" cols = "60" id="review">
+
+         </textarea>
+            <button onClick={submitRating} id="submit_button">
                 submit
             </button>
+            </div>
         </div>
 
     );

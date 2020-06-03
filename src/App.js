@@ -14,7 +14,7 @@ import "./views/loginStyle.css"
 import "./views/homeStyle.css"
 import "./views/loadingStyle.css"
 import "./views/listStyle.css"
-import "./views/rating.css"
+import "./views/ratingStyle.css"
 import User from "./pages/User";
 import SearchCaregivers from "./pages/searchCaregivers";
 import ResetPassword from "./pages/resetPassword"

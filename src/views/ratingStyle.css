@@ -1,0 +1,38 @@
+.rating_box {
+    width:40%;
+    height: 400px;
+    background: #a3bac0;
+    margin : auto;
+    margin-top: 8%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 50px 50px;
+    font-family: fantasy;
+}
+
+#rating_star{
+    margin-left: 30%;
+
+}
+
+#rate{
+    font-size: 150%;
+}
+
+#review{
+    margin-left: 4%;
+    width:85%;
+    height: 50%;
+}
+
+#submit_button
+{
+    margin-top: 10px;
+    width:50%;
+    height: 30px;
+    border: 0;
+    color: #ffffff;
+    font-size: 15px;
+    background-image: linear-gradient(to right, #19c3cb 0%, #7397da 0%, #92bbda 0%, #86c5cf 70%);
+    border-radius: 20px;
+}
