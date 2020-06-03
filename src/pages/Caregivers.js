@@ -3,6 +3,7 @@ import { useCaregivers, updateCaregiver, deleteCaregiver } from "../api";
 import Loading from "../components/Loading";
 import Button from "../components/Button";
 import Filter from "../components/Filter";
+import ReactStars from "react-rating-stars-component";
 
 
 export default function Caregivers() {
@@ -31,8 +32,14 @@ export default function Caregivers() {
                                 Age : {caregiver.age}<br/><br/>
                                 Address : {caregiver.address}<br/><br/>
                                 Salary : {caregiver.salary}<br/><br/>
-                                Working Experience : {caregiver.working_experience}<br/><br/>
                                 Contact Me : {caregiver.contact_information}<br/><br/>
+                                <ReactStars
+                                    count={caregiver.rate}
+                                    size={24}
+                                    edit={false}
+                                    half={true}
+
+                                    color1={'#ffd700'} />
                             </button>
                         </div>
                     ))}
