@@ -6,7 +6,7 @@ import Filter from "../components/Filter";
 import HomePage from "../components/HomePage";
 import Loading from "../components/Loading";
 import ReactStars from "react-rating-stars-component";
-
+import Upload from "../components/Upload";
 export default function CaregiverInformation(){
     var data = sessionStorage.getItem("personalInformation");
     console.log(data);
@@ -121,6 +121,7 @@ export default function CaregiverInformation(){
                                 edit={false}
                                 half={true}
                                 color1={'#ffd700'} />
+                            <Upload/>
                         </form>
                     </form>
                     <div>
