@@ -345,8 +345,8 @@ body{
     margin-top: 10%;
 }
 
-.sendReq{
-    margin-top: 2%;
+#sendReq{
+    margin-top: 20%;
     border-radius: 2px;
     border: transparent;
     font-weight: bold;

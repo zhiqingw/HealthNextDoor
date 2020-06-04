@@ -86,6 +86,7 @@ export default function CaregiverInformation(){
                     <button id="sendReq" onClick={() => sentReq(dict_data.username)}>
                         sent request
                     </button>
+
                     <button id="sendReq" onClick={() => rating(dict_data.username)}>
                         Rate
                     </button>
