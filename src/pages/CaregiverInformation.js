@@ -145,8 +145,6 @@ export default function CaregiverInformation(){
                                 </p>
                             ))))}
                     </div>
-
-
                 </div>
             </div>
         )

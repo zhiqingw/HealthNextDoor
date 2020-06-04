@@ -212,8 +212,8 @@ function decline(name){
 }
 
 
-function toPatientPage(name, patients) {
-    return
+function toPatientPage(name) {
+    window.location.assign(`http://localhost:3000/toPatient/${name}`);
 }
 
 function complete(name){
