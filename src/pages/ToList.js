@@ -181,19 +181,11 @@ function accept(name){
 
 }
 
-function toCaregiverPage(name, caregivers) {
+function toCaregiverPage(name) {
 
     //var string_type_username = JSON.stringify(caregiver.username);
-    {
-        caregivers.map(caregiver => {
-            if (caregiver.username === name) {
-                var string_type = JSON.stringify(caregiver);
-                sessionStorage.setItem("personalInformation", string_type);
-                //sessionStorage.setItem("caregiverUsername", string_type_username);
-                window.location.assign(`http://localhost:3000/CaregiverInformation/${caregiver.username}`);
-            }
-        })
-    }
+    sessionStorage.setItem("caregiver_name", name);
+    window.location.assign(`http://localhost:3000/CaregiverInformation/${name}`);
 }
     //window.location.assign  (`http://localhost:3000/CaregiverInformation/${name}`);
     //console.log(caregivers);
