@@ -114,9 +114,23 @@ export default function CaregiverInformation(){
                             Salary : {dict_data.salary}<br/><br/>
                             Working Experience : {dict_data.working_experience}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
-                            rate : {dict_data.rate}<br/><br/>
+                            <ReactStars
+                                count={dict_data.rate}
+                                size={24}
+                                edit={false}
+                                half={true}
+                                color1={'#ffd700'} />
                         </form>
                     </form>
+                    <div>
+                        review:
+                        {dict_data.comment.map(comment => (
+                            <p>
+                                Anonymous: {comment}
+                                <hr />
+                            </p>
+                        ))}
+                    </div>
 
 
                 </div>
