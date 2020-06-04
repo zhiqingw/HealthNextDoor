@@ -62,28 +62,87 @@ export function getCaregiverInformation(caregiver){
 }
 
 export function Caregiver(caregiver) {
-    const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience, contact_information} = caregiver;
-    const [showUpdate, setShowUpdate] = useState(false);
+    const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience,
+        contact_information} = caregiver;
+    const [first_input, setFirstName] = useState(first_name);
+    const [last_input, setLastName] = useState(last_name);
+    const [gender_input, setGender] = useState(gender);
+    const [introduction_input,setIntroduction] = useState(introduction);
+    const [age_input,setAge] = useState(age);
+    const [address_input,setAddress] = useState(address);
+    const [salary_input,setSalary] = useState(salary);
+    const [working_input,setWorking_experience] = useState(working_experience);
+    const [contact_input,setContact_information] = useState(contact_information);
+    function onSubmit() {
+        // call upate caregiver function
+        console.log(contact_input);
+        updateCaregiver({
+            first_name: first_input,
+            last_name: last_input,
+            gender: gender_input,
+            introduction: introduction_input,
+            username: username,
+            age: age_input,
+            address: address_input,
+            salary: salary_input,
+            working_experience: working_input,
+            contact_information: contact_input,
+        });
+        window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+    }
 
     return (
-        <div id={"block_caregiver"} className={`caregiver caregiver-${username}`} key={username}>
-            <div className="info">
-                <div id="txt">Username: {username}</div>
-                <div id="txt">First_name: {first_name}</div>
-                <div id="txt">Last_name: {last_name}</div>
-                <div id="txt">Gender: {gender}</div>
 
-                <div id="txt">Age: {age}</div>
+        <div className={`caregiver-expand `}>
+            <form className={"caregiver-expand-left"}>
+                {/* TODO - add value and onChange properties to inputs */}
+                <p>
+                    <label className="update_input">first name</label>
+                    <input type="text" name="first_name" value = {first_input} onChange={event => {setFirstName(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">last name</label>
+                    <input type="text" name="last_name" value = {last_input} onChange={event => {setLastName(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">gender</label>
+                    <input type="text" name="gender" value = {gender_input} onChange={event => {setGender(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">introduction</label>
+                    <input type="text" name="introduction" value = {introduction_input} onChange={event => {setIntroduction(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">age</label>
+                    <input type="text" name="age" value = {age_input} onChange={event => {setAge(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">address</label>
+                    <input type="text" name="introduction" value = {address_input} onChange={event => {setAddress(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">salary</label>
+                    <input type="text" name="salary" value = {salary_input} onChange={event => {setSalary(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">working_experience</label>
+                    <input type="text" name="working_experience" value = {working_input} onChange={event => {setWorking_experience(event.target.value);}}/>
+                </p>
+                <p>
+                    <label className="update_input">contact information</label>
+                    <input type="text" name="contact_information" value = {contact_input} onChange={event => {setContact_information(event.target.value);}}/>
+                </p>
 
-                <div id="txt">Salary: {salary}</div>
-
-                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
-                    {showUpdate ? "-" : "+"}
+                <Button className={"btn-danger"} onClick={onSubmit}>
+                    Update
                 </Button>
-            </div>
-            <div id={"list_front"}>
-                <CaregiverExtended {...caregiver} showUpdate={showUpdate} />
-            </div>
+
+                <Button className={"btn-danger"} onClick={() => deleteCaregiver(username)}>
+                    Delete
+                </Button>
+            </form><form className={"caregiver-expand-right"}></form>
+
+
         </div>
     );
 }
