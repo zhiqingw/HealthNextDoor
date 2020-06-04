@@ -39,7 +39,14 @@ body{
   -o-background-size: cover;
   min-height: 100%;
 }
-.homepage_form,
+.homepage_form{
+  background: linear-gradient(to bottom, rgba(100, 100, 100, 0.3) 0%, rgba(100, 100, 100, 0.3) 100%), url(../pictures/3.png) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+
+}
+
 .login_frame{
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%), url(../pictures/2.png) no-repeat center center fixed;
   background-size: cover;
