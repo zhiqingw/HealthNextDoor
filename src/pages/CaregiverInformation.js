@@ -132,6 +132,7 @@ export default function CaregiverInformation(){
                                     half={true}
 
                                     color1={'#ffd700'} />
+                                <Upload/>
                             </form>
                         ))}
                     </form>

@@ -35,11 +35,9 @@ export default function PatientInformation(){
                             Age : {dict_data.age}<br/><br/>
                             Address : {dict_data.address}<br/><br/>
                             Contact Me : {dict_data.contact_information}<br/><br/>
-
                         </form>
                     ))}
                 </form>
-
             </div>
         </div>
     );
