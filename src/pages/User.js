@@ -200,29 +200,16 @@ export function Patient(patient) {
 
     return (
         <div className={`caregiver caregiver-${username}`} key={username}>
-            <div className="info">
-                <div id="txt">Username: {username}</div>
-                <div id="txt">First_name: {first_name}</div>
-                <div id="txt">Last_name: {last_name}</div>
-                <div id="txt">Gender: {gender}</div>
 
-                <div id="txt">Age: {age}</div>
-
-
-
-                <Button className={"btn"} onClick={() => setShowUpdate(!showUpdate)}>
-                    {showUpdate ? "-" : "+"}
-                </Button>
-            </div>
             <div id={"list_front"}>
-                <PatientExtended {...patient} showUpdate={showUpdate} />
+                <PatientExtended {...patient} />
             </div>
         </div>
     );
 }
 
 function PatientExtended(props) {
-    const { first_name, last_name, gender, introduction, username, age, address,showUpdate,
+    const { first_name, last_name, gender, introduction, username, age, address,
         contact_information} = props;
     const [first_input, setFirstName] = useState(first_name);
     const [last_input, setLastName] = useState(last_name);
@@ -249,7 +236,7 @@ function PatientExtended(props) {
 
     return (
 
-        <div className={`caregiver-expand ${showUpdate ? "show" : ""}`}>
+        <div className={`caregiver-expand`}>
             <form className={"caregiver-expand-left"}>
                 {/* TODO - add value and onChange properties to inputs */}
                 <p>
