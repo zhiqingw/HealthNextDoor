@@ -269,11 +269,12 @@ function PatientExtended(props) {
                 </p>
 
                 <Button className={"btn-danger"} onClick={onSubmit}>
-                    Update
+                    <i className="fa fa-pencil" aria-hidden="true">Update</i>
                 </Button>
 
                 <Button className={"btn-danger"} onClick={() => deletePatient(username)}>
-                    Delete
+                    <i className="fa fa-trash-o" aria-hidden="true">Delete</i>
+
                 </Button>
             </form><form className={"caregiver-expand-right"}></form>
 

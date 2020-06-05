@@ -63,6 +63,7 @@ export default function CaregiverInformation(){
                         {caregivers.filter(person => person.username === caregiver_name).map(dict_data => (
                         <form>
                             <img className={"icon"}  src={dict_data.image} ></img><br/><br/>
+                            <i className="fa fa-user" aria-hidden="true">{dict_data.first_name} {dict_data.last_name}</i><br/><br/>
                             Firstname : {dict_data.first_name}<br/><br/>
                             Lastname : {dict_data.last_name}<br/><br/>
                             Gender : {dict_data.gender}<br/><br/>
@@ -92,10 +93,12 @@ export default function CaregiverInformation(){
                             ))))}
                     </div>
                     <button id="sendReq" onClick={() => sentReq(caregiver_name)}>
+                        <i className="fa fa-user-plus" aria-hidden="true"></i>
                         sent request
                     </button>
 
                     <button id="sendReq" onClick={() => rating(caregiver_name)}>
+                        <i className="fa fa-star-half-o" aria-hidden="true"></i>
                         Rate
                     </button>
 
@@ -110,12 +113,12 @@ export default function CaregiverInformation(){
                 <div>
                     <form className={"image_block"}>
                     </form>
-                    <form className={"caregiver_infor_style"}>
+                    <div className={"caregiver_infor_style"}>
                         {caregivers.filter(person => person.username === caregiver_name).map(dict_data => (
                             <form>
                                 <img className={"icon"}  src={dict_data.image} ></img><br/><br/>
-                                Firstname : {dict_data.first_name}<br/><br/>
-                                Lastname : {dict_data.last_name}<br/><br/>
+                                <i className="fa fa-user" aria-hidden="true">{dict_data.first_name} {dict_data.last_name}</i><br/><br/>
+
                                 Gender : {dict_data.gender}<br/><br/>
                                 Age : {dict_data.age}<br/><br/>
                                 Address : {dict_data.address}<br/><br/>
@@ -131,7 +134,7 @@ export default function CaregiverInformation(){
                                     color1={'#ffd700'} />
                             </form>
                         ))}
-                    </form>
+                    </div>
                     <div>
                         review:
                         {caregivers.filter(person => person.username === caregiver_name).map(dict_data => (

@@ -15,9 +15,11 @@ export default function Login() {
                     <h2>LOGIN</h2>
                     <div id="form">
                         <div id = "input_box">
+                            <i className="fa fa-user-circle" aria-hidden="true"/>
                             <input type="text" id="username" placeholder="Username" />
                         </div>
                         <div id = "input_box">
+                            <i className="fa fa-key" aria-hidden="true"/>
                             <input type="password" id="password" placeholder="Password" />
                         </div>
                     </div>

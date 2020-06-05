@@ -331,13 +331,14 @@ body{
     border-radius: 10px;
 }
 .caregiver_infor_style{
+    background-color: #ffffff;
     position: relative;
     width:33.3%;
     margin-top: 80px;
     float: left;
     margin-left: -20%;
     padding: 10px 10px;
-    color: #c6e3e6;
+    color: black;
     border: 5px solid #d2cfcf;
     border-radius: 10px;
 }

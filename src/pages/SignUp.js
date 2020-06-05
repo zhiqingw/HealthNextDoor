@@ -16,12 +16,15 @@ export default function Signup() {
           </div>
           <div id="form">
             <div id = "input_box">
+              <i className="fa fa-user-circle" aria-hidden="true"/>
               <input type="text" id="username" placeholder="Username" />
             </div>
             <div id = "input_box">
+              <i className="fa fa-key" aria-hidden="true"/>
               <input type="password" id="password" placeholder="Password" />
             </div>
             <div id = "input_box">
+              <i className="fa fa-key" aria-hidden="true"/>
               <input type="password" id="confirmed_password" placeholder="Confirm Password" />
             </div>
           </div>
