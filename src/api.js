@@ -473,13 +473,13 @@ export function completeOrder(user) {
 }
 
 export function ratingOrder(user) {
-  const { username, name, rate, state} = user;
+  const { username, name, rate, comment, state} = user;
   const endpoint = BASE_URL + `/user/${name}`;
 // return fetch query
   console.log(username);
   console.log(rate);
   console.log(state);
-  var action = [state, username, rate];
+  var action = [state, username, rate, comment];
   console.log(action);
   console.log(JSON.stringify([state, username, rate]));
   return fetch(endpoint, {
@@ -490,6 +490,11 @@ export function ratingOrder(user) {
     body: JSON.stringify({
       action
     })
+  }).then(res =>{
+    if(res.ok){
+      window.location.assign(`http://localhost:3000/CaregiverInformation/${username}`)
+      //window.location.href = `CaregiverInformation/${username}`;
+    }
   });
 }
 

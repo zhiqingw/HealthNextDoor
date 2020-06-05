@@ -30,7 +30,11 @@
     text-align: center;
     padding: 10px;
 }
-
+.photo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
 
 .caregiver-expand-right {
     /*display: none;*/

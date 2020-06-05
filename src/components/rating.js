@@ -61,13 +61,8 @@ function submitRating() {
         username: username,
         name: name,
         rate: data,
+        comment: review.value,
         state: "rate",
-    });
-    reviewOrder({
-        username: username,
-        name: name,
-        review: review.value,
-        state: "comment",
     });
 }
 

@@ -51,7 +51,6 @@ export default function CaregiverInformation(){
     console.log("!!!!!!!!!!!");
 
     if(userIdentity === "patient") {
-
         return (
             <div>
                 <h1>Caregivers List</h1>
@@ -94,12 +93,9 @@ export default function CaregiverInformation(){
                     <button id="sendReq" onClick={() => sentReq(caregiver_name)}>
                         sent request
                     </button>
-
                     <button id="sendReq" onClick={() => rating(caregiver_name)}>
                         Rate
                     </button>
-
-
                 </div>
             </div>
         )
@@ -127,9 +123,7 @@ export default function CaregiverInformation(){
                                     size={24}
                                     edit={false}
                                     half={true}
-
                                     color1={'#ffd700'} />
-
                             </form>
                         ))}
                     </form>
