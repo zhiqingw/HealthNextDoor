@@ -607,3 +607,19 @@ export function deletePatient(username) {
     window.location.href = `user-management/${username}`;
   });
 }
+
+export function updateimage(url) {
+  const username = window.sessionStorage.getItem("username");
+  const endpoint = BASE_URL + `/findCaregiver/${username}`;
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "username":username,
+      "image": url
+
+    })
+  });
+}

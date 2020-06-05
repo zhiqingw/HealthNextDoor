@@ -4,7 +4,7 @@ import Loading from "../components/Loading";
 import Button from "../components/Button";
 import Filter from "../components/Filter";
 import ReactStars from "react-rating-stars-component";
-
+import Upload from "../components/Upload";
 
 export default function Caregivers() {
     const { loading, caregivers, error } = useCaregivers();
@@ -140,6 +140,7 @@ export function Caregiver(caregiver) {
                 <Button className={"btn-danger"} onClick={() => deleteCaregiver(username)}>
                     Delete
                 </Button>
+                <Upload/>
             </form><form className={"caregiver-expand-right"}></form>
 
 
@@ -309,6 +310,7 @@ function CaregiverExtended(props) {
                 <Button className={"btn-danger"} onClick={() => deleteCaregiver(username)}>
                     Delete
                 </Button>
+
             </form><form className={"caregiver-expand-right"}></form>
 
 

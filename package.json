@@ -12,6 +12,7 @@
     "react-router-dom": "5.1.2",
     "react-scripts": "^3.4.1",
     "react-stars-rating": "0.0.5",
+    "react-test-renderer": "0.0.0-33c3af284",
     "serve": "^11.3.0"
   },
   "devDependencies": {
