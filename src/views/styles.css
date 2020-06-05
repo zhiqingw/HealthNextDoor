@@ -39,15 +39,16 @@ body{
   -o-background-size: cover;
   min-height: 100%;
 }
+
 .homepage_form{
-  background: linear-gradient(to bottom, rgba(100, 100, 100, 0.3) 0%, rgba(100, 100, 100, 0.3) 100%), url(../pictures/3.png) no-repeat center center fixed;
+  background: linear-gradient(to bottom, rgba(200, 200, 200, 0.3) 0%, rgba(100, 100, 100, 0.3) 100%), url(../pictures/2.png) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   overflow: hidden;
 
 }
 .login_frame{
-  background: linear-gradient(to bottom, rgba(100, 100, 100, 0.3) 0%, rgba(100, 100, 100, 0.3) 100%), url(../pictures/2.png) no-repeat center center fixed;
+  background: linear-gradient(to bottom, rgba(200, 200, 200, 0.3) 0%, rgba(100, 100, 100, 0.3) 100%), url(../pictures/3.png) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   overflow: hidden;
@@ -57,9 +58,9 @@ body{
 h1 {
   font-family: "Andale Mono";
   position: relative;
-  margin-top: 1%;
+  margin-top: 10%;
   font-size: 500%;
-  color: #6b97b6;
+  color: #ecebe7;
 }
 
 /*#h1_login{
@@ -124,10 +125,9 @@ input {
 
 nav {
   position: absolute;
-  margin-top: 160px;
-  margin-left: 0;
+  top: 0;
   width: 100%;
-  background-color: #a3bac0;
+  background-color: transparent;
 }
 
 nav a {

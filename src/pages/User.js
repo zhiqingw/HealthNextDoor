@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import {Caregiver} from "./Caregivers";
 import Loading from "../components/Loading";
 import ToList from "../pages/ToList"
+import Nav from "../components/Nav";
 /*user home page*/
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
@@ -36,6 +37,7 @@ export default function Users() {
     }});
     if (userIdentity === "caregiver"){
         return (
+            <div>
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
                 <div id={"htwo"}>
@@ -59,6 +61,7 @@ export default function Users() {
                 </div>
                 <User id={"user_h2"} {...match} />
             </div>
+                </div>
         );
     } else {
         return (

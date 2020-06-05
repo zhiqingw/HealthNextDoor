@@ -30,11 +30,8 @@ export default function Caregivers() {
                                 <img className={"photo"}  src={caregiver.image} ></img>
                                 {caregiver.first_name} {caregiver.last_name}<br/><br/>
                                 </div>
-                                Gender : {caregiver.gender}<br/><br/>
-                                Age : {caregiver.age}<br/><br/>
                                 Address : {caregiver.address}<br/><br/>
                                 Salary : {caregiver.salary}<br/><br/>
-                                Working Experience : {caregiver.working_experience}<br/><br/>
                                 <ReactStars
                                     count={caregiver.rate}
                                     size={24}
