@@ -56,10 +56,13 @@ export default function CaregiverInformation(){
             <div>
                 <h1>Caregivers List</h1>
                 <div>
+                    <form className={"image_block"}>
+                    </form>
                     <form className={"caregiver_infor_style"}>
 
                         {caregivers.filter(person => person.username === caregiver_name).map(dict_data => (
                         <form>
+                            <img className={"icon"}  src={dict_data.image} ></img><br/><br/>
                             Firstname : {dict_data.first_name}<br/><br/>
                             Lastname : {dict_data.last_name}<br/><br/>
                             Gender : {dict_data.gender}<br/><br/>
@@ -108,9 +111,9 @@ export default function CaregiverInformation(){
                     <form className={"image_block"}>
                     </form>
                     <form className={"caregiver_infor_style"}>
-                        <img className={"icon"}  src={dict_data.image} ></img>
                         {caregivers.filter(person => person.username === caregiver_name).map(dict_data => (
                             <form>
+                                <img className={"icon"}  src={dict_data.image} ></img><br/><br/>
                                 Firstname : {dict_data.first_name}<br/><br/>
                                 Lastname : {dict_data.last_name}<br/><br/>
                                 Gender : {dict_data.gender}<br/><br/>
