@@ -26,8 +26,10 @@ export default function Caregivers() {
                     {caregivers.map(caregiver => (
                         <div className="list">
                             <button id="listbutton" onClick={()=>getCaregiverInformation(caregiver)}>
+                                <div id="name">
                                 <img className={"photo"}  src={caregiver.image} ></img>
-                                name : {caregiver.first_name} {caregiver.last_name}<br/><br/>
+                                {caregiver.first_name} {caregiver.last_name}<br/><br/>
+                                </div>
                                 Gender : {caregiver.gender}<br/><br/>
                                 Age : {caregiver.age}<br/><br/>
                                 Address : {caregiver.address}<br/><br/>

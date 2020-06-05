@@ -626,5 +626,10 @@ export function updateimage(url) {
       "image": url
 
     })
+  }).then(res =>{
+    if(res.ok){
+      window.location.assign(`http://localhost:3000/CaregiverInformation/${username}`)
+      //window.location.href = `CaregiverInformation/${username}`;
+    }
   });
 }

@@ -36,6 +36,11 @@
     border-radius: 50px;
 }
 
+#name{
+    color: #5261b6;
+    position: relative;
+    font-size: 130%;
+}
 .caregiver-expand-right {
     /*display: none;*/
     background-color: transparent;
@@ -367,7 +372,8 @@ body{
 }
 
 .icon{
-    width:80%
+    width:80%;
+    border-radius: 200px;
 }
 
 
