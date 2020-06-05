@@ -2,8 +2,6 @@ import React from "react";
 import { usePatients} from "../api";
 
 import Button from "../components/Button";
-import ReactStars from "react-rating-stars-component";
-
 export default function PatientInformation(){
     var data = sessionStorage.getItem("personalInformationForPatient");
     console.log(data);
