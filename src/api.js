@@ -223,6 +223,7 @@ export function updateCaregiver(caregiver) {
     alert("must include a contact information");
     return;
   }
+  console.log(salary)
 
   const endpoint = BASE_URL + `/findCaregiver/${username}`;
   console.log(contact_information.value);
@@ -244,6 +245,9 @@ export function updateCaregiver(caregiver) {
       working_experience,
       contact_information
     })
+  }).then(res =>{
+    window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+
   });
 
 }

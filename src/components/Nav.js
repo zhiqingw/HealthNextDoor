@@ -19,7 +19,6 @@ export default function Nav() {
                     </NavLink>
                     <NavLink to="/login">User Center</NavLink>
                     <NavLink to="/findCaregivers">Caregivers</NavLink>
-                    <h id="hello">Hello, </h>
                     <ul className="nav">
                         <li className="drop-down">
                             <Button className={"userbt"} onClick={showUser}>{window.sessionStorage.getItem("username")}
