@@ -117,28 +117,25 @@ export default function CaregiverInformation(){
                     </form>
                     <div className={"caregiver_infor_style"}>
                         {caregivers.filter(person => person.username === caregiver_name).map(dict_data => (
-                            <form>
-                                <form className={"main-container"}>
+                            <form className={"main-container"}>
                                 <img className={"icon"}  src={dict_data.image} ></img><br/><br/>
-
                                 <i className="fa fa-user" aria-hidden="true">{dict_data.first_name} {dict_data.last_name}</i><br/><br/>
-
-                                Gender : {dict_data.gender}<br/><br/>
-                                Age : {dict_data.age}<br/><br/>
-                                Address : {dict_data.address}<br/><br/>
-                                Salary : {dict_data.salary}<br/><br/>
+                                <div id ="caregiver-contain">
+                                    <i className="fa fa-transgender fa_info" aria-hidden="true"/>{dict_data.gender}<br/><br/>
+                                    <i className="fa fa-home fa_info" aria-hidden="true"/>{dict_data.address}<br/><br/>
+                                    <i className="fa fa-money fa_info" aria-hidden="true"/>{dict_data.salary}<br/><br/>
+                                    <i className="fa fa-phone fa_info" aria-hidden="true"></i>{dict_data.contact_information}<br/><br/>
+                                    <hr/>
+                                </div>
                                 Working Experience : {dict_data.working_experience}<br/><br/>
-                                Contact Me : {dict_data.contact_information}<br/><br/>
-                                Rating :
-                                </form>
-                                <form className={"stars_form"}>
+                                <div id="star">
                                     <ReactStars
                                         count={dict_data.rate}
                                         size={24}
                                         edit={false}
                                         half={true}
-                                        color1={'#ffd700'} /></form>
-
+                                        color1={'#ffd700'} />
+                                </div>
                             </form>
                         ))}
                     </div>
