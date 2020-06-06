@@ -104,9 +104,6 @@ function User(user) {
     return (
         <div className={`user user-${username}`} key={username}>
             <div id={"reset"}>
-                <Button id={"btn-resetpassword"} onClick={toReset}>
-                    Reset Password
-                </Button>
 
                 <Button id={"btn-toList"} onClick={() => toList(user)}>
                 List
@@ -175,11 +172,11 @@ export function UserExtended() {
     );
 }
 */
-function toReset() {
+export function toReset() {
     window.location.assign("http://localhost:3000/resetPassword")
 }
 
-function toList(user){
+export function toList(user){
     console.log(user);
     var string_type = JSON.stringify(user);
     sessionStorage.setItem("listing",string_type);

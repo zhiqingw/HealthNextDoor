@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import {Logout} from "../pages/User";
+import {toReset} from "../pages/User";
 
 export default function Nav() {
     if(window.sessionStorage.getItem("username")){
@@ -14,12 +15,19 @@ export default function Nav() {
                     <NavLink to="/login">User Center</NavLink>
                     <NavLink to="/findCaregivers">Caregivers</NavLink>
                     <h id="hello">Hello, </h>
-                    <Button id="user_button" onClick={showUser}>{window.sessionStorage.getItem("username")}</Button>
-                    <Button className={"logout"} onClick={Logout}>
-                        Log out
-                    </Button>
+                    <ul className="nav">
+                        <li className="drop-down">
+                            <Button className={"userbt"} onClick={showUser}>{window.sessionStorage.getItem("username")}
+                                <i className="fa fa-chevron-down" aria-hidden="true"/>
+                            </Button>
+                            <ul className="drop-down-content">
+                                <li><Button className={"userbt"} onClick={toReset}>RESET PASSWORD</Button></li>
+                                <li><Button className={"userbt"} onClick={toList}>LIST</Button></li>
+                                <li><Button className={"userbt"} onClick={Logout}>LOG OUT</Button></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </nav>
-
             </div>
 
         );
@@ -58,3 +66,6 @@ function showUser(){
         );
     }
 }*/
+function toList(){
+    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`);
+}
