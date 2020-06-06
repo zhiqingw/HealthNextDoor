@@ -4,6 +4,8 @@ import Logo from "./Logo";
 
 export default function HomePage() {
     return (
+        <div>
+
 
         <div className="homepage_form">
             <div className={"h1_form"}>
@@ -12,18 +14,22 @@ export default function HomePage() {
             <div className={"h3_form"}>
                 <h3> Care about you and your families! </h3>
             </div>
-
             <div className={"blank"}>
 
-                <p>
-                    Hope you can enjoy our services! Cheers!
-                </p>
+                <button className="opa" onClick={toLogin}>
+                    Getting start
+                </button>
             </div>
-
-            <div className={"credit_form"}>
-                <p>2020 HealthNextDoor © All Rights Reserved</p>
-            </div>
+        </div>
         </div>
 
     );
+}
+
+function toLogin() {
+    if(window.sessionStorage.getItem("username")) {
+        window.location.assign(`http://localhost:3000/findCaregivers`)
+    }else{
+        window.location.assign(`http://localhost:3000/login`)
+    }
 }

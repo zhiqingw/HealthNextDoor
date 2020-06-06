@@ -3,11 +3,16 @@ import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import {Logout} from "../pages/User";
 import {toReset} from "../pages/User";
+import Logo from "./Logo";
 
 export default function Nav() {
     if(window.sessionStorage.getItem("username")){
         return (
-            <div>
+            <div className={"whole_nav"}>
+                <div id={"logo_part"}>
+                    <Logo/>
+                </div>
+                <div id={"nav_part"}>
                 <nav id="head">
                     <NavLink exact to="/">
                         Home
@@ -28,12 +33,18 @@ export default function Nav() {
                         </li>
                     </ul>
                 </nav>
+                </div>
+
             </div>
 
         );
     }
     return (
-        <div>
+        <div className={"whole_nav"}>
+            <div id={"logo_part"}>
+                <Logo/>
+            </div>
+            <div id={"nav_part"}>
             <nav id="head">
                 <NavLink exact to="/">
                     Home
@@ -42,6 +53,7 @@ export default function Nav() {
                 <NavLink to="/findCaregivers">Caregivers</NavLink>
 
             </nav>
+            </div>
         </div>
 
     );
