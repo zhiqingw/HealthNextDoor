@@ -14,9 +14,22 @@ export default function HomePage() {
             <div className={"h3_form"}>
                 <h3> Care about you and your families! </h3>
             </div>
+            <div className={"blank"}>
 
+                <button className="opa" onClick={toLogin}>
+                    Getting start
+                </button>
+            </div>
         </div>
         </div>
 
     );
+}
+
+function toLogin() {
+    if(window.sessionStorage.getItem("username")) {
+        window.location.assign(`http://localhost:3000/findCaregivers`)
+    }else{
+        window.location.assign(`http://localhost:3000/login`)
+    }
 }
