@@ -18,7 +18,6 @@ export default function Caregivers() {
     return (
         <div>
             <div className={"list_style"}>
-                <h1>Caregivers List</h1>
                 <div id={"filter_place"}><Filter/></div>
                 <div id={"join_button"}>
                 </div>
@@ -144,9 +143,6 @@ export function Caregiver(caregiver) {
                     Update
                 </Button>
 
-                <Button className={"btn-danger"} onClick={() => deleteCaregiver(username)}>
-                    Delete
-                </Button>
                 <Upload/>
             </form><form className={"caregiver-expand-right"}></form>
 

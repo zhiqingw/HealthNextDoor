@@ -40,7 +40,7 @@
 }
 
 #name{
-    color: #818cb6;
+    color: #3e7a62;
     position: relative;
     font-size: 200%;
     font-family: Calibri;
@@ -291,13 +291,15 @@ body{
     font-weight: bold;
     margin-top: 2%;
     background-color: transparent;
+    height: 70px;
     border-radius: 5px;
 }
 .title_input{
     /*margin-left:-850px;*/
     position: relative;
     margin-top: 8.5%;
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: bold;
     font-family: "Andale Mono";
     color: #94bd97;
 
@@ -312,6 +314,7 @@ body{
 
 #careGiverList{
     margin-top: 50px;
+    margin-left: 23%;
 }
 
 .image_block{

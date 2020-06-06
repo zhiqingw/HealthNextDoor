@@ -30,7 +30,7 @@ body {
   background-repeat: repeat;
   background-size: 100%;
 }*/
-
+/*
 body{
   background: linear-gradient(to bottom, rgba(100, 100, 100, 0.3) 0%, rgba(100, 100, 0, 0.3) 100%), url(../pictures/bgp.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -39,7 +39,7 @@ body{
   -o-background-size: cover;
   min-height: 100%;
 }
-
+*/
 .homepage_form{
   background: linear-gradient(to bottom, rgba(200, 200, 200, 0.3) 0%, rgba(100, 100, 100, 0.3) 100%), url(../pictures/2.png) no-repeat center center fixed;
   background-size: cover;
@@ -60,7 +60,7 @@ h1 {
   position: relative;
   margin-top: 10%;
   font-size: 500%;
-  color: #ecebe7;
+  color: #3e7a62;
 }
 
 /*#h1_login{
@@ -96,13 +96,13 @@ h3 {
 
   top: 10px;
   font-size: 150%;
-  color: #98c5c2;
+  color: #738a9c;
 }
 
 h4 {
   text-align: center;
   font-size: 19px;
-  color:aliceblue;
+  color:#549d82;
 }
 
 /*.logo_form img{
@@ -136,7 +136,7 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  color: #3e7a62;
   text-decoration: none;
   padding: 10px;
   display: inline-block;
@@ -472,12 +472,12 @@ ul Button{
   display: block;
 }
 .userbt{
-  background: transparent;
+  background:#94bd97 ;
   width: 100%;
 }
 .userbt:active,
 .userbt:hover{
-  background-color: transparent;
+  background-color:#94bd97 ;
 }
 .nav ul li:hover{
   color:#fff;
