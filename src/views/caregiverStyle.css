@@ -1,7 +1,7 @@
 .list{
     width:70%;
     float:left;
-    margin-top: 0px;
+    margin-top: 50px;
 }
 
 #listbutton{
@@ -9,16 +9,14 @@
     margin-top: 10px;
     font-family: "Times New Roman";
     font-size: 16px;
-    border-color: transparent;
-    border-top-color: #d7d7d7;
+    font-weight: bold;
+
     width: 700px;
     height: 250px;
     background-color: transparent;
+    border-radius: 10px;
     text-align: left;
-}
 
-.block_list{
-    display: flex;
 }
 #listbutton:active,
 #listbutton:hover{
@@ -33,17 +31,15 @@
     padding: 10px;
 }
 .photo{
-    margin-left: 35%;
-    height: 230px;
-    width: 230px;
+    height: 100px;
+    width: 100px;
     border-radius: 50px;
 }
 
 #name{
-    color: #818cb6;
+    color: #5261b6;
     position: relative;
-    font-size: 200%;
-    font-family: Calibri;
+    font-size: 130%;
 }
 .caregiver-expand-right {
     /*display: none;*/
@@ -321,7 +317,7 @@ body{
 }
 
 #careGiverList{
-    margin-top: 50px;
+    margin-top: -50px;
 }
 
 .image_block{
@@ -335,18 +331,29 @@ body{
     border-radius: 10px;
 }
 .caregiver_infor_style{
-    background-color: #ffffff;
+    background-color: aliceblue;
     position: relative;
-    width:33.3%;
-    margin-top: 80px;
+    width:30%;
+    margin-top: 40px;
     float: left;
     margin-left: -20%;
     padding: 10px 10px;
     color: black;
     border: 5px solid #d2cfcf;
     border-radius: 10px;
+
 }
 
+.comment_style{
+    margin-top: 40px;
+    width:50%;
+    float :right;
+    text-align: left;
+}
+.comment_p_style{
+    margin-top : 23px;
+
+}
 .image_area{
     border: 2px solid #d2cfcf;
     position: relative;
@@ -378,19 +385,17 @@ body{
 }
 
 .icon{
-    width:80%;
+    width:40%;
     border-radius: 200px;
+    height:200px;
+
 }
 
-#as{
-    font-size: 12px;
-    font-weight: bold;
-    font-family: Calibri;
+.stars_form{
+    width:56%;
+    float: right;
 }
 
-#intro{
-    height: 100px;
-    width: 200px;
-    font-family: Calibri;
-}
+
+
 
