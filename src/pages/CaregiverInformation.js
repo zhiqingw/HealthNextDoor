@@ -73,13 +73,14 @@ export default function CaregiverInformation(){
                             <hr/>
                             </div>
                             Working Experience : {dict_data.working_experience}<br/><br/>
+                            <div id="star">
                             <ReactStars
                                 count={dict_data.rate}
                                 size={24}
                                 edit={false}
                                 half={true}
-
                                 color1={'#ffd700'} />
+                            </div>
                         </form>
                             ))}
                     </div>
