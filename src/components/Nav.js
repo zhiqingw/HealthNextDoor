@@ -31,7 +31,11 @@ export default function Nav() {
         );
     }
     return (
-        <div>
+        <div className={"whole_nav"}>
+            <div id={"logo_part"}>
+                <Logo/>
+            </div>
+            <div id={"nav_part"}>
             <nav id="head">
                 <NavLink exact to="/">
                     Home
@@ -40,6 +44,7 @@ export default function Nav() {
                 <NavLink to="/findCaregivers">Caregivers</NavLink>
 
             </nav>
+            </div>
         </div>
 
     );
