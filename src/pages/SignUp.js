@@ -47,9 +47,13 @@ function onSubmit() {
     //console.log(caregiver.value);
     signupCheck(username.value, password.value, confirmed_password.value, caregiver.value);
     //window.location.href = "AddCaregiver"
-  } else{
+  } else if(patient.checked){
     signupCheck(username.value, password.value, confirmed_password.value, patient.value);
     //window.location.href = "AddPatient"
+  }
+  if(!caregiver.checked && !patient.checked){
+    alert("Must select an identity!")
+    return;
   }
 
 

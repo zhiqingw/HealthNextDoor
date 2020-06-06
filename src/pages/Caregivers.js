@@ -161,6 +161,15 @@ export function SubmitFilter(caregivers) {
     var male = document.getElementById("gender_male");
     var female = document.getElementById("gender_female");
     var gender_result = caregivers;
+    console.log(min_age.value);
+    if(min_age.type !== "number" || max_age.type !== "number"){
+        alert("Please enter a valid age range!");
+        return;
+    }
+    if(working_experience.type !== "number"){
+        alert("Please enter a valid working experience!")
+    }
+
     if (male && female) {
         if (male.checked && !female.checked) {
             gender_result = caregivers.filter(function (caregiver) {
@@ -230,7 +239,7 @@ export function SubmitFilter(caregivers) {
     var string_type = JSON.stringify(working_experience_result);
     console.log(string_type);
     sessionStorage.setItem("targetData",string_type);
-    window.location.href = "SearchCaregivers"
+    //window.location.href = "SearchCaregivers"
 
 }
 
