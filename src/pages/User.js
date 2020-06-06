@@ -22,6 +22,7 @@ export default function Users() {
     if (errors) {
         return <p>Something went wrong: {error.message}</p>;
     }
+    var notFound = -1;
     let username;
     username = window.location.pathname;
     let index;
@@ -36,6 +37,30 @@ export default function Users() {
             userIdentity = singleuser.identity;
     }});
     if (userIdentity === "caregiver"){
+        caregivers.map(caregiver =>{
+            if(caregiver.username===name){
+                notFound = 0;
+            }
+        });
+        if (notFound === -1){
+            notFound = 1;
+        }
+    }
+    if (userIdentity === "patient") {
+        patients.map(patient => {
+            if (patient.username === name) {
+                notFound = 0;
+            }
+        });
+        if (notFound === -1){
+            notFound = 1;
+        }
+    }
+    console.log(notFound);
+    if (notFound === -1){
+        return("")
+    }
+    if (userIdentity === "caregiver" && notFound === 0){
         return (
             <div>
             <div className={"user_home_page"}>
@@ -47,9 +72,12 @@ export default function Users() {
                 <div id={"tryy"}>
                     {caregivers.map(caregiver =>{
                         if(caregiver.username===name){
+                            //console.log(caregiver);
                            return <Caregiver key={caregiver.username} {...caregiver} />
                         }
                     })}
+
+
 
                 </div>
                 <div>
@@ -63,7 +91,7 @@ export default function Users() {
             </div>
                 </div>
         );
-    } else {
+    } if (userIdentity === "patient" && notFound === 0) {
         return (
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
@@ -87,13 +115,48 @@ export default function Users() {
                 <User id={"user_h2"} {...match} />
             </div>
         );
+    } if (userIdentity = "caregiver" && notFound === 1) {
+        return (
+            <div className={"user_home_page"}>
+                <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
+                <div id={"htwo"}>
+                    <h2>Warning!</h2>
+                </div>
+                <p> Your infomation is not saved successfully, please click the button below to fill the infomation! </p>
+                <Button className="login_button" onClick={fillCaregiverInformation}>
+                    Fill infomation
+                </Button>
+            </div>
+
+        )
+    } if (userIdentity = "patient" && notFound === 1) {
+        return (
+            <div className={"user_home_page"}>
+                <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
+                <div id={"htwo"}>
+                    <h2>Warning!</h2>
+                </div>
+                <p> Your infomation is not saved successfully, please click the button below to fill the infomation! </p>
+                <Button className="login_button" onClick={fillPatientInformation}>
+                    Fill infomation
+                </Button>
+            </div>
+        )
     }
+}
+
+function fillCaregiverInformation(){
+    window.location.assign('http://localhost:3000/AddCaregiver');
+}
+
+function fillPatientInformation(){
+    window.location.assign('http://localhost:3000/AddPatient');
 }
 
 /*log out and redirect to home page*/
 export function Logout(){
     window.sessionStorage.removeItem("username");
-    window.location.assign('http://localhost:3000')
+    window.location.assign('http://localhost:3000');
 }
 
 /*reset password*/
