@@ -84,14 +84,17 @@ export default function CaregiverInformation(){
                         </form>
                             ))}
                     </div>
-                    <div>
-                    review:
+                    <div className={"comment_style"}>
+                        <h4>Comment:</h4>
                         {caregivers.filter(person => person.username === caregiver_name).map(dict_data => (
                             dict_data.comment.map( comment => (
-                        <p>
-                           Anonymous: {comment}
-                            <hr />
-                        </p>
+                                <p className={"comment_p_style"}>
+                                    <img src={anonymousIcon} width={"25px"}></img>  &nbsp;
+                                    Anonymous: <br/><br/>{comment}
+                                    <p className={"comment_p_style"}>
+                                        <hr />
+                                    </p>
+                                </p>
                             ))))}
                     </div>
                     <button id="sendReq" onClick={() => sentReq(caregiver_name)}>

@@ -174,7 +174,7 @@ export function SubmitFilter(caregivers) {
             return;
         }
     }
-    
+
     if (male && female) {
         if (male.checked && !female.checked) {
             gender_result = caregivers.filter(function (caregiver) {
