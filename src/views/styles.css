@@ -419,3 +419,60 @@ fieldset[disabled] .btn {
   margin-top: 20%;
 }
 
+.nav{
+  position: absolute;
+  display: inline-block;
+  background: transparent;
+
+}
+
+ul{
+  margin-left: 19%;
+  margin-top: -3px;
+  list-style: none;
+}
+.nav>li{
+  float: left;
+}
+ul Button{
+  display: block;
+  text-decoration: none;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+.nav>li:first-child a{
+  border-radius: 10px 0 0 10px;
+}
+.nav>li:last-child a{
+  border-radius: 0 10px 10px 0;
+}
+
+.drop-down-content{
+  padding: 0;
+  display: none;
+  position: absolute;
+}
+
+.nav .drop-down:hover .drop-down-content{
+  display: block;
+}
+.userbt{
+  background: transparent;
+  width: 100%;
+}
+.userbt:active,
+.userbt:hover{
+  background-color: transparent;
+}
+.nav ul li:hover{
+  color:#fff;
+  background: linear-gradient(to right, #19c3cb 0%, #7397da 0%, #92bbda 0%, #86c5cf 70%);
+}
+.fa-chevron-down{
+  margin-left: 10px;
+}
