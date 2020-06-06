@@ -5,8 +5,13 @@ export default function Home() {
     return (
         <div>
             <HomePage/>
-            <div className="white_line"><br/><br/></div>
+                        <div className={"blank"}>
+                <p>
+                    Hope you can enjoy our services! Cheers!
+                </p>
+            </div>
             <div className="block_h">
+
             <div id='inform'>
                 <div id='title'>
                     what is dementia?
