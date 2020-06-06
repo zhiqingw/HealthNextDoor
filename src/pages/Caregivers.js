@@ -162,14 +162,19 @@ export function SubmitFilter(caregivers) {
     var female = document.getElementById("gender_female");
     var gender_result = caregivers;
     console.log(min_age.value);
-    if(min_age.type !== "number" || max_age.type !== "number"){
-        alert("Please enter a valid age range!");
-        return;
+    if (min_age.value || max_age.value) {
+        if (min_age.type !== "number" || max_age.type !== "number") {
+            alert("Please enter a valid age range!");
+            return;
+        }
     }
-    if(working_experience.type !== "number"){
-        alert("Please enter a valid working experience!")
+    if(working_experience.value) {
+        if (working_experience.type !== "number") {
+            alert("Please enter a valid working experience!")
+            return;
+        }
     }
-
+    
     if (male && female) {
         if (male.checked && !female.checked) {
             gender_result = caregivers.filter(function (caregiver) {

@@ -37,8 +37,8 @@ export default function Filter() {
                 &nbsp;&nbsp;&nbsp;
 
                 Age:
-                <input type = "number" id = "min_age" min="0"className="small_textframe" placeholder="0"/>&nbsp;-&nbsp;
-                <input type = "number" id = "max_age" min="0"className="small_textframe" placeholder="99"/>
+                <input type = "text" id = "min_age" min="0"className="small_textframe" placeholder="0"/>&nbsp;-&nbsp;
+                <input type = "text" id = "max_age" min="0"className="small_textframe" placeholder="99"/>
                 &nbsp;&nbsp;&nbsp;
 
 
@@ -49,7 +49,7 @@ export default function Filter() {
 
 
                 Working experience:&nbsp;
-                More than <input type = "number" min="0" id="working_experience" className="small_textframe"></input>&nbsp;years
+                More than <input type = "text" min="0" id="working_experience" className="small_textframe"></input>&nbsp;years
                 &nbsp;&nbsp;&nbsp;
 
                 Salary (per hour):&nbsp;
