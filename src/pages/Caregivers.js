@@ -243,7 +243,7 @@ export function SubmitFilter(caregivers) {
     var string_type = JSON.stringify(working_experience_result);
     console.log(string_type);
     sessionStorage.setItem("targetData",string_type);
-    //window.location.href = "SearchCaregivers"
+    window.location.href = "SearchCaregivers"
 
 }
 
