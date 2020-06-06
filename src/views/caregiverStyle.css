@@ -383,3 +383,27 @@ body{
     width: 200px;
     font-family: Calibri;
 }
+
+.icon{
+    width:40%;
+    border-radius: 200px;
+    height:200px;
+
+}
+
+.comment_style{
+    margin-top: 40px;
+    width:50%;
+    float :right;
+    text-align: left;
+}
+
+.comment_p_style{
+    margin-top : 23px;
+}
+
+.stars_form{
+    width:56%;
+    float: right;
+}
+
