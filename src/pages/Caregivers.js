@@ -26,12 +26,18 @@ export default function Caregivers() {
                     {caregivers.map(caregiver => (
                         <div className="list">
                             <button id="listbutton" onClick={()=>getCaregiverInformation(caregiver)}>
-                                <div id="name">
-                                <img className={"photo"}  src={caregiver.image} ></img>
-                                {caregiver.first_name} {caregiver.last_name}<br/><br/>
-                                </div>
-                                Address : {caregiver.address}<br/><br/>
+                                <div className="block_list">
+                                <div>
+                                    <div id="name">
+                                        {caregiver.first_name} {caregiver.last_name}<br/><br/>
+                                    </div>
+                                    <div id="intro">
+                                        introduction : {caregiver.introduction}
+                                    </div>
+                                    <div id="as">
+                                Address : {caregiver.address} &nbsp;&nbsp;
                                 Salary : {caregiver.salary}<br/><br/>
+                                </div>
                                 <ReactStars
                                     count={caregiver.rate}
                                     size={24}
@@ -39,6 +45,9 @@ export default function Caregivers() {
                                     half={true}
 
                                     color1={'#ffd700'} />
+                                    </div>
+                                <img className={"photo"}  src={caregiver.image} ></img>
+                                    </div>
                             </button>
                         </div>
                     ))}
