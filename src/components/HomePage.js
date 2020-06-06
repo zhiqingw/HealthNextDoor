@@ -15,12 +15,6 @@ export default function HomePage() {
                 <h3> Care about you and your families! </h3>
             </div>
 
-            <div className={"blank"}>
-
-                <p>
-                    Hope you can enjoy our services! Cheers!
-                </p>
-            </div>
         </div>
         </div>
 
