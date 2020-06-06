@@ -14,9 +14,9 @@
     width: 700px;
     height: 250px;
     background-color: transparent;
-    border-radius: 10px;
     text-align: left;
-
+    border-left-color: transparent;
+    border-right-color: transparent;
 }
 #listbutton:active,
 #listbutton:hover{

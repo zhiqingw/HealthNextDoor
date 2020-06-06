@@ -4,6 +4,8 @@ import Logo from "./Logo";
 
 export default function HomePage() {
     return (
+        <div>
+
 
         <div className="homepage_form">
             <div className={"h1_form"}>
@@ -19,10 +21,7 @@ export default function HomePage() {
                     Hope you can enjoy our services! Cheers!
                 </p>
             </div>
-
-            <div className={"credit_form"}>
-                <p>2020 HealthNextDoor © All Rights Reserved</p>
-            </div>
+        </div>
         </div>
 
     );

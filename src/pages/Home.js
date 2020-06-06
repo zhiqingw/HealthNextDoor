@@ -21,8 +21,11 @@ export default function Home() {
             <img id={"ph"} src={require('../pictures/hp.jpg')} alt="ifo"/>
             </div>
                 </div>
-            contact us<br/><br/>
-            term and condition
+            <div className={"contact"}>contact us</div>
+            <div className={"term_condi"}>term and condition</div>
+            <div className={"credit_form"}>
+                <p>2020 HealthNextDoor © All Rights Reserved</p>
+            </div>
         </div>
     );
 }

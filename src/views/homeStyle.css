@@ -61,3 +61,12 @@ h6{
     height: 10%;
     background-color: white;
 }
+
+.logo_block{
+    position: relative;
+    width: 10%;
+    float: left;
+    max-height: 2px;
+    max-width: 2px;
+
+}
