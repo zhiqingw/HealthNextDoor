@@ -354,6 +354,7 @@ body{
 }
 
 #sendReq{
+
     width: 8%;
     height: 50px;
     margin-top: 3%;
@@ -400,6 +401,7 @@ body{
 }
 
 .comment_style{
+    min-height:600px;
     margin-top: 40px;
     width:50%;
     float :right;
