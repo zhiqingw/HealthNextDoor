@@ -27,17 +27,15 @@ export default function CaregiverInformation(){
     if (error) {
         return <p>Something went wrong: {error.message}</p>;
     }
-
+    // Find the identity of the user.
     var userIdentity = undefined;
     user.map(singleuser => {
         if (singleuser.username === window.sessionStorage.getItem("username")){
             userIdentity = singleuser.identity;
         }});
 
-    console.log("!!!!!!!!!!!");
-
+    // Return what should a patient see on this page if this user is a patient (Patient are able to send request to caregivers).
     if(userIdentity === "patient") {
-
         return (
             <div>
                 <h1>Caregivers List</h1>
@@ -91,12 +89,11 @@ export default function CaregiverInformation(){
                         <i className="fa fa-star-half-o" aria-hidden="true"></i>
                         Rate
                     </button>
-
-
                 </div>
             </div>
         )
-    }else{
+        // Return what should a caregiver see on this page if this user is a caregiver.
+    }if (userIdentity === "caregiver"){
         return (
             <div>
                 <h1>Caregivers List</h1>
@@ -144,13 +141,12 @@ export default function CaregiverInformation(){
                 </div>
             </div>
         )
-
-
     }
-
 }
+/*
+* A function to send request from a patient to a caregiver
+ */
 function sentReq(name){
-    console.log("here!!!!!!!!!!!!");
     var username = window.sessionStorage.getItem("username");
     sentRequestPatient({
         username: username,
@@ -159,6 +155,9 @@ function sentReq(name){
     });
 }
 
+/*
+* A function to give rating to a caregiver.
+ */
 function rating(username) {
     window.sessionStorage.setItem("rating_target",username);
     window.location.assign(`http://localhost:3000/rating/${username}`);
