@@ -1,12 +1,19 @@
 import React,{useState}from "react";
 import {updateimage} from "../api"
+import Button from "./Button";
 export default function Upload() {
     const [image,setImage] = useState('');
     const [loading, setLoading] = useState(false);
+    var selectedFile;
+    const fileSelectedHandler = event => {
+        selectedFile = event.target.files[0];
+        console.log(event.target.files[0]);
+    };
+
     const uploadImage = async e => {
-        const files = e.target.files;
+        //const files = e.target.files;
         const data = new FormData();
-        data.append('file', files[0]);
+        data.append('file', selectedFile);
         data.append('upload_preset', 'xuxuxue');
         setLoading(true);
         const res = await fetch(
@@ -28,7 +35,10 @@ export default function Upload() {
     return(
         <div >
             <label className="update_input"> Upload Image</label>
-            <input type="file" name ="file" placeholder="Upload an image" onChange={uploadImage}/>
+            <input type="file" name ="file" placeholder="Upload an image" onChange={fileSelectedHandler}/>
+            <Button className="login_button" onClick={uploadImage}>
+                Upload
+            </Button>
             {loading ?(
                 <label className="update_input"> Loading</label>
             ):(
@@ -37,3 +47,5 @@ export default function Upload() {
         </div>
     );
 }
+
+

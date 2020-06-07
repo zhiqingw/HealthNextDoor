@@ -102,7 +102,8 @@ export default function Users() {
                 </div>
             </div>
         );
-    } if (userIdentity = "caregiver" && notFound === 1) {
+    } if (userIdentity === "caregiver" && notFound === 1) {
+        console.log(userIdentity);
         return (
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
@@ -116,7 +117,7 @@ export default function Users() {
             </div>
 
         )
-    } if (userIdentity = "patient" && notFound === 1) {
+    } if (userIdentity === "patient" && notFound === 1) {
         return (
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
@@ -206,13 +207,13 @@ export function Patient(patient) {
     return (
         <div>
             <table id='profile'>
-                <tr><td>firstname:</td> <td>{first_name}</td></tr>
-                <tr><td>lastname: </td> <td>{last_name}</td></tr>
-                <tr><td>gender: </td> <td>{gender}</td></tr>
-                <tr><td>age: </td> <td> {age}</td></tr>
-                <tr><td>address: </td> <td> {address}</td></tr>
-                <tr><td>contact information: </td> <td>{contact_information}</td></tr>
-                <tr ><td>introduction: </td> <td width={'300px'}>{introduction}</td></tr>
+                <tr><td>Firstname:</td> <td>{first_name}</td></tr>
+                <tr><td>Lastname: </td> <td>{last_name}</td></tr>
+                <tr><td>Gender: </td> <td>{gender}</td></tr>
+                <tr><td>Age: </td> <td> {age}</td></tr>
+                <tr><td>Address: </td> <td> {address}</td></tr>
+                <tr><td>Contact information: </td> <td>{contact_information}</td></tr>
+                <tr ><td>Introduction: </td> <td width={'300px'}>{introduction}</td></tr>
                 <button className={"btn-success"} onClick={()=>updateProfilePatient(username)}>
                     update
                 </button>

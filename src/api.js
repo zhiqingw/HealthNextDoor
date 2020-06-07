@@ -487,7 +487,12 @@ export function sentRequestPatient(user) {
       action
     })
   }).then(res =>{
-    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    if(res.ok){
+      window.location.assign(`http://localhost:3000/toList/${username}`)
+      //window.location.href = `CaregiverInformation/${username}`;
+    }else{
+      alert("you are a patient of that caregiver!");
+    }
   });
 }
 
@@ -535,6 +540,8 @@ export function ratingOrder(user) {
     if(res.ok){
       window.location.assign(`http://localhost:3000/CaregiverInformation/${username}`)
       //window.location.href = `CaregiverInformation/${username}`;
+    }else{
+      alert("you are not a patient of that caregiver!");
     }
   });
 }

@@ -17,18 +17,18 @@ This is the current version of our project. We are team HealthNextDoor,
  
         a. When you click into Login page, you will see the Login
             box, you can use login button log into our web. 
-    e.g. try username: jack, password: 1234
+    e.g. try username: www, password: 12345
         
         b. If you are not our user, you can click sign up button 
             to sign up your account.
     e.g. try to enter any username and password by yourself
  
         c. After you login or signup, page will link to your user
-            center, which will display your post recording. 
-    e.g. try username: jack, password: 1234
+            center, which will display your profile. 
+    e.g. try username: www, password: 12345
     
-        d. Also in your user center, you can change your password
-            by click Reset Password button.
+        d. After you login, there will be a button in the top-right corner.
+           that is a drop-off-menu. The drop-off-menu
     e.g. try click and change it by yourself
     
  2. Caregivers
@@ -43,12 +43,13 @@ This is the current version of our project. We are team HealthNextDoor,
      e.g. click female condition, and press search, it will only 
         show female caregivers
         
-        c. If you want to join the caregiver team, and show your 
-            information on this page, you can click "Let's Join Us
-            Today" button, and it will link to a new page with the 
-            information form, and you can post your information. 
-            After posting the information, you can get to the login 
-            page to see your post.
+        c. When you click into an exact caregiver listing in the caregiver page,
+           you will see the information in detail of that caregiver, as well as
+           the rating and review for that caregiver. If you are logging in as 
+           patient, you will see the rating and send request button. Clicking
+           the rating button will direct to the rating page for that caregiver,
+           you will only be able to rate if you were a patient of that caregiver.
+          
      e.g. try any information by yourself
      
 ### Set Up

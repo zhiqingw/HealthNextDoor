@@ -338,6 +338,7 @@ body{
     color: black;
     border: 5px solid #d2cfcf;
     border-radius: 10px;
+    border-color: #0a6310;
 }
 
 .image_area{
@@ -355,14 +356,15 @@ body{
 #sendReq{
     width: 8%;
     height: 50px;
-    margin-top: 20%;
+    margin-top: 3%;
+    margin-left: 5%;
     border: transparent;
     font-weight: bold;
     font-size: 15px;
     color: white;
     background-color: #63a4ff;
     border-radius: 200px;
-    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+    background-image: linear-gradient(315deg, #63ff6c 0%, #0a6310 74%);
 }
 
 #req_left{
@@ -427,23 +429,37 @@ body{
 }
 
 #profile{
+     color: #0c0d0c;
+     background-color: mediumseagreen;
+     margin: 12px 12px 12px 12px;
+     padding: 12px 12px 12px 12px;
+     margin-left: 37%;
+ }
+#profileOuter{
     color: #0c0d0c;
     background-color: #2da2db;
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
-    margin-left: 30%;
+    margin-left: 0%;
 }
 .postingProfile{
-    margin-left: 37%;
+    margin-left: 38%;
+    
+}
+.profileImage{
+    height:110px;
+    margin-right:60%;
+}
+.uploadStyle{
+    margin-right:60%;
 }
 #profile td {
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
 }
-
-#profile_photo{
-    position: absolute;
-    margin-right: 20%;
+#profileOuter td {
+    margin: 12px 12px 12px 12px;
+    padding: 12px 12px 12px 12px;
 }
 
 #min_age,
@@ -451,4 +467,5 @@ body{
 #address,
 #working_experience{
     border-color: #0c0d0c;
+
 }
