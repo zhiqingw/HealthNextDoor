@@ -154,7 +154,7 @@ export function addCaregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience,contact_information } = caregiver;
   var reg=/^[0-9]+.?[0-9]*$/;
   if(!reg.test(age)){
-    alert("must include a valid age!");
+    alert("age must be a number!");
     return;
   }
   if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
@@ -162,11 +162,11 @@ export function addCaregiver(caregiver) {
     return;
   }
   if(!reg.test(salary)){
-    alert("must include a valid salary!");
+    alert("salary must be a number!");
     return;
   }
   if(!reg.test(working_experience)){
-    alert("must include a valid working experience!");
+    alert("working experience must be a number!");
     return;
   }
   if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !salary || !working_experience || !contact_information) {
@@ -206,7 +206,7 @@ export function updateCaregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience, contact_information } = caregiver;
   var reg=/^[0-9]+.?[0-9]*$/;
   if(!reg.test(age)){
-    alert("must include a valid age!");
+    alert("age must be number!");
     return;
   }
   if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
@@ -214,11 +214,11 @@ export function updateCaregiver(caregiver) {
     return;
   }
   if(!reg.test(salary)){
-    alert("must include a valid salary!");
+    alert("salary must be in number!");
     return;
   }
   if(!reg.test(working_experience)){
-    alert("must include a valid working experience!");
+    alert("working experience must be a number!");
     return;
   }
   if (!username) {
@@ -562,7 +562,7 @@ export function addPatient(patient) {
   const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;
   var reg=/^[0-9]+.?[0-9]*$/;
   if(!reg.test(age)){
-    alert("must include a valid age!");
+    alert("age must be a number!");
     return;
   }
   if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
@@ -604,7 +604,7 @@ export function updatePatient(patient) {
   const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;
   var reg=/^[0-9]+.?[0-9]*$/;
   if(!reg.test(age)){
-    alert("must include a valid age!");
+    alert("age must be number!");
     return;
   }
   if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){

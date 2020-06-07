@@ -74,8 +74,8 @@ export function Caregiver(caregiver) {
 
 
     return (
-        <div>
-                <img className={"profile_photo"} height='100px' width='100px' src={image} ></img><br/><br/>
+        <div className='postingProfile'>
+                <img id={"profile_photo"} height='100px' width='100px' src={image} ></img><br/><br/>
             <table id='profile'>
                 <tr><td>firstname:</td> <td>{first_name}</td></tr>
                 <tr><td>lastname: </td> <td>{last_name}</td></tr>
