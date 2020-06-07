@@ -428,25 +428,32 @@ body{
 
 #profile{
     color: #0c0d0c;
+    background-color: #2da2db;
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
+    margin-left: 30%;
 }
 .postingProfile{
-    margin-left: 37%;
+    margin-left: 38%;
+    
+}
+.profileImage{
+    height:110px;
+    margin-right:60%;
+}
+.uploadStyle{
+    margin-right:60%;
 }
 #profile td {
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
 }
 
-#profile_photo{
-    position: absolute;
-    margin-right: 20%;
-}
 
 #min_age,
 #max_age,
 #address,
 #working_experience{
     border-color: #0c0d0c;
+
 }
