@@ -90,7 +90,8 @@ export function updateUser(user) {
     alert("must include a password");
     return;
   }
-  const endpoint = BASE_URL + `/login/${username}`;
+  console.log(username);
+  const endpoint = BASE_URL + `/user/${username}`;
 // return fetch query
   return fetch(endpoint, {
     method: "POST",
@@ -98,8 +99,7 @@ export function updateUser(user) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      username,
-      password
+      "password":password
     })
   });
 }
