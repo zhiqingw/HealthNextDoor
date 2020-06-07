@@ -60,3 +60,9 @@
 }
 
 /*background-color: gradient(315deg, #63a4ff 0%, #83eaf1 74%);*/
+
+.user_home_page{
+    margin-top: -7%;
+    background: url(../pictures/old-people.jpg);
+    height: 250px;
+}

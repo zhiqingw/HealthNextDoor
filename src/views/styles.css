@@ -440,6 +440,7 @@ fieldset[disabled] .btn {
   position: absolute;
   display: inline-block;
   background: transparent;
+  z-index: 9999;
 
 }
 
