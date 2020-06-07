@@ -87,7 +87,7 @@ export default function Users() {
     } if (userIdentity === "patient" && notFound === 0) {
         return (
             <div className={"user_home_page"}>
-                <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
+                <h1 id={"lol"}>Welcome, {window.sessionStorage.getItem("username")}</h1>
                 <div id={"htwo"}>
                     <h2>Profile</h2>
                 </div>
