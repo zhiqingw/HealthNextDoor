@@ -6,6 +6,9 @@ import Filter from "../components/Filter";
 import ReactStars from "react-rating-stars-component";
 import Upload from "../components/Upload";
 
+/*
+* List caregiver's information on the page.
+ */
 export default function Caregivers() {
     const { loading, caregivers, error } = useCaregivers();
     if (loading) {
@@ -56,22 +59,25 @@ export default function Caregivers() {
     );
 }
 
+/*
+* Store the caregiver's information and take it to the next page.
+ */
 export function getCaregiverInformation(caregiver){
     console.log(caregiver);
     console.log(caregiver.username);
     var string_type = JSON.stringify(caregiver);
-    //var string_type_username = JSON.stringify(caregiver.username);
     console.log(string_type);
+    //set the information by using sessionStorage.
     sessionStorage.setItem("personalInformation",string_type);
-    //sessionStorage.setItem("caregiverUsername", string_type_username);
     window.location.assign(`http://localhost:3000/CaregiverInformation/${caregiver.username}`);
 }
 
+/*
+*  list the information on personal profile which can be revised by users.
+ */
 export function Caregiver(caregiver) {
     const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience,
         contact_information, image} = caregiver;
-
-
 
     return (
         <div className='postingProfile'>
@@ -99,6 +105,9 @@ export function Caregiver(caregiver) {
     );
 }
 
+/*
+* Use filter to select suitable caregivers.
+ */
 export function SubmitFilter(caregivers) {
     console.log(caregivers);
     var address = document.getElementById("address");
@@ -109,14 +118,16 @@ export function SubmitFilter(caregivers) {
     var male = document.getElementById("gender_male");
     var female = document.getElementById("gender_female");
     var gender_result = caregivers;
+    // To check whether the input is number.
     var reg=/^[0-9]+.?[0-9]*$/;
-
+    // Search caregivers by testing the limitations.
     if (min_age.value || max_age.value) {
         if(!reg.test(min_age.value) || !reg.test(max_age.value)) {
             alert("please input valid age range!");
             return;
         }
     }
+
     if(working_experience.value) {
         if(!reg.test(working_experience.value)) {
             alert("please input valid working experience!");
@@ -136,7 +147,6 @@ export function SubmitFilter(caregivers) {
             );
         }
     }
-    console.log(gender_result);
 
     if (address.value) {
         var address_result = gender_result.filter(function (caregiver) {
@@ -181,7 +191,7 @@ export function SubmitFilter(caregivers) {
     } else {
         salary_result = age_result;
     }
-    console.log(salary_result);
+
     if (working_experience.value) {
         var working_experience_result = salary_result.filter(function (caregiver) {
             return caregiver.working_experience > working_experience.value;

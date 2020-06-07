@@ -26,12 +26,15 @@ This is the current version of our project. We are team HealthNextDoor,
         c. After you login or signup, page will link to your user
             center, which will display your profile. 
     e.g. try username: www, password: 12345
-    
         d. After you login, there will be a button in the top-right corner.
-           that is a drop-off-menu. The drop-off-menu
+           that is a drop-down-menu. The drop-down-menu contain following 
+           function:
+            1.reset passowrd
+            2.list
+            3.logout
     e.g. try click and change it by yourself
     
- 2. Caregivers
+ 2. For Patient
  
         a. When you click into Caregivers page, you will see the
             information list of our caregivers.
@@ -49,6 +52,10 @@ This is the current version of our project. We are team HealthNextDoor,
            patient, you will see the rating and send request button. Clicking
            the rating button will direct to the rating page for that caregiver,
            you will only be able to rate if you were a patient of that caregiver.
+           
+        d. after logging in, the list button on the drop-down menu have a listing
+            function. After clicking that button, you will see three list, which
+            are sent request, order list and order history.
           
      e.g. try any information by yourself
      

@@ -36,7 +36,9 @@ export default function Login() {
             </div>
         );}
 }
-
+/*
+* Get and send the username and password back to back-end to check whether the user exists.
+ */
 function login() {
     var username = document.getElementById("username");
     var pass = document.getElementById("password");
