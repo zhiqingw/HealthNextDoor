@@ -37,7 +37,13 @@ export default function ToList() {
     index = username.lastIndexOf('/');
     let name;
     name = username.slice(index+1);
-    if(dict_data.identity === "caregiver") {
+    var userIdentity = undefined;
+    user.map(singleuser => {
+        if (singleuser.username === window.sessionStorage.getItem("username")){
+            userIdentity = singleuser.identity;
+        }});
+
+    if(userIdentity === "caregiver") {
         return (
             <div>
                 <h1>List</h1>
