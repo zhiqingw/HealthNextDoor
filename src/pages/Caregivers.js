@@ -208,5 +208,5 @@ export function SubmitFilter(caregivers) {
 }
 
 function updateProfile() {
-    window.location.assign(`http://localhost:3000/updateProfile`);
+    window.location.assign(`https://healthnextdoor.herokuapp.com/updateProfile`);
 }
