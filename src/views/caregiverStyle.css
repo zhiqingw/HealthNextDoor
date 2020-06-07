@@ -425,3 +425,21 @@ body{
 #star{
     margin-left: 40%;
 }
+
+#profile{
+    color: #0c0d0c;
+    margin: 12px 12px 12px 12px;
+    padding: 12px 12px 12px 12px;
+}
+.postingProfile{
+    margin-left: 37%;
+}
+#profile td {
+    margin: 12px 12px 12px 12px;
+    padding: 12px 12px 12px 12px;
+}
+
+#profile_photo{
+    position: absolute;
+    margin-right: 20%;
+}

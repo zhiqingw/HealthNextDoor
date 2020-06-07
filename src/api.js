@@ -152,8 +152,25 @@ function getCaregivers() {
 /*addCaregiver used to let user to make a post*/
 export function addCaregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience,contact_information } = caregiver;
+  var reg=/^[0-9]+.?[0-9]*$/;
+  if(!reg.test(age)){
+    alert("age must be a number!");
+    return;
+  }
+  if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
+    alert("please include 'male' or 'female' as a gender!");
+    return;
+  }
+  if(!reg.test(salary)){
+    alert("salary must be a number!");
+    return;
+  }
+  if(!reg.test(working_experience)){
+    alert("working experience must be a number!");
+    return;
+  }
   if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !salary || !working_experience || !contact_information) {
-    alert("must include all fields");
+    alert("must include all fields!");
     return;
   }
 
@@ -187,40 +204,57 @@ export function addCaregiver(caregiver) {
 /*updataeCarever used to let user to update post*/
 export function updateCaregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience, contact_information } = caregiver;
+  var reg=/^[0-9]+.?[0-9]*$/;
+  if(!reg.test(age)){
+    alert("age must be number!");
+    return;
+  }
+  if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
+    alert("please include 'male' or 'female' as a gender!");
+    return;
+  }
+  if(!reg.test(salary)){
+    alert("salary must be in number!");
+    return;
+  }
+  if(!reg.test(working_experience)){
+    alert("working experience must be a number!");
+    return;
+  }
   if (!username) {
-    alert("must include a username");
+    alert("must include a username!");
     return;
   }
   if (!first_name || !last_name) {
-    alert("must include a first name or last name to update");
+    alert("must include a first name or last name to update!");
     return;
   }
   if (!gender){
-    alert("must include gender");
+    alert("must include gender!");
     return;
   }
   if (!introduction){
-    alert("must include an introduction");
+    alert("must include an introduction!");
     return;
   }
   if (!age){
-    alert("must include an age");
+    alert("must include an age!");
     return;
   }
   if (!address){
-    alert("must include an address");
+    alert("must include an address!");
     return;
   }
   if (!salary){
-    alert("must include a salary");
+    alert("must include a salary!");
     return;
   }
   if (!working_experience){
-    alert("must include a working experience");
+    alert("must include a working experience!");
     return;
   }
   if (!contact_information){
-    alert("must include a contact information");
+    alert("must include a contact information!");
     return;
   }
   console.log(salary)
@@ -526,6 +560,15 @@ export function reviewOrder(user) {
 
 export function addPatient(patient) {
   const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;
+  var reg=/^[0-9]+.?[0-9]*$/;
+  if(!reg.test(age)){
+    alert("age must be a number!");
+    return;
+  }
+  if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
+    alert("please include 'male' or 'female' as a gender!");
+    return;
+  }
   if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !contact_information) {
     alert("must include all fields");
     return;
@@ -559,32 +602,41 @@ export function addPatient(patient) {
 
 export function updatePatient(patient) {
   const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;
+  var reg=/^[0-9]+.?[0-9]*$/;
+  if(!reg.test(age)){
+    alert("age must be number!");
+    return;
+  }
+  if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
+    alert("please include 'male' or 'female' as a gender!");
+    return;
+  }
   if (!username) {
-    alert("must include a username");
+    alert("must include a username!");
     return;
   }
   if (!first_name || !last_name) {
-    alert("must include a first name or last name to update");
+    alert("must include a first name or last name to update!");
     return;
   }
   if (!gender){
-    alert("must include gender");
+    alert("must include gender!");
     return;
   }
   if (!introduction){
-    alert("must include an introduction");
+    alert("must include an introduction!");
     return;
   }
   if (!age){
-    alert("must include an age");
+    alert("must include an age!");
     return;
   }
   if (!address){
-    alert("must include an address");
+    alert("must include an address!");
     return;
   }
   if (!contact_information){
-    alert("must include a contact information");
+    alert("must include a contact information!");
     return;
   }
   const endpoint = BASE_URL + `/findPatient/${username}`;
@@ -605,6 +657,9 @@ export function updatePatient(patient) {
       address,
       contact_information
     })
+  }).then(res =>{
+    window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+
   });
 }
 

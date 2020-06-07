@@ -5,6 +5,7 @@ import {Caregiver} from "./Caregivers";
 import Loading from "../components/Loading";
 import ToList from "../pages/ToList"
 import Nav from "../components/Nav";
+import Upload from "../components/Upload";
 /*user home page*/
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
@@ -66,7 +67,7 @@ export default function Users() {
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
                 <div id={"htwo"}>
-                    <h2>Posting Record</h2>
+                    <h2>Profile</h2>
                 </div>
 
                 <div id={"tryy"}>
@@ -96,7 +97,7 @@ export default function Users() {
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
                 <div id={"htwo"}>
-                    <h2>Posting Record</h2>
+                    <h2>Profile</h2>
                 </div>
 
                 <div id={"tryy"}>
@@ -214,27 +215,6 @@ export function UserExtended() {
     );
 }
 
-/*export function UserExtendedList() {
-
-    function onSubmit() {
-        var username = window.sessionStorage.getItem("username");
-
-            updateUserList({
-                username: username,
-
-
-            });
-            window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
-
-    }
-
-    return (
-        <div>
-
-        </div>
-    );
-}
-*/
 export function toReset() {
     window.location.assign("http://localhost:3000/resetPassword")
 }
@@ -244,104 +224,35 @@ export function toList(user){
     var string_type = JSON.stringify(user);
     sessionStorage.setItem("listing",string_type);
     window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
-    /*return(
-        <div>
-            <ToList {...user}/>
-        </div>
 
-    );*/
 }
 function toPatient(){
     window.location.assign("http://localhost:3000/toPatient")
 
 }
 
-//==========================================================================================================================
+
 export function Patient(patient) {
     const { first_name, last_name, gender, introduction, username, age, address, contact_information} = patient;
-    const [showUpdate, setShowUpdate] = useState(false);
 
     return (
-        <div className={`caregiver caregiver-${username}`} key={username}>
-
-            <div id={"list_front"}>
-                <PatientExtended {...patient} />
-            </div>
+        <div>
+            <table id='profile'>
+                <tr><td>firstname:</td> <td>{first_name}</td></tr>
+                <tr><td>lastname: </td> <td>{last_name}</td></tr>
+                <tr><td>gender: </td> <td>{gender}</td></tr>
+                <tr><td>age: </td> <td> {age}</td></tr>
+                <tr><td>address: </td> <td> {address}</td></tr>
+                <tr><td>contact information: </td> <td>{contact_information}</td></tr>
+                <tr ><td>introduction: </td> <td width={'300px'}>{introduction}</td></tr>
+                <button className={"btn-success"} onClick={()=>updateProfilePatient(username)}>
+                    update
+                </button>
+            </table>
         </div>
     );
 }
 
-function PatientExtended(props) {
-    const { first_name, last_name, gender, introduction, username, age, address,
-        contact_information} = props;
-    const [first_input, setFirstName] = useState(first_name);
-    const [last_input, setLastName] = useState(last_name);
-    const [gender_input, setGender] = useState(gender);
-    const [introduction_input,setIntroduction] = useState(introduction);
-    const [age_input,setAge] = useState(age);
-    const [address_input,setAddress] = useState(address);
-    const [contact_input,setContact_information] = useState(contact_information);
-    function onSubmit() {
-        // call upate caregiver function
-        console.log(contact_input);
-        updatePatient({
-            first_name: first_input,
-            last_name: last_input,
-            gender: gender_input,
-            introduction: introduction_input,
-            username: username,
-            age: age_input,
-            address: address_input,
-            contact_information: contact_input,
-        });
-        window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
-    }
-
-    return (
-
-        <div className={`caregiver-expand`}>
-            <form className={"caregiver-expand-left"}>
-                {/* TODO - add value and onChange properties to inputs */}
-                <p>
-                    <label className="update_input">first name</label>
-                    <input type="text" name="first_name" value = {first_input} onChange={event => {setFirstName(event.target.value);}}/>
-                </p>
-                <p>
-                    <label className="update_input">last name</label>
-                    <input type="text" name="last_name" value = {last_input} onChange={event => {setLastName(event.target.value);}}/>
-                </p>
-                <p>
-                    <label className="update_input">gender</label>
-                    <input type="text" name="gender" value = {gender_input} onChange={event => {setGender(event.target.value);}}/>
-                </p>
-                <p>
-                    <label className="update_input">introduction</label>
-                    <input type="text" name="introduction" value = {introduction_input} onChange={event => {setIntroduction(event.target.value);}}/>
-                </p>
-                <p>
-                    <label className="update_input">age</label>
-                    <input type="text" name="age" value = {age_input} onChange={event => {setAge(event.target.value);}}/>
-                </p>
-                <p>
-                    <label className="update_input">address</label>
-                    <input type="text" name="introduction" value = {address_input} onChange={event => {setAddress(event.target.value);}}/>
-                </p>
-                <p>
-                    <label className="update_input">contact information</label>
-                    <input type="text" name="contact_information" value = {contact_input} onChange={event => {setContact_information(event.target.value);}}/>
-                </p>
-
-                <Button className={"btn-danger"} onClick={onSubmit}>
-                    <i className="fa fa-pencil" aria-hidden="true">Update</i>
-                </Button>
-
-                <Button className={"btn-danger"} onClick={() => deletePatient(username)}>
-                    <i className="fa fa-trash-o" aria-hidden="true">Delete</i>
-
-                </Button>
-            </form><form className={"caregiver-expand-right"}></form>
-
-
-        </div>
-    );
+function updateProfilePatient(){
+    window.location.assign(`http://localhost:3000/updatePatientProfile`);
 }
