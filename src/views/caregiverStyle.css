@@ -428,8 +428,10 @@ body{
 
 #profile{
     color: #0c0d0c;
+    background-color: #2da2db;
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
+    margin-left: 30%;
 }
 .postingProfile{
     margin-left: 38%;
@@ -447,5 +449,11 @@ body{
     padding: 12px 12px 12px 12px;
 }
 
-#profile_photo{
+
+#min_age,
+#max_age,
+#address,
+#working_experience{
+    border-color: #0c0d0c;
+
 }

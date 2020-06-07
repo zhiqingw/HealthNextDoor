@@ -63,6 +63,15 @@ h1 {
   color: #3e7a62;
 }
 
+.ti {
+  font-family: "Andale Mono";
+  position: relative;
+  margin-top: 10%;
+  font-size: 500%;
+  color: aliceblue;
+}
+
+
 /*#h1_login{
   position: absolute;
   margin-left: 500px;
@@ -90,13 +99,11 @@ h2{
 
 h3 {
   font-family: "Andale Mono";
-  position: absolute;
+  position: relative;
   width: 100%;
-  margin-top: 7.5%;
-
-  top: 10px;
+  margin-top:5%;
   font-size: 150%;
-  color: #738a9c;
+  color: aliceblue;
 }
 
 h4 {

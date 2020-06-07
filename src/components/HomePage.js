@@ -9,10 +9,10 @@ export default function HomePage() {
 
         <div className="homepage_form">
             <div className={"h1_form"}>
-                <h1> HEALTH NEXT DOOR</h1>
+                <div className='ti'> HEALTH NEXT DOOR</div>
             </div>
             <div className={"h3_form"}>
-                <h3> Care about you and your families! </h3>
+                <h3> health next door provide a platform for you connect with caregiver or patient family! </h3>
             </div>
             <div className={"blank"}>
 

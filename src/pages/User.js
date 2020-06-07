@@ -63,7 +63,6 @@ export default function Users() {
     }
     if (userIdentity === "caregiver" && notFound === 0){
         return (
-            <div>
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
                 <div id={"htwo"}>
@@ -81,16 +80,9 @@ export default function Users() {
 
 
                 </div>
-                <div>
-                {user.map(used =>{
-                    if(used.username===name){
-                        match = used;
-                    }
-                })}
-                </div>
-                <User id={"user_h2"} {...match} />
+
             </div>
-                </div>
+
         );
     } if (userIdentity === "patient" && notFound === 0) {
         return (
@@ -108,12 +100,6 @@ export default function Users() {
                     })}
 
                 </div>
-                {user.map(used =>{
-                    if(used.username===name){
-                        match = used;
-                    }
-                })}
-                <User id={"user_h2"} {...match} />
             </div>
         );
     } if (userIdentity === "caregiver" && notFound === 1) {
@@ -161,25 +147,7 @@ export function Logout(){
     window.location.assign('http://localhost:3000');
 }
 
-/*reset password*/
-function User(user) {
-    const {username, password} = user;
-    const [showUpdate, setShowUpdate] = useState(false);
 
-    return (
-        <div className={`user user-${username}`} key={username}>
-            <div id={"reset"}>
-
-                <Button id={"btn-toList"} onClick={() => toList(user)}>
-                List
-                </Button>
-            </div>
-
-            </div>
-
-
-    );
-}
 
 export function UserExtended() {
     function onSubmit() {
