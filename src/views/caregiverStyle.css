@@ -427,11 +427,18 @@ body{
 }
 
 #profile{
+     color: #0c0d0c;
+     background-color: mediumseagreen;
+     margin: 12px 12px 12px 12px;
+     padding: 12px 12px 12px 12px;
+     margin-left: 37%;
+ }
+#profileOuter{
     color: #0c0d0c;
     background-color: #2da2db;
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
-    margin-left: 30%;
+    margin-left: 0%;
 }
 .postingProfile{
     margin-left: 38%;
@@ -448,7 +455,10 @@ body{
     margin: 12px 12px 12px 12px;
     padding: 12px 12px 12px 12px;
 }
-
+#profileOuter td {
+    margin: 12px 12px 12px 12px;
+    padding: 12px 12px 12px 12px;
+}
 
 #min_age,
 #max_age,
