@@ -10,9 +10,9 @@ export default function Login() {
     else{
         return (
             <div className={"login_frame"}>
-                <h1> Join Us </h1>
+                <div className="ti">Join us</div>
                 <div className="login_box">
-                    <h2>LOGIN</h2>
+                    <div className="ti">LOGIN</div>
                     <div id="form">
                         <div id = "input_box">
                             <i className="fa fa-user-circle" aria-hidden="true"/>

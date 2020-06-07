@@ -443,3 +443,10 @@ body{
     position: absolute;
     margin-right: 20%;
 }
+
+#min_age,
+#max_age,
+#address,
+#working_experience{
+    border-color: #0c0d0c;
+}
