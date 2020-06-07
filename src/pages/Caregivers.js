@@ -161,7 +161,6 @@ export function SubmitFilter(caregivers) {
     var male = document.getElementById("gender_male");
     var female = document.getElementById("gender_female");
     var gender_result = caregivers;
-    console.log(min_age.value);
     var reg=/^[0-9]+.?[0-9]*$/;
 
     if (min_age.value || max_age.value) {

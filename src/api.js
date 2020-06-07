@@ -152,8 +152,25 @@ function getCaregivers() {
 /*addCaregiver used to let user to make a post*/
 export function addCaregiver(caregiver) {
   const { first_name, last_name, gender, introduction, username, age, address, salary, working_experience,contact_information } = caregiver;
+  var reg=/^[0-9]+.?[0-9]*$/;
+  if(!reg.test(age)){
+    alert("must include a valid age!");
+    return;
+  }
+  if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
+    alert("please include 'male' or 'female' as a gender!");
+    return;
+  }
+  if(!reg.test(salary)){
+    alert("must include a valid salary!");
+    return;
+  }
+  if(!reg.test(working_experience)){
+    alert("must include a valid working experience!");
+    return;
+  }
   if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !salary || !working_experience || !contact_information) {
-    alert("must include all fields");
+    alert("must include all fields!");
     return;
   }
 
@@ -526,6 +543,14 @@ export function reviewOrder(user) {
 
 export function addPatient(patient) {
   const { first_name, last_name, gender, introduction, username, age, address, contact_information } = patient;
+  if(!reg.test(age)){
+    alert("must include a valid age!");
+    return;
+  }
+  if(gender.toLocaleLowerCase() !== "male" && gender.toLocaleLowerCase() !== "female"){
+    alert("please include 'male' or 'female' as a gender!");
+    return;
+  }
   if ( !gender|| !first_name || !last_name || !introduction || !username || !age || !address || !contact_information) {
     alert("must include all fields");
     return;
