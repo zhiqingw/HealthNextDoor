@@ -440,5 +440,6 @@ body{
 }
 
 #profile_photo{
-    margin-left: 10%;
+    position: absolute;
+    margin-right: 20%;
 }
