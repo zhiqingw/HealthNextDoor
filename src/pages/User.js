@@ -184,19 +184,19 @@ export function UserExtended() {
 }
 /*to the reset page*/
 export function toReset() {
-    window.location.assign("http://localhost:3000/resetPassword")
+    window.location.assign("https://healthnextdoor.herokuapp.com/resetPassword")
 }
 /*to the list page*/
 export function toList(user){
     console.log(user);
     var string_type = JSON.stringify(user);
     sessionStorage.setItem("listing",string_type);
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/toList/${window.sessionStorage.getItem("username")}`)
 
 }
 /*to the patient page*/
 function toPatient(){
-    window.location.assign("http://localhost:3000/toPatient")
+    window.location.assign("https://healthnextdoor.herokuapp.com/toPatient")
 
 }
 
@@ -224,5 +224,5 @@ export function Patient(patient) {
 
 /*update the personal information of the patient*/
 function updateProfilePatient(){
-    window.location.assign(`http://localhost:3000/updatePatientProfile`);
+    window.location.assign(`https://healthnextdoor.herokuapp.com/updatePatientProfile`);
 }
