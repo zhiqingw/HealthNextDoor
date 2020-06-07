@@ -5,7 +5,7 @@ import {signupCheck} from "../api";
 export default function Signup() {
   return (
       <div className={"login_frame"} id={"sign_version"}>
-        <h1> Join Us </h1>
+        <div className="ti">Join us</div>
         <div className="login_box">
           <h2>SignUp</h2>
           <div>
