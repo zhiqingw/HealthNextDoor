@@ -69,7 +69,7 @@ export function getCaregiverInformation(caregiver){
     console.log(string_type);
     //set the information by using sessionStorage.
     sessionStorage.setItem("personalInformation",string_type);
-    window.location.assign(`http://localhost:3000/CaregiverInformation/${caregiver.username}`);
+    window.location.assign(`https://healthnextdoor.herokuapp.com/CaregiverInformation/${caregiver.username}`);
 }
 
 /*

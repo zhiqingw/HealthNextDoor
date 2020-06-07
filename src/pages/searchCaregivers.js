@@ -3,7 +3,7 @@ import {getCaregivers} from "../api";
 import Button from "../components/Button";
 import {getCaregiverInformation, SubmitFilter} from "./Caregivers";
 import ReactStars from "react-rating-stars-component";
-
+/*show the search result of the filter*/
 export default function SearchCaregivers() {
     var data = sessionStorage.getItem("targetData")
     var dict_data = JSON.parse(data)
@@ -51,7 +51,7 @@ export default function SearchCaregivers() {
         </div>
     );
 }
-
+/*back to the previous level*/
 function backToCaregiver(){
     window.location.href = "findCaregivers"
 }
