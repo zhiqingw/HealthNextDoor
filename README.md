@@ -26,6 +26,7 @@ This is the finalized version of our project. We are team HealthNextDoor,
         c. After you login or signup, page will link to your user
             center, which will display your profile. 
     e.g. try username: www, password: 12345
+        
         d. After you login, there will be a button in the top-right corner.
            that is a drop-down-menu. The drop-down-menu contain following 
            function:
