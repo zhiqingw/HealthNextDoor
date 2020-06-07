@@ -217,7 +217,7 @@ function decline(name){
 
 
 function toPatientPage(name) {
-    window.location.assign(`http://localhost:3000/toPatient/${name}`);
+    window.location.assign(`https://healthnextdoor.herokuapp.com/toPatient/${name}`);
 }
 
 function complete(name){
