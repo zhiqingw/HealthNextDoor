@@ -24,6 +24,7 @@ import CaregiverInformation from "./pages/CaregiverInformation";
 import PatientInformation from "./pages/ToPatient";
 import Rate from "./components/rating";
 import UpdateProfile from "./components/updateProfile";
+import UpdatePatientProfile from "./components/UpdatePatientProfile";
 
 export default function App() {
   return (
@@ -72,6 +73,9 @@ export default function App() {
             </Route>
             <Route path='/updateProfile'>
               <UpdateProfile/>
+            </Route>
+            <Route path='/updatePatientProfile'>
+              <UpdatePatientProfile/>
             </Route>
           </Switch>
         </div>

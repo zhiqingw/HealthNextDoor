@@ -605,6 +605,9 @@ export function updatePatient(patient) {
       address,
       contact_information
     })
+  }).then(res =>{
+    window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+
   });
 }
 
