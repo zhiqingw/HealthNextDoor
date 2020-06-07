@@ -1,6 +1,7 @@
 import React from "react";
 import {UserExtended} from "./User";
 
+/*reset the password by given data */
 export default function resetPassword() {
 
     return (

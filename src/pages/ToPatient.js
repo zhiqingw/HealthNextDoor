@@ -2,6 +2,8 @@ import React from "react";
 import { usePatients} from "../api";
 
 import Button from "../components/Button";
+/*display the basic information of all the caregivers, if you want to know more about a particular caregiver,
+just simply click on the profile card and it would show the detail of that caregiver*/
 export default function PatientInformation(){
     var data = sessionStorage.getItem("personalInformationForPatient");
     console.log(data);
@@ -41,11 +43,3 @@ export default function PatientInformation(){
     );
 }
 
-/*function getPatientInformation(patient){
-    console.log(patient);
-    var string_type = JSON.stringify(patient)
-    console.log(string_type);
-    sessionStorage.setItem("personalInformation",string_type);
-    window.location.href = "PatientInformation";
-}
-*/

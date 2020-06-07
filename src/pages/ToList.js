@@ -1,5 +1,4 @@
 import React from "react";
-import {UserExtendedList} from "./User";
 import {
     acceptReq,
     acceptReqPatient,
@@ -12,9 +11,10 @@ import {
     completeOrder
 } from "../api";
 import Loading from "../components/Loading";
-import {Caregiver} from "./Caregivers";
 
 
+/*display a table which shows all the lists(including order list,
+list of send request, list of received request, history list)*/
 export default function ToList() {
     var data = sessionStorage.getItem("listing");
     var dict_data = JSON.parse(data);
@@ -22,12 +22,13 @@ export default function ToList() {
     const { loading_c, caregivers, error_c } = useCaregivers();
     const { loading_p, patients, error_p} = usePatients();
     const { loading, user, error} = useUser();
-    var dict_caregivers;
     console.log(dict_data);
     console.log(caregivers);
+    //indicating the loading status
     if (loading || loading_p || loading_c) {
         return Loading();
     }
+    //throws an error
     if (error || error_p || error_c) {
         return <p>Something went wrong: {error.message}</p>;
     }
@@ -42,7 +43,7 @@ export default function ToList() {
         if (singleuser.username === window.sessionStorage.getItem("username")){
             userIdentity = singleuser.identity;
         }});
-
+    /*only patients are allowed to end the order*/
     if(userIdentity === "caregiver") {
         return (
             <div>

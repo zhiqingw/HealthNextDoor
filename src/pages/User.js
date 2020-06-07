@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import {updatePatient, deletePatient, updateUser, useCaregivers, usePatients, useUser} from "../api";
+import React from "react";
+import { updateUser, useCaregivers, usePatients, useUser} from "../api";
 import Button from "../components/Button";
 import {Caregiver} from "./Caregivers";
 import Loading from "../components/Loading";
-import ToList from "../pages/ToList"
-import Nav from "../components/Nav";
-import Upload from "../components/Upload";
+
 /*user home page*/
 export default function Users() {
     const { loading, caregivers, error } = useCaregivers();
@@ -58,6 +56,7 @@ export default function Users() {
         }
     }
     console.log(notFound);
+    /*"notFound" is to check whether a user has only sign up as a user but didn't sign up for as a caregiver or patient */
     if (notFound === -1){
         return("")
     }
@@ -183,11 +182,11 @@ export function UserExtended() {
             </div>
     );
 }
-
+/*to the reset page*/
 export function toReset() {
     window.location.assign("http://localhost:3000/resetPassword")
 }
-
+/*to the list page*/
 export function toList(user){
     console.log(user);
     var string_type = JSON.stringify(user);
@@ -195,12 +194,13 @@ export function toList(user){
     window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
 }
+/*to the patient page*/
 function toPatient(){
     window.location.assign("http://localhost:3000/toPatient")
 
 }
 
-
+/*show the personal information of the patient*/
 export function Patient(patient) {
     const { first_name, last_name, gender, introduction, username, age, address, contact_information} = patient;
 
@@ -222,6 +222,7 @@ export function Patient(patient) {
     );
 }
 
+/*update the personal information of the patient*/
 function updateProfilePatient(){
     window.location.assign(`http://localhost:3000/updatePatientProfile`);
 }

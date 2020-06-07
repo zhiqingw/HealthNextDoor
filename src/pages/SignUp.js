@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../components/Button";
 import {signupCheck} from "../api";
 
+/*create a new user in database and base on the identity that registrant choose, create a
+new caregiver or a new patient in the database */
 export default function Signup() {
   return (
       <div className={"login_frame"} id={"sign_version"}>
@@ -36,7 +38,7 @@ export default function Signup() {
       </div>
   );
 }
-
+/*get all the information of a new registrant, check whether the given information is available */
 function onSubmit() {
   var username = document.getElementById("username");
   var password = document.getElementById("password");
@@ -44,12 +46,9 @@ function onSubmit() {
   var caregiver = document.getElementById("caregiver");
   var patient = document.getElementById("patient");
   if(caregiver.checked){
-    //console.log(caregiver.value);
     signupCheck(username.value, password.value, confirmed_password.value, caregiver.value);
-    //window.location.href = "AddCaregiver"
   } else if(patient.checked){
     signupCheck(username.value, password.value, confirmed_password.value, patient.value);
-    //window.location.href = "AddPatient"
   }
   if(!caregiver.checked && !patient.checked){
     alert("Must select an identity!")
