@@ -133,17 +133,17 @@ export default function Users() {
 }
 
 function fillCaregiverInformation(){
-    window.location.assign('http://localhost:3000/AddCaregiver');
+    window.location.assign('https://healthnextdoor.herokuapp.com/AddCaregiver');
 }
 
 function fillPatientInformation(){
-    window.location.assign('http://localhost:3000/AddPatient');
+    window.location.assign('https://healthnextdoor.herokuapp.com/AddPatient');
 }
 
 /*log out and redirect to home page*/
 export function Logout(){
     window.sessionStorage.removeItem("username");
-    window.location.assign('http://localhost:3000');
+    window.location.assign('https://healthnextdoor.herokuapp.com');
 }
 
 

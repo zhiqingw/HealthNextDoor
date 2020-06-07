@@ -184,7 +184,6 @@ function accept(name){
         name: name,
         state: "accept",
     });
-    //window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
 
 }
 
@@ -192,11 +191,9 @@ function toCaregiverPage(name) {
 
     //var string_type_username = JSON.stringify(caregiver.username);
     sessionStorage.setItem("caregiver_name", name);
-    window.location.assign(`http://localhost:3000/CaregiverInformation/${name}`);
+    window.location.assign(`https://healthnextdoor.herokuapp.com/CaregiverInformation/${name}`);
 }
-    //window.location.assign  (`http://localhost:3000/CaregiverInformation/${name}`);
-    //console.log(caregivers);
-    //console.log(name);
+
 
 function decline(name){
     let username;

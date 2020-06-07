@@ -28,8 +28,8 @@ export default function HomePage() {
 
 function toLogin() {
     if(window.sessionStorage.getItem("username")) {
-        window.location.assign(`http://localhost:3000/findCaregivers`)
+        window.location.assign(`https://healthnextdoor.herokuapp.com/findCaregivers`)
     }else{
-        window.location.assign(`http://localhost:3000/login`)
+        window.location.assign(`https://healthnextdoor.herokuapp.com/login`)
     }
 }

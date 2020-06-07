@@ -160,5 +160,5 @@ function sentReq(name){
  */
 function rating(username) {
     window.sessionStorage.setItem("rating_target",username);
-    window.location.assign(`http://localhost:3000/rating/${username}`);
+    window.location.assign(`https://healthnextdoor.herokuapp.com/rating/${username}`);
 }
