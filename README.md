@@ -1,15 +1,15 @@
 # info30005_front
 
-This is the current version of our project. We are team HealthNextDoor,
+This is the finalized version of our project. We are team HealthNextDoor,
  and we would like to solve the problem "how might we better support family caregivers 
  as they care for a loved one with dementia". We would like to use 
  this website to help Dementia patient and their families.
  
  ## Features
  
- For Deliverable 3, we just developed 3 main pages, which can 
+ For the last Deliverable, we just developed 3 main functions, which can 
  be seen from the web navigation, Home, Login, and Caregivers. 
- And we also develop two core functions.
+ And we also develop three core functions.
  
  ### Core Function
  
@@ -26,6 +26,7 @@ This is the current version of our project. We are team HealthNextDoor,
         c. After you login or signup, page will link to your user
             center, which will display your profile. 
     e.g. try username: www, password: 12345
+        
         d. After you login, there will be a button in the top-right corner.
            that is a drop-down-menu. The drop-down-menu contain following 
            function:
@@ -35,11 +36,8 @@ This is the current version of our project. We are team HealthNextDoor,
     e.g. try click and change it by yourself
     
  2. For Patient
- 
-        a. When you click into Caregivers page, you will see the
-            information list of our caregivers.
             
-        b. You can also use the filter function, above the 
+        a. You can use the filter function in Caregiver information list, above the 
             caregiivers' information, to filter some conditions
             to find a caregivers who suits you best, also press
             back button to return to the full list page.
@@ -58,6 +56,25 @@ This is the current version of our project. We are team HealthNextDoor,
             are sent request, order list and order history.
           
      e.g. try any information by yourself
+     
+ 3. For Caregiver
+ 
+        a. You can use the filter function in Caregiver information list, above the 
+           caregiivers' information, to filter some conditions
+           to find a caregivers who suits you best, also press
+           back button to return to the full list page. (this one same as patient)
+     e.g. click female condition, and press search, it will only 
+          show female caregivers
+        
+        b. When user register as a Caregivers, they will fill a form
+           to enter their information, and this information will be
+           displyed at the caregiver information list. 
+       
+     e.g. click the user center page you will see the form
+        
+        c. When you click into Caregivers page, you will see the
+           information list of our caregivers.
+     e.g. click the page and check
      
 ### Set Up
 
