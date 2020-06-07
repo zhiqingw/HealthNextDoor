@@ -432,7 +432,15 @@ body{
     padding: 12px 12px 12px 12px;
 }
 .postingProfile{
-    margin-left: 37%;
+    margin-left: 38%;
+    
+}
+.profileImage{
+    height:110px;
+    margin-right:60%;
+}
+.uploadStyle{
+    margin-right:60%;
 }
 #profile td {
     margin: 12px 12px 12px 12px;
@@ -440,6 +448,4 @@ body{
 }
 
 #profile_photo{
-    position: absolute;
-    margin-right: 20%;
 }

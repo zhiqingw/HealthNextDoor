@@ -116,7 +116,8 @@ export default function Users() {
                 <User id={"user_h2"} {...match} />
             </div>
         );
-    } if (userIdentity = "caregiver" && notFound === 1) {
+    } if (userIdentity === "caregiver" && notFound === 1) {
+        console.log(userIdentity);
         return (
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
@@ -130,7 +131,7 @@ export default function Users() {
             </div>
 
         )
-    } if (userIdentity = "patient" && notFound === 1) {
+    } if (userIdentity === "patient" && notFound === 1) {
         return (
             <div className={"user_home_page"}>
                 <h1>Welcome, {window.sessionStorage.getItem("username")}</h1>
