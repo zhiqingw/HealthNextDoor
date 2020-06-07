@@ -192,7 +192,7 @@ export function UserExtended() {
                 username: username,
                 password: password.value,
             });
-            window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+            //window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
         }
     }
 
