@@ -102,7 +102,7 @@ export function updateUser(user) {
       password
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/user-management/${window.sessionStorage.getItem("username")}`)
 
   });
 }
@@ -283,7 +283,7 @@ export function updateCaregiver(caregiver) {
       contact_information
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/user-management/${window.sessionStorage.getItem("username")}`)
 
   });
 
@@ -379,7 +379,7 @@ export function acceptReq(user) {
       action
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/toList/${window.sessionStorage.getItem("username")}`)
 
   });
 }
@@ -402,7 +402,7 @@ export function acceptReqPatient(user) {
       action
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/toList/${window.sessionStorage.getItem("username")}`)
 
   });
 }
@@ -425,7 +425,7 @@ export function declineReq(user) {
       action
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/toList/${window.sessionStorage.getItem("username")}`)
   });
 }
 
@@ -488,7 +488,7 @@ export function sentRequestPatient(user) {
     })
   }).then(res =>{
     if(res.ok){
-      window.location.assign(`http://localhost:3000/toList/${username}`)
+      window.location.assign(`https://healthnextdoor.herokuapp.com/toList/${username}`)
       //window.location.href = `CaregiverInformation/${username}`;
     }else{
       alert("you are a patient of that caregiver!");
@@ -514,7 +514,7 @@ export function completeOrder(user) {
       action
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/rating/${name}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/rating/${name}`)
   });
 }
 
@@ -538,7 +538,7 @@ export function ratingOrder(user) {
     })
   }).then(res =>{
     if(res.ok){
-      window.location.assign(`http://localhost:3000/CaregiverInformation/${username}`)
+      window.location.assign(`https://healthnextdoor.herokuapp.com/CaregiverInformation/${username}`)
       //window.location.href = `CaregiverInformation/${username}`;
     }else{
       alert("you are not a patient of that caregiver!");
@@ -668,7 +668,7 @@ export function updatePatient(patient) {
       contact_information
     })
   }).then(res =>{
-    window.location.assign(`http://localhost:3000/user-management/${window.sessionStorage.getItem("username")}`)
+    window.location.assign(`https://healthnextdoor.herokuapp.com/user-management/${window.sessionStorage.getItem("username")}`)
 
   });
 }
@@ -697,7 +697,7 @@ export function updateimage(url) {
     })
   }).then(res =>{
     if(res.ok){
-      window.location.assign(`http://localhost:3000/CaregiverInformation/${username}`)
+      window.location.assign(`https://healthnextdoor.herokuapp.com/CaregiverInformation/${username}`)
       //window.location.href = `CaregiverInformation/${username}`;
     }
   });
