@@ -32,7 +32,6 @@ export default function SearchCaregivers() {
                                         size={24}
                                         edit={false}
                                         half={true}
-
                                         color1={'#ffd700'} />
                                 </div>
                                 <img className={"photo"}  src={caregiver.image} ></img>

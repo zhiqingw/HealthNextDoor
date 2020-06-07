@@ -23,6 +23,7 @@ import ToList from "./pages/ToList";
 import CaregiverInformation from "./pages/CaregiverInformation";
 import PatientInformation from "./pages/ToPatient";
 import Rate from "./components/rating";
+import UpdateProfile from "./components/updateProfile";
 
 export default function App() {
   return (
@@ -68,6 +69,9 @@ export default function App() {
             </Route>
             <Route path='/rating'>
               <Rate/>
+            </Route>
+            <Route path='/updateProfile'>
+              <UpdateProfile/>
             </Route>
           </Switch>
         </div>
