@@ -78,5 +78,5 @@ function showUser(){
     }
 }*/
 function toList(){
-    window.location.assign(`http://localhost:3000/toList/${window.sessionStorage.getItem("username")}`);
+    window.location.assign(`https://healthnextdoor.herokuapp.com/toList/${window.sessionStorage.getItem("username")}`);
 }
