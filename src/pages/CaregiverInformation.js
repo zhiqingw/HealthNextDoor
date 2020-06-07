@@ -27,22 +27,7 @@ export default function CaregiverInformation(){
     if (error) {
         return <p>Something went wrong: {error.message}</p>;
     }
-    /*var identity = "caregiver";
-    if(window.sessionStorage.getItem("username")){
-        var now = user.filter(function (userr) {
-            if(userr.username === window.sessionStorage.getItem("username")){
-                return userr.identity;
-            }
-        });
-        var userIdentity = undefined;
-        user.map(singleuser => {
-            if (singleuser.username === name){
-                userIdentity = singleuser.identity;
-            }});
 
-        //var noww = JSON.parse(now);
-        //identity = now;
-    }*/
     var userIdentity = undefined;
     user.map(singleuser => {
         if (singleuser.username === window.sessionStorage.getItem("username")){
