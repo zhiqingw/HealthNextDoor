@@ -93,7 +93,7 @@ export default function CaregiverInformation(){
             </div>
         )
         // Return what should a caregiver see on this page if this user is a caregiver.
-    }if (userIdentity === "caregiver"){
+    }else{
         return (
             <div>
                 <h1>Caregivers List</h1>
